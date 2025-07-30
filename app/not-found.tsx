@@ -113,7 +113,7 @@ export default function NotFound() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <Link href="/page.tsx">
+            <Link href="/">
               <Button size="lg" className="btn-primary px-8 py-4">
                 <Home className="mr-2 h-5 w-5" />
                 Về trang chủ
