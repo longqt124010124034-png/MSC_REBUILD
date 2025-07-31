@@ -41,7 +41,8 @@ const HeroVideo = () => {
           className="w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920&text=MSC+Center+Video+Poster"
         >
-          <source src="/placeholder.mp4" type="video/mp4" />
+          <source src="/Intro.mp4" type="video/mp4" /> 
+          
           {/* Fallback gradient background */}
           <div
             className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900"
@@ -84,22 +85,9 @@ const HeroVideo = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-8"
-          >
-            <div className="mx-auto w-96 h-32 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-              <div className="text-center">
-                <h1 className="text-4xl font-bold text-white mb-2">MSC CENTER</h1>
-                <p className="text-lg text-gray-200">Life Long Learning</p>
-              </div>
-            </div>
-          </motion.div>
+         
 
-          {/* Title */}
+          {/* Title 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,9 +95,9 @@ const HeroVideo = () => {
             className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif"
           >
             {t("hero.title")}
-          </motion.h2>
+          </motion.h2>*/}
 
-          {/* Subtitle */}
+          {/* Subtitle 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -117,9 +105,9 @@ const HeroVideo = () => {
             className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed"
           >
             {t("hero.subtitle")}
-          </motion.p>
+          </motion.p>*/}
 
-          {/* CTA Button */}
+          {/* CTA Button
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,7 +120,7 @@ const HeroVideo = () => {
             >
               {t("hero.cta")}
             </Button>
-          </motion.div>
+          </motion.div>*/}
         </motion.div>
 
         {/* Scroll Indicator */}

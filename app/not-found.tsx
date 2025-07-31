@@ -189,9 +189,9 @@ export default function NotFound() {
               <Button
                 variant="outline"
                 className="bg-transparent"
-                onClick={() => window.open("tel:+84909123456", "_self")}
+                onClick={() => window.open("tel: (+84) 329 381 489", "_self")}
               >
-                Gọi hotline: 0909 123 456
+                Gọi hotline: (+84) 329 381 489
               </Button>
             </div>
           </motion.div>
@@ -204,7 +204,7 @@ export default function NotFound() {
             className="mt-12 text-center"
           >
             <p className="text-sm text-gray-500 italic">
-              💡 Fun fact: Lỗi 404 được đặt tên theo phòng 404 tại CERN - nơi máy chủ web đầu tiên được đặt!
+              💡 Chúng tôi đang giải quyết lỗi trong thời gian sớm nhất có thể!
             </p>
           </motion.div>
         </div>

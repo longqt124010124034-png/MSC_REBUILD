@@ -27,12 +27,12 @@ const translations = {
     "nav.register": "Đăng ký",
     "nav.profile": "Hồ sơ năng lực",
     "hero.title": "MSC Center – Life Long Learning",
-    "hero.subtitle": "Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp",
+ 
     "hero.cta": "Đăng ký ngay",
     "footer.contact": "Liên hệ",
     "footer.social": "Mạng xã hội",
     "footer.newsletter": "Đăng ký nhận tin",
-    "footer.copyright": "© 2025 MSC Center. Tất cả quyền được bảo lưu.",
+    "footer.copyright": "© 2025 MSC Center. Được phát triển bởi Phòng CNTT.",
   },
   en: {
     "nav.about": "About",
@@ -47,12 +47,12 @@ const translations = {
     "nav.register": "Register",
     "nav.profile": "Profile",
     "hero.title": "MSC Center – Life Long Learning",
-    "hero.subtitle": "Professional Training and Skill Development Center",
+  
     "hero.cta": "Register Now",
     "footer.contact": "Contact",
     "footer.social": "Social Media",
     "footer.newsletter": "Newsletter",
-    "footer.copyright": "© 2025 MSC Center. All rights reserved.",
+    "footer.copyright": "© 2025 MSC Center. Developed by the IT Department.",
   },
 }
 
