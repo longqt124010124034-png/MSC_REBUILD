@@ -75,12 +75,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "logo/favicon.ico" },
+      { url: "logo/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "logo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
       {
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-    generator: 'v0.dev'
+    generator: 'MSC-IT Department'
 }
 
 export default function RootLayout({
@@ -102,9 +102,9 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="logo/favicon.ico" sizes="any" />
+        <link rel="icon" href="logo/favicon.svg" type="image/svg+xml" />
+        <link rel="logo/apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0c3c78" />
         <meta name="msapplication-TileColor" content="#0c3c78" />

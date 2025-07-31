@@ -41,7 +41,7 @@ const HeroVideo = () => {
           className="w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920&text=MSC+Center+Video+Poster"
         >
-          <source src="/placeholder.mp4" type="video/mp4" />
+          <source src="/Intro.mp4" type="video/mp4" />
           {/* Fallback gradient background */}
           <div
             className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900"
