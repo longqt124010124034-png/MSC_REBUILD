@@ -85,7 +85,7 @@ const HeroVideo = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Logo */}
+          {/* Logo 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -98,9 +98,9 @@ const HeroVideo = () => {
                 <p className="text-lg text-gray-200">Life Long Learning</p>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* Title */}
+          {/* Title 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,9 +108,9 @@ const HeroVideo = () => {
             className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif"
           >
             {t("hero.title")}
-          </motion.h2>
+          </motion.h2>*/}
 
-          {/* Subtitle */}
+          {/* Subtitle 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ const HeroVideo = () => {
             className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed"
           >
             {t("hero.subtitle")}
-          </motion.p>
+          </motion.p>*/}
 
           {/* CTA Button */}
           <motion.div

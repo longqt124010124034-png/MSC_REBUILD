@@ -4,8 +4,8 @@ import Image from "next/image"
 
 const PartnersCarousel = () => {
   const partners = [
-    { id: 1, name: "UEH University", logo: "/placeholder.svg?height=60&width=120&text=UEH" },
-    { id: 2, name: "FPT Corporation", logo: "/placeholder.svg?height=60&width=120&text=FPT" },
+    { id: 1, name: "UEH University", logo: "/ASL.webp" },
+    { id: 2, name: "FPT Corporation", logo: "/carousel/ASL.webp" },
     { id: 3, name: "Vietcombank", logo: "/placeholder.svg?height=60&width=120&text=VCB" },
     { id: 4, name: "Samsung Vietnam", logo: "/placeholder.svg?height=60&width=120&text=Samsung" },
     { id: 5, name: "Unilever Vietnam", logo: "/placeholder.svg?height=60&width=120&text=Unilever" },
