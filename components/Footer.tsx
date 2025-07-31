@@ -187,7 +187,7 @@ const Footer = () => {
                   <Facebook className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="https://youtube.com/msccenter"
+                  href="https://youtube.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 border border-white/20 hover:scale-110"

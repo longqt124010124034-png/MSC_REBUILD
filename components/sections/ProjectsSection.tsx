@@ -12,69 +12,73 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: "1",
-      title: "Chương trình Mentoring & Coaching cho Sinh viên",
-      description:
-        "Chương trình đào tạo và phát triển kỹ năng lãnh đạo, giao tiếp và tư duy phản biện cho sinh viên đại học.",
-      image: "/placeholder.svg?height=250&width=400&text=Mentoring+Program",
+      title: "Dự án: Công ty TNHH F Deli",
+      description:" Mentoring & Coaching: Chuẩn hoá quy trình làm việc",
+      instructors: "Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
+      image: "/Projects/Fdeli.webp",
       category: "Mentoring",
       mentors: [
-        { name: "TS. Nguyễn Văn A", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+1" },
-        { name: "ThS. Trần Thị B", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+2" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "ThS. Đoàn Đức Minh", avatar: "/Mentors/DDM.webp" },
       ],
     },
     {
       id: "2",
-      title: "Dự án Phát triển Kỹ năng Mềm",
-      description: "Khóa học tập trung vào phát triển kỹ năng giao tiếp, làm việc nhóm và quản lý thời gian hiệu quả.",
-      image: "/placeholder.svg?height=250&width=400&text=Soft+Skills",
-      category: "Kỹ năng mềm",
+      title: "Dự án: Khu du lịch Happy Land",
+      description: "👉 Mentoring & Coaching: Đào tạo đội ngũ Sales & Marketing",
+      instructors: "Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
+      image: "/Projects/Happyland.webp",
+      category: "Mentoring,Training",
       mentors: [
-        { name: "TS. Phạm Văn D", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+4" },
-        { name: "ThS. Hoàng Thị E", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+5" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "MSC Teams", avatar: "/MSCers/mscteam.webp" },
       ],
     },
     {
       id: "3",
-      title: "Chương trình Quản lý Dự án",
-      description: "Đào tạo chuyên sâu về quản lý dự án, áp dụng các phương pháp Agile và Scrum trong thực tế.",
-      image: "/placeholder.svg?height=250&width=400&text=Project+Management",
+      title: "Dự án: Einstein School HCM - ESH",
+      description: "👉Mentoring & Coaching: Đào tạo đội ngũ Sales & Marketing, Tư vấn tuyển sinh",
+      instructors: "Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
+      image: "/Projects/einsteinschool.webp",
       category: "Quản lý dự án",
       mentors: [
-        { name: "TS. Vũ Văn F", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+6" },
-        { name: "ThS. Đặng Thị G", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+7" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "Th.S Đoàn Đức Minh", avatar: "/Mentors/DDM.webp" },
       ],
     },
     {
       id: "4",
-      title: "Khóa học Leadership & Team Building",
-      description: "Phát triển kỹ năng lãnh đạo và xây dựng đội nhóm hiệu quả cho các nhà quản lý trẻ.",
-      image: "/placeholder.svg?height=250&width=400&text=Leadership",
+      title: "Dự án: Tâm Châu",
+      description: "Mentoring & Coaching: Đội ngũ Quản lý dự án",
+      instructors: "Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
+      image: "/Projects/Tam-Chau.webp",
       category: "Lãnh đạo",
       mentors: [
-        { name: "TS. Cao Văn I", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+9" },
-        { name: "ThS. Lý Thị K", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+10" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "MSC Teams", avatar: "/MSCers/mscteam.webp" },
       ],
     },
     {
       id: "5",
-      title: "Chương trình Coaching cá nhân",
+      title: "Dự án: Đôi Dép - Không thể thiếu nhau",
       description: "Dịch vụ coaching 1-1 giúp cá nhân phát triển bản thân và đạt được mục tiêu nghề nghiệp.",
-      image: "/placeholder.svg?height=250&width=400&text=Personal+Coaching",
+      instructors: "Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
+      image: "/Projects/DoiDep.webp",
       category: "Coaching",
       mentors: [
-        { name: "TS. Mai Văn L", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+11" },
-        { name: "ThS. Đinh Thị M", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+12" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "MSC Teams", avatar: "/MSCers/mscteam.webp" },
       ],
     },
     {
       id: "6",
-      title: "Workshop Tư duy Sáng tạo",
-      description: "Các buổi workshop thực hành về tư duy sáng tạo, giải quyết vấn đề và đổi mới trong công việc.",
-      image: "/placeholder.svg?height=250&width=400&text=Creative+Thinking",
+      title: "Dự án: VNPT",
+      description: "Mentoring & Coaching: Văn hoá doanh nghiệp.",
+      image: "/Projects/VNPT.webp",
       category: "Workshop",
       mentors: [
-        { name: "TS. Tô Văn N", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+13" },
-        { name: "ThS. Dương Thị O", avatar: "/placeholder.svg?height=40&width=40&text=Mentor+14" },
+        { name: "TS. Phan Huỳnh Anh", avatar: "/Mentors/PHA.webp" },
+        { name: "MSC Teams", avatar: "/MSCers/mscteam.webp" },
       ],
     },
   ]
@@ -93,7 +97,7 @@ const ProjectsSection = () => {
             Dự án đã triển khai
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Khám phá các dự án đào tạo và phát triển kỹ năng chuyên nghiệp mà MSC Center đã triển khai thành công
+            Khám phá các dự án đào tạo và phát triển kỹ năng chuyên nghiệp mà MSC Center đã và đang triển kha.
           </p>
         </motion.div>
 

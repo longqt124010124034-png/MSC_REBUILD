@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import {Project} from "./types"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -27,24 +28,32 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // BƯỚC 2.1: Xóa thuộc tính `icon`
   const navItems = [
-    { href: "/gioi-thieu", label: t("nav.about"), icon: "🏢" },
-    { href: "/dao-tao", label: t("nav.training"), icon: "📚" },
-    { href: "/du-an", label: t("nav.projects"), icon: "🚀" },
-    { href: "/mentors", label: t("nav.mentors"), icon: "👨‍🏫" },
-    { href: "/mscer", label: t("nav.mscer"), icon: "🎓" },
-    { href: "/dong-hanh", label: t("nav.partners"), icon: "🤝" },
-    { href: "/chia-se", label: t("nav.blog"), icon: "📝" },
-    { href: "/lien-he", label: t("nav.contact"), icon: "📞" },
+    { href: "/gioi-thieu", label: t("nav.about") },
+    { href: "/dao-tao", label: t("nav.training") },
+    { href: "/du-an", label: t("nav.projects") },
+    { href: "/mentors", label: t("nav.mentors") },
+    { href: "/mscer", label: t("nav.mscer") },
+    { href: "/dong-hanh", label: t("nav.partners") },
+    { href: "/chia-se", label: t("nav.blog") },
+    { href: "/lien-he", label: t("nav.contact") },
   ]
 
-  const isActiveRoute = (href: string) => {
-    if (href === "/" && pathname === "/") return true
-    if (href !== "/" && pathname.startsWith(href)) return true
-    return false
+  // THAY THẾ BẰNG HÀM NÀY (chính xác hơn)
+const isActiveRoute = (href: string) => {
+  // Trường hợp đặc biệt cho trang chủ
+  if (href === "/" && pathname === "/") {
+    return true;
   }
-
-  const TOPBAR_HEIGHT = 38
+  // Bỏ qua trang chủ cho các logic sau
+  if (href === "/") {
+    return false;
+  }
+  // Kiểm tra khớp chính xác hoặc là trang con (ví dụ: /du-an/chi-tiet khớp với /du-an)
+  return pathname === href || pathname.startsWith(href + '/');
+};
+  const TOPBAR_HEIGHT = 36
   const SCROLLED_HEADER_HEIGHT = 70
 
   return (
@@ -80,7 +89,7 @@ const Header = () => {
               <div className="flex items-center space-x-4 text-xs">
                 <span className="hidden sm:block">📧 msc.edu.vn@gmail.com</span>
                 <span className="hidden md:block">📞 (+84) 329 381 489</span>
-                <span className="block">🌟 Life Long Learning</span>
+                <span className="block">🌟 Mekong Skill Center</span>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -132,14 +141,15 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Enhanced Header */}
+      {/* BƯỚC 1: Sửa lỗi khoảng cách */}
       <motion.header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 w-full ${
           isScrolled
-            ? "top-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl py-2"
-            : `top-[${TOPBAR_HEIGHT}px] bg-white/90 dark:bg-gray-900/90 backdrop-blur-md py-4`
+            ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl py-2"
+            : "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md py-4"
         }`}
-        animate={{
-          y: isScrolled ? 0 : 0,
+        style={{
+          top: isScrolled ? 0 : `${TOPBAR_HEIGHT}px`
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
@@ -157,12 +167,12 @@ const Header = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Image
-                  src="/placeholder.svg?height=48&width=180&text=MSC+CENTER"
-                  alt="MSC Center"
+                  src="/logo.webp"
+                  alt="Mekong Skill Center"
                   width={180}
                   height={48}
-                  className="h-12 w-auto transition-all duration-300"
-                  style={{ height: isScrolled ? "40px" : "48px" }}
+                  className="h-12 w-auto transition-all duration-300 float-left" 
+              style={{ height: isScrolled ? "40px" : "48px" }}
                 />
               </motion.div>
             </Link>
@@ -184,10 +194,8 @@ const Header = () => {
                         isActive ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20" : ""
                       }`}
                     >
-                      <span className="flex items-center space-x-1">
-                        <span>{item.icon}</span>
-                        <span>{item.label}</span>
-                      </span>
+                      {/* BƯỚC 2.2: Xóa icon khỏi menu desktop */}
+                      {item.label}
                       <motion.div
                         className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full"
                         initial={{ scaleX: isActive ? 1 : 0 }}
@@ -286,16 +294,13 @@ const Header = () => {
                           >
                             <Link
                               href={item.href}
-                              className={`group flex items-center space-x-4 p-4 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-teal-50 dark:hover:from-blue-900/30 dark:hover:to-teal-900/30 hover:border-blue-200 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${
+                              // BƯỚC 2.3: Xóa space-x-4
+                              className={`group flex items-center p-4 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-teal-50 dark:hover:from-blue-900/30 dark:hover:to-teal-900/30 hover:border-blue-200 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${
                                 isActive ? "bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900/30 dark:to-teal-900/30 border-blue-200 dark:border-blue-700" : ""
                               }`}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              <div className={`flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-300 ${
-                                isActive ? "scale-110" : ""
-                              }`}>
-                                {item.icon}
-                              </div>
+                              {/* BƯỚC 2.3: Xóa div chứa icon */}
                               <div className="flex-1">
                                 <div className={`font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 ${
                                   isActive ? "text-blue-600 dark:text-blue-400" : ""
@@ -361,7 +366,7 @@ const Header = () => {
                         <div className="text-sm text-gray-600 dark:text-gray-400">📧 msc.edu.vn@gmail.com</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400">📞 (+84) 329 381 489</div>
                         <div className="text-xs text-blue-600 dark:text-blue-400 font-medium">
-                          🌟 Life Long Learning
+                          🌟 Mekong Skill Center
                         </div>
                       </div>
                     </motion.div>

@@ -47,11 +47,11 @@ export default function LoginPage() {
 
   const testimonials = [
     {
-      name: "Nguyễn Văn A",
-      role: "Product Manager",
-      company: "FPT Software",
-      content: "MSC Center đã giúp tôi phát triển kỹ năng lãnh đạo một cách toàn diện.",
-      avatar: "/placeholder.svg?height=40&width=40&text=A"
+      name: "Nguyễn Tuấn Dũng",
+      role: "IT Fullstack",
+      company: "UEH",
+      content: "MSC Center đã giúp tôi môi trường phát triển một cách toàn diện.",
+      avatar: "/MSCers/NTD.webp"
     },
     {
       name: "Trần Thị B",
@@ -276,7 +276,7 @@ export default function LoginPage() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: 20 
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex items-center space-x-3"

@@ -20,9 +20,9 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: "MSC Center - Life Long Learning",
+  title: "MSC Center - Viện Đào tạo Kỹ năng cho sinh viên và người đi làm",
   description: "Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp MSC Center - Học tập và nỗ lực suốt đời",
-  keywords: "MSC Center, đào tạo, coaching, mentoring, kỹ năng mềm, phát triển bản thân, life long learning",
+  keywords: "MSC Center, đào tạo, coaching, mentoring, kỹ năng mềm, phát triển bản thân, life long learning,Viện Đào tạo Kỹ năng cho sinh viên và người đi làm",
   authors: [{ name: "MSC Center", url: "https://msc.edu.vn" }],
   creator: "MSC Center",
   publisher: "MSC Center",
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     siteName: "MSC Center",
     images: [
       {
-        url: "/placeholder.svg?height=630&width=1200&text=MSC+Center+OG+Image",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "MSC Center - Life Long Learning",
+        alt: "Viện Đào tạo Kỹ năng cho sinh viên và người đi làm",
       },
     ],
     locale: "vi_VN",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "logo/site.webmanifest",
     generator: 'MSC-IT Department'
 }
 
@@ -104,8 +104,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="logo/favicon.ico" sizes="any" />
         <link rel="icon" href="logo/favicon.svg" type="image/svg+xml" />
-        <link rel="logo/apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="logo/apple-touch-icon" href="logo/apple-touch-icon.png" />
+        <link rel="manifest" href="logo/site.webmanifest" />
         <meta name="theme-color" content="#0c3c78" />
         <meta name="msapplication-TileColor" content="#0c3c78" />
         <meta name="msapplication-config" content="/browserconfig.xml" />

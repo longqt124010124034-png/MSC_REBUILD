@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import { motion } from "framer-motion"
 import { ChevronDown, Play, Pause } from "lucide-react"
 import { useState, useRef } from "react"
@@ -126,11 +127,15 @@ const HeroVideo = () => {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <Button
+            asChild
+
               onClick={scrollToContact}
               size="lg"
               className="btn-secondary text-lg px-8 py-4 hover:scale-105 transition-transform duration-300"
             >
+              <Link href = "/lien-he">
               {t("hero.cta")}
+              </Link>
             </Button>
           </motion.div>
         </motion.div>

@@ -9,41 +9,34 @@ const DirectorsSection = () => {
   const directors = [
     {
       id: "dir-1",
-      name: "TS. Nguyễn Thành Đạt",
-      title: "Chủ nhiệm MSC Center",
-      degree: "Tiến sĩ Quản trị Kinh doanh",
-      avatar: "/placeholder.svg?height=128&width=128&text=Director+1",
-      specialties: ["Strategic Leadership", "Business Development", "Educational Management"],
-      social: {
-        linkedin: "https://linkedin.com/in/director1",
-        facebook: "https://facebook.com/director1",
-        email: "director1@msc.edu.vn",
-      },
+      name: "Dương Thế Khải",
+      title: "",
+      degree: "Phó Giám Đốc MSC",
+      avatar: "/MSCers/DTK.webp",
+      specialties: ["Strategic Leadership", "Business Development", "Management"],
+      
     },
     {
       id: "dir-2",
-      name: "ThS. Lê Thị Minh Châu",
-      title: "Phó Chủ nhiệm Học thuật",
-      degree: "Thạc sĩ Giáo dục",
-      avatar: "/placeholder.svg?height=128&width=128&text=Director+2",
-      specialties: ["Academic Affairs", "Curriculum Development", "Quality Assurance"],
-      social: {
+      name: "Phạm Hoàng Minh Khánh",
+      title: "",
+      degree: "Giám Đốc MSC",
+      avatar: "/MSCers/PHMK.webp",
+      specialties: ["Academic Affairs", "Curriculum Development", "Quality Assurance","Business Development"],
+      /*social: {
         linkedin: "https://linkedin.com/in/director2",
         email: "director2@msc.edu.vn",
-      },
+      },*/
     },
     {
       id: "dir-3",
-      name: "TS. Trần Văn Hùng",
-      title: "Phó Chủ nhiệm Đối ngoại",
-      degree: "Tiến sĩ Quan hệ Quốc tế",
-      avatar: "/placeholder.svg?height=128&width=128&text=Director+3",
-      specialties: ["International Relations", "Partnership Development", "External Affairs"],
-      social: {
-        linkedin: "https://linkedin.com/in/director3",
-        facebook: "https://facebook.com/director3",
-        email: "director3@msc.edu.vn",
-      },
+      name: "Quách Thành Long",
+      title: "",
+      degree: "Trưởng phòng CNTT",
+      avatar: "/MSCers/QTL.webp",
+      specialties: ["Strategic Leadership", "Business Development", "Technique Management","Game Development"],
+      
+      
     },
   ]
 

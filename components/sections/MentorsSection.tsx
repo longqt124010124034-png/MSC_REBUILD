@@ -12,78 +12,57 @@ const MentorsSection = () => {
   const mentors = [
     {
       id: "1",
-      name: "TS. Nguyễn Văn Minh",
-      title: "Giám đốc Học thuật",
-      degree: "Tiến sĩ Quản trị Kinh doanh",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+1",
+      name: "TS. Phan Huỳnh Anh",
+      title: "Tiến Sĩ Kinh tế",
+      degree: "Chủ tịch HĐQT Công ty Smentor",
+      avatar: "/Mentors/PHA.webp",
       specialties: ["Leadership", "Strategic Management", "Business Coaching"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor1",
-        facebook: "https://facebook.com/mentor1",
-        email: "mentor1@msc.edu.vn",
-      },
+      
     },
     {
       id: "2",
-      name: "ThS. Trần Thị Hương",
-      title: "Chuyên gia Phát triển Nhân sự",
-      degree: "Thạc sĩ Tâm lý Tổ chức",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+2",
+      name: "Hoàng Cửu Long",
+      title: "Phó Giáo Sư - Tiến Sĩ",
+      degree: "Giảng viên Đại học Kinh tế TP. Hồ Chí Minh",
+      avatar: "/Mentors/HCL.webp",
       specialties: ["HR Development", "Team Building", "Communication Skills"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor2",
-        email: "mentor2@msc.edu.vn",
-      },
+      
     },
     {
       id: "3",
-      name: "TS. Lê Hoàng Nam",
-      title: "Chuyên gia Quản lý Dự án",
-      degree: "Tiến sĩ Công nghệ Thông tin",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+3",
+      name: "Đoàn Đức Minh",
+      title: "Thạc Sĩ - Nghiên cứu sinh",
+      degree: "Giảng viên Đại học Western Sydney",
+      avatar: "/Mentors/DDM.webp",
       specialties: ["Project Management", "Agile", "Digital Transformation"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor3",
-        facebook: "https://facebook.com/mentor3",
-        email: "mentor3@msc.edu.vn",
-      },
+      
     },
     {
       id: "4",
-      name: "ThS. Phạm Thị Lan",
-      title: "Chuyên gia Coaching",
-      degree: "Thạc sĩ Tâm lý Ứng dụng",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+4",
+      name: "Nguyễn Chí Thành",
+      title: "CEO",
+      degree: "TLàng Kết nối Kinh doanh VABIX",
+      avatar: "/Mentors/NCT.webp",
       specialties: ["Personal Coaching", "Career Development", "Mindfulness"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor4",
-        email: "mentor4@msc.edu.vn",
-      },
+      
     },
     {
       id: "5",
-      name: "TS. Vũ Đình Khoa",
-      title: "Chuyên gia Đổi mới Sáng tạo",
-      degree: "Tiến sĩ Kinh tế",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+5",
+      name: "Lê Nhật Trường Chinh",
+      title: "CEO & Founder",
+      degree: "SUCCESS Partner Co.Ltd",
+      avatar: "/Mentors/LNTC.webp",
       specialties: ["Innovation", "Entrepreneurship", "Design Thinking"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor5",
-        facebook: "https://facebook.com/mentor5",
-        email: "mentor5@msc.edu.vn",
-      },
+      
     },
     {
       id: "6",
-      name: "ThS. Hoàng Thị Mai",
-      title: "Chuyên gia Kỹ năng Mềm",
-      degree: "Thạc sĩ Giáo dục",
-      avatar: "/placeholder.svg?height=128&width=128&text=Mentor+6",
+      name: "Phan Phát Huy",
+      title: "CEO & Founder",
+      degree: "HILTOW LANDMARK",
+      avatar: "/Mentors/PPH.webp",
       specialties: ["Soft Skills", "Public Speaking", "Emotional Intelligence"],
-      social: {
-        linkedin: "https://linkedin.com/in/mentor6",
-        email: "mentor6@msc.edu.vn",
-      },
+      
     },
   ]
 
