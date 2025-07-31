@@ -132,7 +132,7 @@ deploy_staging() {
         ssh staging-server "pm2 restart msc-center"
         
         print_success "Deployed to staging environment"
-        print_status "Staging URL: https://staging.msc.edu.vn"
+        print_status "Staging URL:  "
     else
         print_error "rsync not found. Please install rsync or use alternative deployment method."
         exit 1

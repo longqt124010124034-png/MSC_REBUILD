@@ -87,7 +87,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-blue-100 mb-6 leading-relaxed max-w-md">
-              MSC Center - Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp hàng đầu Việt Nam. Chúng tôi cam kết
+              MSC Center - Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp hàng đầu Việt Nam cho người đi làm và sinh viên. Chúng tôi cam kết
               mang đến những chương trình đào tạo chất lượng cao, giúp bạn phát triển bản thân và đạt được thành công
               trong sự nghiệp.
             </p>
@@ -116,7 +116,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-bold mb-6 font-serif text-teal-200">{t("footer.contact")}</h3>
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-5 w-5 text-teal-300" />
