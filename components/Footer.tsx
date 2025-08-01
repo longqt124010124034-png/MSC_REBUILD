@@ -6,62 +6,85 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Facebook, Youtube, Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react'
-import { useLanguage } from "./language-provider"
+// import { useLanguage } from "./language-provider" // Bỏ comment nếu bạn dùng đa ngôn ngữ
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import FacebookSDKLoader from "@/components/ui/facebook-sdk-loader"; // Thêm dòng này
+
+// Giả sử bạn có một component FacebookSDKLoader riêng
+const FacebookSDKLoader = () => {
+    useEffect(() => {
+        // Kiểm tra xem script đã tồn tại chưa để tránh tải lại
+        if (document.getElementById('facebook-jssdk')) {
+            // Nếu đã có, chỉ cần parse lại
+            if (window.FB) {
+                window.FB.XFBML.parse();
+            }
+            return;
+        }
+
+        // Tạo thẻ div #fb-root
+        const fbRoot = document.createElement('div');
+        fbRoot.id = 'fb-root';
+        document.body.insertBefore(fbRoot, document.body.firstChild);
+
+        // Tạo và thêm thẻ script
+        const script = document.createElement('script');
+        script.id = 'facebook-jssdk';
+        script.src = "https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0&appId=YOUR_APP_ID&autoLogAppEvents=1"; // THAY APP ID CỦA BẠN
+        script.async = true;
+        script.defer = true;
+        script.crossOrigin = "anonymous";
+        
+        // Parse lại XFBML sau khi SDK tải xong
+        script.onload = () => {
+            // Lỗi đã được giải quyết ở đây vì TypeScript giờ đã biết 'window.FB' có thể tồn tại
+            if (window.FB) { 
+                window.FB.XFBML.parse();
+            }
+        };
+
+        document.body.appendChild(script);
+
+    }, []);
+
+    return null; 
+};
 
 const Footer = () => {
-    // const { t } = useLanguage() // Bỏ comment nếu bạn dùng đa ngôn ngữ
-
-    useEffect(() => {
-        // Tải SDK Facebook
-        const loadFacebookSDK = () => {
-            const script = document.createElement("script")
-            script.src = "https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v17.0&appId=123456789" // Thay '123456789' bằng App ID của bạn
-            script.async = true
-            script.defer = true
-            script.crossOrigin = "anonymous"
-            document.body.appendChild(script)
-        }
-
-        // Tải SDK khi component mount
-        if (typeof window !== 'undefined') {
-            loadFacebookSDK()
-        }
-    }, [])
+    // const { t } = useLanguage()
 
     const handleNewsletterSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+        // Xử lý logic đăng ký nhận tin tại đây
         console.log("Newsletter subscription submitted")
     }
 
     return (
         <footer className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white overflow-hidden">
-             <FacebookSDKLoader /> {/* Gọi component tải SDK */}
-            {/* Ocean Wave Animation */}
-        
+             <FacebookSDKLoader /> {/* Gọi component tải và khởi tạo SDK */}
+            
+            {/* Hiệu ứng nền */}
             <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-1 animate-pulse" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-300/20 to-transparent transform skew-y-1 animate-pulse delay-1000" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-300/20 to-transparent transform skew-y-12 animate-pulse delay-1000" />
                 <motion.div
                     className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-teal-500/30 to-transparent"
-                    animate={{ backgroundPosition: ["0% 0%", "100% 0%"] }}
+                    animate={{ x: ["-100%", "100%"] }}
                     transition={{
-                        duration: 8,
-                        repeat: Number.POSITIVE_INFINITY,
+                        duration: 20,
+                        repeat: Infinity,
+                        repeatType: "mirror",
                         ease: "linear",
                     }}
                     style={{
                         backgroundImage:
-                            "repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.1) 50px, rgba(255,255,255,0.1) 100px)",
+                            "repeating-linear-gradient(-45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 20px, transparent 20px, transparent 40px)",
                     }}
                 />
             </div>
 
-            {/* Main Footer Content */}
+            {/* Nội dung chính của Footer */}
             <div className="relative z-10 container mx-auto px-4 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     
                     {/* Cột 1: Logo, Thông tin chung & Fanpage */}
                     <motion.div
@@ -72,13 +95,15 @@ const Footer = () => {
                         className="lg:col-span-2"
                     >
                         <Link href="/" className="inline-block mb-6">
-                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-white/40 transition-all duration-300">
+                                {/* Thay src bằng logo mới của bạn, có thể là file PNG nền trong suốt */}
                                 <Image
-                                    src="/logo.webp"
-                                    alt="MSC Center"
-                                    width={200}
-                                    height={60}
-                                    className="h-12 w-auto"
+                                    src="/logo.webp" // Cập nhật đường dẫn logo của bạn ở đây
+                                    alt="MSC Center - UEH University"
+                                    width={450} // Có thể tăng width một chút để logo trông rõ hơn
+                                    height={100}
+                                    className="h-auto w-auto max-w-full md:max-w-[450px]"
+                                    priority
                                 />
                             </div>
                         </Link>
@@ -86,14 +111,14 @@ const Footer = () => {
                             MSC Center - Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp hàng đầu Việt Nam cho người đi làm và sinh viên.
                         </p>
 
-                        <div className="mt-6">
+                        <div className="mt-6 bg-white/5 p-1 rounded-lg backdrop-blur-sm border border-white/10" style={{ maxWidth: 320 }}>
                             <div
                                 className="fb-page"
                                 data-href="https://www.facebook.com/msc.edu.vn"
                                 data-tabs="timeline"
-                                data-width="300"
+                                data-width="320"
                                 data-height="150"
-                                data-small-header="false"
+                                data-small-header="true"
                                 data-adapt-container-width="true"
                                 data-hide-cover="false"
                                 data-show-facepile="true"
@@ -102,7 +127,7 @@ const Footer = () => {
                                     cite="https://www.facebook.com/msc.edu.vn"
                                     className="fb-xfbml-parse-ignore"
                                 >
-                                    <a href="https://www.facebook.com/msc.edu.vn">MSC Việt Nam</a>
+                                    <a href="https://www.facebook.com/msc.edu.vn">MSC - Life Long Learning</a>
                                 </blockquote>
                             </div>
                         </div>
@@ -116,26 +141,26 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <h3 className="text-xl font-bold mb-6 font-serif text-teal-200">Thông tin liên hệ</h3>
-                        <div className="space-y-4 ">
-                            <div className="flex items-start space-x-3">
-                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="space-y-4">
+                            <div className="flex items-start space-x-4">
+                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-400/30">
                                     <MapPin className="h-5 w-5 text-teal-300" />
                                 </div>
                                 <div>
-                                    <p className="text-blue-100">279 Nguyễn Tri Phương, Quận 10, TP.Hồ Chí Minh</p>
+                                    <p className="text-blue-100">279 Nguyễn Tri Phương, Phường 5, Quận 10, TP.Hồ Chí Minh</p>
                                 </div>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div className="flex items-center space-x-4">
+                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-400/30">
                                     <Phone className="h-5 w-5 text-teal-300" />
                                 </div>
-                                <p className="text-blue-100">Điện Thoại: (+84) 329 381 489</p>
+                                <p className="text-blue-100 hover:text-white transition-colors"><a href="tel:+84329381489">Điện Thoại: (+84) 329 381 489</a></p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div className="flex items-center space-x-4">
+                                <div className="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-400/30">
                                     <Mail className="h-5 w-5 text-teal-300" />
                                 </div>
-                                <p className="text-blue-100">Email: msc.edu.vn@gmail.com</p>
+                                <p className="text-blue-100 hover:text-white transition-colors"><a href="mailto:msc.edu.vn@gmail.com">Email: msc.edu.vn@gmail.com</a></p>
                             </div>
                         </div>
                     </motion.div>
@@ -148,65 +173,69 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <h3 className="text-xl font-bold mb-6 font-serif text-teal-200">Kết nối với chúng tôi</h3>
-                        <p className="text-blue-100 mb-4">Đăng ký để nhận thông tin về các khóa học và sự kiện mới nhất</p>
+                        <p className="text-blue-100 mb-4">Đăng ký để nhận thông tin về các khóa học và sự kiện mới nhất.</p>
 
-                        <div className="flex space-x-4 mb-8">
+                        <form onSubmit={handleNewsletterSubmit} className="mb-8">
+                            <div className="flex">
+                                <Input
+                                    type="email"
+                                    placeholder="Email của bạn"
+                                    className="rounded-r-none bg-white/10 border-white/20 text-white placeholder-blue-200 backdrop-blur-sm focus:ring-teal-400 focus:border-teal-400"
+                                    required
+                                />
+                                <Button type="submit" className="rounded-l-none bg-teal-500 hover:bg-teal-600 px-4 transition-colors">
+                                    <Send className="h-4 w-4" />
+                                </Button>
+                            </div>
+                        </form>
+
+                        <div className="flex space-x-4">
                             <Link
                                 href="https://www.facebook.com/msc.edu.vn"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 border border-white/20 hover:scale-110"
+                                aria-label="Facebook của MSC"
                             >
                                 <Facebook className="h-5 w-5" />
                             </Link>
                             <Link
-                                href="#"
+                                href="https://www.youtube.com/@MSCLifeLongLearning" // <-- Cập nhật link Youtube của bạn
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 border border-white/20 hover:scale-110"
+                                aria-label="Youtube của MSC"
                             >
                                 <Youtube className="h-5 w-5" />
                             </Link>
                             <Link
-                                href="https://zalo.me/g/acumou501"
+                                href="https://zalo.me/g/acumou501" // <-- Cập nhật link Zalo của bạn
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 border border-white/20 hover:scale-110"
+                                aria-label="Zalo của MSC"
                             >
                                 <MessageCircle className="h-5 w-5" />
                             </Link>
                         </div>
 
-                        <form onSubmit={handleNewsletterSubmit}>
-                            <div className="flex">
-                                <Input
-                                    type="email"
-                                    placeholder="Email của bạn"
-                                    className="rounded-r-none bg-white/10 border-white/20 text-white placeholder-blue-200 backdrop-blur-sm"
-                                    required
-                                />
-                                <Button type="submit" className="rounded-l-none bg-teal-500 hover:bg-teal-600 px-4">
-                                    <Send className="h-4 w-4" />
-                                </Button>
-                            </div>
-                        </form>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Bottom Bar */}
+            {/* Thanh dưới cùng */}
             <div className="relative z-10 border-t border-white/20 bg-black/20 backdrop-blur-sm">
                 <div className="container mx-auto px-4 py-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="text-blue-200 text-sm"> © {new Date().getFullYear()} MSC Center. Phát triển bởi Phòng Công nghệ thông tin</p>
+                    <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+                        <p className="text-blue-200 text-sm"> © {new Date().getFullYear()} MSC Center. Phát triển bởi Phòng Công nghệ thông tin.</p>
                         <div className="flex space-x-6 text-sm">
-                            <Link href="/privacy" className="text-blue-200 hover:text-white transition-colors">
+                            <Link href="/chinh-sach-bao-mat" className="text-blue-200 hover:text-white transition-colors">
                                 Chính sách bảo mật
                             </Link>
-                            <Link href="/terms" className="text-blue-200 hover:text-white transition-colors">
+                            <Link href="/dieu-khoan-su-dung" className="text-blue-200 hover:text-white transition-colors">
                                 Điều khoản sử dụng
                             </Link>
-                            <Link href="/sitemap" className="text-blue-200 hover:text-white transition-colors">
+                            <Link href="/so-do-trang-web" className="text-blue-200 hover:text-white transition-colors">
                                 Sơ đồ trang web
                             </Link>
                         </div>
@@ -216,5 +245,14 @@ const Footer = () => {
         </footer>
     )
 }
+// /global.d.ts
 
+declare global {
+  interface Window {
+    FB?: any; // Khai báo rằng window CÓ THỂ có thuộc tính FB
+  }
+}
+
+// Dòng này rất quan trọng để đảm bảo file được coi là một module.
+export {};
 export default Footer
