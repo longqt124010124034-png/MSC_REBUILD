@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+
 import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Play, X, Eye } from 'lucide-react'
@@ -8,8 +8,10 @@ import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { AnimatePresence, motion } from "framer-motion"
 
 const AboutPageClient = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const { t } = useLanguage()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
@@ -180,18 +182,16 @@ const AboutPageClient = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
+              onClick={() => setSelectedImage('/Introduction/yolo.png')}
             >
-              <div className="mb-8">
-                <div className="w-32 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center border-2 border-gray-200 dark:border-gray-600">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">YOLO</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400 border-t border-gray-300 dark:border-gray-500 pt-1 mt-1">
-                      YOU ONLY LIVE ONCE
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/Introduction/yolo.png"
+                alt="YOLO"
+                width={300}
+                height={200}
+                className="rounded-lg shadow-lg mx-auto mb-6"
+              />
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t("about.yolo.title")}
               </h3>
@@ -206,57 +206,16 @@ const AboutPageClient = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
+              onClick={() => setSelectedImage('/Introduction/pdca.png')}
             >
-              <div className="mb-8">
-                <div className="w-32 h-32 mx-auto mb-6 relative">
-                  <svg viewBox="0 0 120 120" className="w-full h-full">
-                    {/* PDCA Circle */}
-                    <circle cx="60" cy="60" r="50" fill="none" stroke="#e5e7eb" strokeWidth="2" />
-                    
-                    {/* Plan - Orange */}
-                    <path
-                      d="M 60 10 A 50 50 0 0 1 95.71 35.29 L 60 60 Z"
-                      fill="#f97316"
-                      className="opacity-80"
-                    />
-                    <text x="75" y="30" textAnchor="middle" className="text-xs font-bold fill-white">PLAN</text>
-                    
-                    {/* Do - Green */}
-                    <path
-                      d="M 95.71 35.29 A 50 50 0 0 1 95.71 84.71 L 60 60 Z"
-                      fill="#22c55e"
-                      className="opacity-80"
-                    />
-                    <text x="85" y="65" textAnchor="middle" className="text-xs font-bold fill-white">DO</text>
-                    
-                    {/* Check - Blue */}
-                    <path
-                      d="M 95.71 84.71 A 50 50 0 0 1 24.29 84.71 L 60 60 Z"
-                      fill="#3b82f6"
-                      className="opacity-80"
-                    />
-                    <text x="45" y="90" textAnchor="middle" className="text-xs font-bold fill-white">CHECK</text>
-                    
-                    {/* Act - Red */}
-                    <path
-                      d="M 24.29 84.71 A 50 50 0 0 1 24.29 35.29 L 60 60 Z"
-                      fill="#ef4444"
-                      className="opacity-80"
-                    />
-                    <text x="35" y="45" textAnchor="middle" className="text-xs font-bold fill-white">ACT</text>
-                    
-                    {/* Center circle */}
-                    <circle cx="60" cy="60" r="15" fill="white" stroke="#6b7280" strokeWidth="2" />
-                    <text x="60" y="65" textAnchor="middle" className="text-xs font-bold fill-gray-700">
-                      Continuous
-                    </text>
-                    <text x="60" y="75" textAnchor="middle" className="text-xs fill-gray-600">
-                      Improvement
-                    </text>
-                  </svg>
-                </div>
-              </div>
+              <Image
+                src="/Introduction/pdca.png"
+                alt="PDCA"
+                width={300}
+                height={200}
+                className="rounded-lg shadow-lg mx-auto mb-6"
+              />
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t("about.pdca.title")}
               </h3>
@@ -271,27 +230,16 @@ const AboutPageClient = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
+              onClick={() => setSelectedImage('/Introduction/kaizen.png')}
             >
-              <div className="mb-8">
-                <div className="w-32 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 relative overflow-hidden">
-                  {/* Word Cloud Effect */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">KAIZEN</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 space-x-1">
-                        <span className="text-[8px]">IMPROVEMENT</span>
-                        <span className="text-[6px]">QUALITY</span>
-                        <span className="text-[7px]">PROCESS</span>
-                      </div>
-                      <div className="text-xs text-gray-400 dark:text-gray-500 space-x-1">
-                        <span className="text-[6px]">EFFICIENCY</span>
-                        <span className="text-[8px]">GROWTH</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/Introduction/kaizen.png"
+                alt="Kaizen"
+                width={300}
+                height={200}
+                className="rounded-lg shadow-lg mx-auto mb-6"
+              />
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t("about.kaizen.title")}
               </h3>
@@ -302,6 +250,27 @@ const AboutPageClient = () => {
           </div>
         </div>
       </section>
+       {/* Popup Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img
+              src={selectedImage}
+              alt="Enlarged"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              className="max-w-5xl max-h-[90vh] rounded-lg shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Image Gallery Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">

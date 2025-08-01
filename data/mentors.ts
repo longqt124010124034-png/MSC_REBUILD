@@ -3,7 +3,7 @@ export const mentorsData = [
     id: "pham-hoang-minh-khanh",
     name: "Phạm Hoàng Minh Khánh",
     title: "Giám đốc MSC Center",
-    degree: "Tiến sĩ Quản trị Kinh doanh - Đại học Kinh tế TP.HCM",
+    degree: "Thạc sĩ Quản trị Kinh doanh - Đại học Kinh tế TP.HCM",
     avatar: "/placeholder.svg?height=200&width=200&text=PHMK",
     experience: "20+ năm",
     students: "5000+",
