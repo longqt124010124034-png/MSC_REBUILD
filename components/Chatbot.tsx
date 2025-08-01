@@ -65,7 +65,7 @@ const Chatbot = () => {
       id: "roadmap",
       text: "🗺️ Lộ trình học tập",
       response:
-        "MSC Center có các lộ trình học tập:\n\n🚀 Frontend Developer (6 tháng)\n⚙️ Backend Developer (8 tháng)\n📱 Mobile Developer (7 tháng)\n🤖 AI/ML Engineer (10 tháng)\n💼 Product Manager (4 tháng)\n\nBạn quan tâm lộ trình nào?",
+        "MSC Center có các lộ trình học tập:\n\n🚀 Frontend Developer (6 tháng)\n⚙️ Backend Developer (8 tháng)\n📱 Mobile Developer (7 tháng)\n🤖 AI/ML Engineer (10 tháng)\n💼 Trưởng phòng CNTT (4 tháng)\n\nBạn quan tâm lộ trình nào?",
     },
     {
       id: "pricing",

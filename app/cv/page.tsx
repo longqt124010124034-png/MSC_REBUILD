@@ -128,7 +128,7 @@ export default function CVPage() {
   const successStories = [
     {
       name: "Nguyễn Minh Tú",
-      position: "Senior Product Manager",
+      position: "Senior Trưởng phòng CNTT",
       company: "Grab Vietnam",
       avatar: "/placeholder.svg?height=60&width=60&text=Tu",
       story:

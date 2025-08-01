@@ -13,7 +13,7 @@ const MSCersSection = () => {
     {
       id: 1,
       name: "Dương Thế Khải",
-      position: "Senior Business Analyst",
+      position: "Phó Giám Đốc MSC",
       company: "FPT Software",
       avatar: "/placeholder.svg?height=120&width=120&text=Khai",
       achievement: "Tốt nghiệp xuất sắc khóa Leadership 2023",
@@ -22,11 +22,11 @@ const MSCersSection = () => {
     {
       id: 2,
       name: "Quách Thành Long",
-      position: "Product Manager",
+      position: "Trưởng phòng CNTT",
       company: "Shopee Vietnam",
       avatar: "/placeholder.svg?height=120&width=120&text=Long",
       achievement: "Học viên xuất sắc khóa Project Management 2023",
-      testimonial: "Những kiến thức về quản lý dự án tại MSC đã giúp tôi thành công trong vai trò Product Manager.",
+      testimonial: "Những kiến thức về quản lý dự án tại MSC đã giúp tôi thành công trong vai trò Trưởng phòng CNTT.",
     },
     {
       id: 3,

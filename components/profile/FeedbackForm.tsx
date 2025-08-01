@@ -118,7 +118,7 @@ const FeedbackForm = () => {
           id: "r3",
           message: "Đây là một ý tưởng rất hay! Chúng tôi sẽ đưa vào kế hoạch phát triển cho phiên bản tiếp theo.",
           author: "Lê Hoàng Nam",
-          role: "Product Manager",
+          role: "Trưởng phòng CNTT",
           createdAt: "2024-01-12T11:00:00Z",
           isInternal: false,
         },
