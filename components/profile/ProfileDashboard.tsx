@@ -1,15 +1,25 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Building, Target, Eye, Heart, Users, Crown, Phone, Mail } from "lucide-react"
+import { Building, Target, Eye, Crown, Phone, Mail } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
+// --- CẢI TIẾN: ĐỊNH NGHĨA KIỂU DỮ LIỆU ---
+// Giúp code an toàn hơn, dễ bảo trì và được hỗ trợ tốt hơn từ trình soạn thảo.
+interface Cofounder {
+  name: string;
+  title: string;
+  company: string;
+  imageSrc: string;
+  specialties: string[];
+}
+
 // --- DỮ LIỆU ĐỘI NGŨ ĐỒNG SÁNG LẬP ---
-// Chỉ bao gồm 5 thành viên cốt cán theo yêu cầu
-const cofoundersData = [
+// Áp dụng kiểu dữ liệu Cofounder[] để đảm bảo dữ liệu luôn đúng cấu trúc.
+const cofoundersData: Cofounder[] = [
   {
     name: "TS. Phan Huỳnh Anh",
     title: "Tiến Sĩ Kinh tế",
@@ -133,8 +143,8 @@ const ProfileDashboard = () => {
             <h2 className="text-3xl font-bold mb-4">Đồng hành cùng MSC trên hành trình sự nghiệp</h2>
             <p className="max-w-2xl mx-auto mb-8 text-gray-300">Khám phá các khóa học được thiết kế bởi những chuyên gia hàng đầu và sẵn sàng bứt phá trong sự nghiệp của bạn.</p>
             <div className="flex justify-center items-center gap-6 mb-8">
-              <span className="flex items-center gap-2"><Phone size={18}/> 0987.654.321</span>
-              <span className="flex items-center gap-2"><Mail size={18}/> tuvan@msc.edu.vn</span>
+              <span className="flex items-center gap-2"><Phone size={18}/> (+84) 329 381 489</span>
+              <span className="flex items-center gap-2"><Mail size={18}/>  msc.edu.vn@gmail.com</span>
             </div>
             <Button size="lg" className="bg-white text-blue-600 font-bold hover:bg-gray-200 transition-colors text-lg px-8 py-6">
               Xem Toàn Bộ Khóa Học
