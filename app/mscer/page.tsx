@@ -1,373 +1,232 @@
-import type { Metadata } from "next"
+'use client'
+
+import { motion, Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Star, Award, TrendingUp, Users } from "lucide-react"
+import { Star, Award, Users, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-
-export const metadata: Metadata = {
-  title: "MSCer - MSC Center",
-  description: "Cộng đồng MSCer - Những học viên xuất sắc và thành công từ MSC Center",
-}
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function MSCerPage() {
   const mscers = [
     {
+      id: "pham-hoang-minh-khanh",
+      name: "Phạm Hoàng Minh Khánh",
+      position: "Giám Đốc",
+      company: "Trung tâm MSC",
+      avatar: "/MSCers/PHMK.webp",
+      testimonial: "MSC là nơi tôi không chỉ học hỏi mà còn trưởng thành. Môi trường năng động đã giúp tôi định hình con đường sự nghiệp của mình.",
+      skills: ["Lãnh đạo chiến lược", "Phát triển kinh doanh", "Quản lý giáo dục"],
+    },
+    {
       id: "duong-the-khai",
       name: "Dương Thế Khải",
-      position: "Phó Giám Đốc MSC",
-      company: "MSC",
+      position: "Phó Giám Đốc",
+      company: "Trung tâm MSC",
       avatar: "/MSCers/DTK.webp",
-      graduationYear: "2024",
-      course: "Leadership Excellence Program",
-      achievement: "Tốt nghiệp xuất sắc khóa Leadership 2023",
-      currentSalary: "45M+ VNĐ/tháng",
-      promotion: "Thăng tiến 2 cấp trong 8 tháng",
-      testimonial:
-        "MSC Center đã giúp tôi phát triển kỹ năng lãnh đạo và tư duy chiến lược một cách toàn diện. Những kiến thức học được đã giúp tôi thăng tiến nhanh chóng trong sự nghiệp.",
-      skills: ["Strategic Leadership", "Business Analysis", "Team Management", "Data Analytics"],
-      socialImpact: "Mentor cho 20+ junior developers",
+      testimonial: "Với những kiến thức từ MSC, tôi tự tin trong việc mở rộng mạng lưới đối tác và thúc đẩy sự tăng trưởng bền vững cho tổ chức.",
+      skills: ["Phát triển đối tác", "Vận hành", "Quản lý đội nhóm"],
     },
     {
       id: "quach-thanh-long",
       name: "Quách Thành Long",
       position: "Trưởng phòng CNTT",
-      company: "MSC",
+      company: "Trung tâm MSC",
       avatar: "/MSCers/QTL.webp",
-      graduationYear: "2025",
-      course: "Project Management Professional",
-      achievement: "Học viên xuất sắc khóa Project Management 2023",
-      currentSalary: "50M+ VNĐ/tháng",
-      promotion: "Từ Developer lên Trưởng phòng CNTT",
-      testimonial:
-        "Những kiến thức về quản lý dự án tại MSC đã giúp tôi thành công trong vai trò Trưởng phòng CNTT. Tôi có thể áp dụng ngay các phương pháp Agile và Scrum vào công việc thực tế.",
-      skills: ["Product Management", "Agile/Scrum", "User Experience", "Market Research"],
-      socialImpact: "Dẫn dắt team 15 người phát triển sản phẩm",
+      testimonial: "Từ những khóa học đầu tiên, tôi đã tìm thấy đam mê công nghệ. MSC đã cho tôi cơ hội để biến đam mê đó thành sự nghiệp.",
+      skills: ["Quản lý dự án", "Phát triển sản phẩm", "Lãnh đạo kỹ thuật"],
     },
     {
       id: "la-phuong-uyen",
       name: "Lã Phương Uyên",
-      position: "Marketing Director",
+      position: "Nhân sự Marketing",
       company: "Unilever Vietnam",
-      avatar: "/placeholder.svg?height=200&width=200&text=Uyen",
-      graduationYear: "2025",
-      course: "Digital Marketing Mastery",
-      achievement: "Cựu học viên khóa Digital Marketing 2022",
-      currentSalary: "60M+ VNĐ/tháng",
-      promotion: "Thăng tiến từ Manager lên Director",
-      testimonial:
-        "MSC Center không chỉ dạy kiến thức mà còn giúp tôi xây dựng network chuyên nghiệp. Tôi đã kết nối được với nhiều chuyên gia trong ngành và tìm được cơ hội nghề nghiệp tuyệt vời.",
-      skills: ["Digital Marketing", "Brand Management", "Strategic Planning", "Team Leadership"],
-      socialImpact: "Quản lý ngân sách marketing 50+ tỷ VNĐ",
+      avatar: "/MSCers/LPU.webp",
+      testimonial: "Kiến thức về marketing chiến lược từ MSC là nền tảng vững chắc giúp tôi tự tin chinh phục các vị trí quan trọng tại tập đoàn đa quốc gia.",
+      skills: ["Chiến lược thương hiệu", "Marketing kỹ thuật số", "Nghiên cứu thị trường"],
     },
     {
       id: "nguyen-thien-huong",
-      name: "Nguyễn N. Thiên Hương",
-      position: "HR Business Partner",
+      name: "Nguyễn Ngọc Thiên Hương",
+      position: "Nhân sự nội dung",
       company: "Samsung Vietnam",
-      avatar: "/placeholder.svg?height=200&width=200&text=Huong",
-      graduationYear: "2023",
-      course: "HR Business Partner Excellence",
-      achievement: "Học viên tiêu biểu khóa HR Development 2023",
-      currentSalary: "42M+ VNĐ/tháng",
-      promotion: "Từ HR Specialist lên Business Partner",
-      testimonial:
-        "Chương trình đào tạo tại MSC rất thực tế và ứng dụng được ngay vào công việc. Tôi đã học được cách xây dựng chiến lược HR và phát triển nhân tài một cách hiệu quả.",
-      skills: ["HR Strategy", "Talent Development", "Performance Management", "Change Management"],
-      socialImpact: "Phát triển 200+ nhân viên trong tổ chức",
+      avatar: "/MSCers/NNTH.webp",
+      testimonial: "Chương trình đào tạo nhân sự tại MSC rất thực tiễn. Tôi đã áp dụng thành công nhiều mô hình để xây dựng và phát triển đội ngũ nhân tài.",
+      skills: ["Đối tác nhân sự (HRBP)", "Phát triển nhân tài", "Văn hóa doanh nghiệp"],
+    },
+    {
+      id: "phan-bich-hop",
+      name: "Phan Bích Hợp",
+      position: "Nhân sự Marketing",
+      company: "Google",
+      avatar: "/MSCers/PBH.webp",
+      testimonial: "Tư duy sáng tạo và phương pháp tiếp cận thị trường từ MSC đã giúp tôi rất nhiều trong việc xây dựng các chiến dịch toàn cầu.",
+      skills: ["Content Marketing", "Digital Advertising", "Brand Strategy"],
     },
     {
       id: "pham-thuy-trang",
       name: "Phạm Ngọc Thuỳ Trang",
-      position: "Financial Analyst",
+      position: "Nhân sự Marketing",
       company: "KPMG Vietnam",
-      avatar: "/placeholder.svg?height=200&width=200&text=Trang",
-      graduationYear: "2022",
-      course: "Financial Management & Analysis",
-      achievement: "Tốt nghiệp khóa Financial Management 2022",
-      currentSalary: "38M+ VNĐ/tháng",
-      promotion: "Thăng tiến Senior Analyst sau 1 năm",
-      testimonial:
-        "MSC đã trang bị cho tôi nền tảng vững chắc để phát triển sự nghiệp trong lĩnh vực tài chính. Các case study thực tế giúp tôi hiểu sâu về phân tích tài chính và đầu tư.",
-      skills: ["Financial Analysis", "Investment Valuation", "Risk Management", "Financial Modeling"],
-      socialImpact: "Tư vấn tài chính cho 30+ doanh nghiệp SME",
+      avatar: "/MSCers/PNTT.webp",
+      testimonial: "MSC đã trang bị cho tôi nền tảng vững chắc để phát triển sự nghiệp trong lĩnh vực tài chính. Các case study thực tế rất giá trị.",
+      skills: ["Phân tích tài chính", "Quản lý rủi ro", "Mô hình hóa tài chính"],
     },
     {
       id: "tran-minh-thu",
       name: "Trần Hoàng Minh Thư",
-      position: "UX/UI Designer",
+      position: "Thư ký dự án",
       company: "Grab Vietnam",
-      avatar: "/placeholder.svg?height=200&width=200&text=Thu",
-      graduationYear: "2023",
-      course: "Design Thinking & Innovation",
-      achievement: "Học viên xuất sắc khóa Design Thinking 2023",
-      currentSalary: "40M+ VNĐ/tháng",
-      promotion: "Từ Junior lên Senior Designer",
-      testimonial:
-        "Khóa học Design Thinking tại MSC đã mở ra góc nhìn mới về thiết kế và trải nghiệm người dùng. Tôi học được cách tư duy sáng tạo và giải quyết vấn đề một cách có hệ thống.",
-      skills: ["UX/UI Design", "Design Thinking", "User Research", "Prototyping"],
-      socialImpact: "Thiết kế sản phẩm phục vụ 10M+ người dùng",
+      avatar: "/MSCers/THMT.webp",
+      testimonial: "Khóa học Design Thinking đã mở ra một góc nhìn mới, giúp tôi giải quyết vấn đề thiết kế lấy người dùng làm trung tâm.",
+      skills: ["Thiết kế trải nghiệm", "Nghiên cứu người dùng", "Prototyping"],
     },
     {
       id: "huynh-nguyen-quan",
       name: "Huỳnh Nguyên Quân",
-      position: "Software Engineer",
-      company: "Google Vietnam",
-      avatar: "/placeholder.svg?height=200&width=200&text=Quan",
-      graduationYear: "2022",
-      course: "Tech Leadership Program",
-      achievement: "Cựu học viên khóa Tech Leadership 2022",
-      currentSalary: "80M+ VNĐ/tháng",
-      promotion: "Từ Developer lên Tech Lead",
-      testimonial:
-        "MSC Center đã giúp tôi phát triển từ một developer thành tech leader tự tin. Tôi học được cách quản lý team kỹ thuật và dẫn dắt các dự án công nghệ phức tạp.",
-      skills: ["Software Engineering", "Tech Leadership", "System Architecture", "Team Management"],
-      socialImpact: "Lead team phát triển sản phẩm cho 1B+ users",
+      position: "Nhân sự Marketing",
+      company: "Google",
+      avatar: "/MSCers/HNQ.webp",
+      testimonial: "Khóa học Tech Leadership đã giúp tôi nâng cao kỹ năng mềm và quản lý, một bước đệm quan trọng để phát triển sự nghiệp.",
+      skills: ["Software Engineering", "System Design", "Tech Leadership"],
     },
-    {
-      id: "vo-minh-duc",
-      name: "Võ Minh Đức",
-      position: "Startup Founder & CEO",
-      company: "EduTech Solutions",
-      avatar: "/placeholder.svg?height=200&width=200&text=Duc",
-      graduationYear: "2021",
-      course: "Entrepreneurship & Innovation",
-      achievement: "Founder xuất sắc nhất 2023",
-      currentSalary: "100M+ VNĐ/tháng",
-      promotion: "Từ Employee thành Entrepreneur",
-      testimonial:
-        "MSC đã cho tôi những kiến thức và kỹ năng cần thiết để khởi nghiệp thành công. Từ ý tưởng ban đầu, tôi đã xây dựng được một startup với định giá 50 tỷ VNĐ.",
-      skills: ["Entrepreneurship", "Business Development", "Fundraising", "Strategic Planning"],
-      socialImpact: "Tạo việc làm cho 100+ nhân viên",
-    },
-  ]
+  ];
 
   const successStats = [
-    { label: "MSCers thành công", value: "1000+", icon: Users },
-    { label: "Mức lương trung bình", value: "50M+ VNĐ", icon: TrendingUp },
-    { label: "Tỷ lệ thăng tiến", value: "85%", icon: Award },
-    { label: "Hài lòng với nghề nghiệp", value: "95%", icon: Star },
-  ]
-
-  const industries = [
-    { name: "Technology", count: 35, color: "bg-blue-500" },
-    { name: "Finance & Banking", count: 25, color: "bg-green-500" },
-    { name: "Consulting", count: 20, color: "bg-purple-500" },
-    { name: "Marketing & Advertising", count: 15, color: "bg-orange-500" },
-    { name: "Healthcare", count: 10, color: "bg-red-500" },
-    { name: "Education", count: 8, color: "bg-yellow-500" },
-    { name: "Others", count: 12, color: "bg-gray-500" },
-  ]
+    { label: "MSCer thành công", value: "5,000+", icon: Users },
+    { label: "Doanh nghiệp đối tác", value: "100+", icon: Award },
+    { label: "Câu chuyện truyền cảm hứng", value: "Hàng trăm", icon: Star },
+  ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
         <div className="container">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <Award className="h-12 w-12 text-yellow-400 mr-4" />
-              <h1 className="text-5xl md:text-6xl font-bold font-serif">MSCer Community</h1>
+          <motion.div 
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block bg-white/10 p-4 rounded-full mb-6">
+              <Users className="h-12 w-12 text-white" />
             </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Cộng đồng MSCer</h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Cộng đồng những học viên xuất sắc và thành công từ MSC Center - Những câu chuyện truyền cảm hứng về sự
-              phát triển và thăng tiến trong sự nghiệp
+              Nơi hội tụ những câu chuyện thành công, những gương mặt ưu tú đã trưởng thành từ các chương trình đào tạo của MSC Center.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-yellow-400">
-              <Star className="h-6 w-6 fill-current" />
-              <Star className="h-6 w-6 fill-current" />
-              <Star className="h-6 w-6 fill-current" />
-              <Star className="h-6 w-6 fill-current" />
-              <Star className="h-6 w-6 fill-current" />
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Success Stats */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {successStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div 
+                key={index} 
+                className="text-center p-6 bg-gray-50 rounded-2xl"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <p className="text-gray-600 text-lg">{stat.label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industry Distribution */}
-      <section className="py-20 bg-gray-50">
+      {/* MSCers Profiles Section - ĐÃ NÂNG CẤP */}
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Phân bố ngành nghề</h2>
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Câu Chuyện Thành Công</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              MSCers đang làm việc tại các ngành nghề đa dạng với vị trí cao trong các công ty hàng đầu
+              Những MSCer tiêu biểu với hành trình phát triển sự nghiệp ấn tượng sau khi hoàn thành các chương trình đào tạo.
             </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {industries.map((industry, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
-                  <div className={`w-4 h-4 rounded-full ${industry.color}`}></div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{industry.name}</span>
-                      <span className="text-sm text-gray-600">{industry.count}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className={`h-2 rounded-full ${industry.color}`}
-                        style={{ width: `${industry.count * 2}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MSCers Profiles */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Câu chuyện thành công</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Những MSCers tiêu biểu với hành trình phát triển sự nghiệp ấn tượng sau khi tốt nghiệp
-            </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mscers.map((mscer) => (
-              <Card key={mscer.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-0">
-                  {/* Header with Avatar */}
-                  <div className="relative bg-gradient-to-br from-blue-100 to-teal-100 p-6 text-center">
-                    <div className="relative mx-auto mb-4 w-24 h-24">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full p-1">
-                        <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                          <Image
-                            src={mscer.avatar || "/placeholder.svg"}
-                            alt={mscer.name}
-                            width={200}
-                            height={200}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                        </div>
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                        <Star className="h-4 w-4 text-yellow-600 fill-current" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">{mscer.name}</h3>
-                    <p className="text-blue-600 font-medium text-sm mb-1">{mscer.position}</p>
-                    <p className="text-gray-600 text-sm mb-2">{mscer.company}</p>
-                    <div className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium inline-block">
-                      {mscer.achievement}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    {/* Key Metrics */}
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className="text-center p-3 bg-green-50 rounded-lg">
-                        <div className="text-sm font-bold text-green-700">{mscer.currentSalary}</div>
-                        <div className="text-xs text-green-600">Mức lương hiện tại</div>
-                      </div>
-                      <div className="text-center p-3 bg-blue-50 rounded-lg">
-                        <div className="text-sm font-bold text-blue-700">{mscer.graduationYear}</div>
-                        <div className="text-xs text-blue-600">Tốt nghiệp</div>
+            {mscers.map((mscer, index) => (
+              <motion.div
+                key={mscer.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full flex flex-col group overflow-hidden bg-white hover:shadow-2xl transition-all duration-300 rounded-2xl text-center border">
+                  <CardContent className="p-8 flex flex-col flex-grow items-center">
+                    <div className="relative mb-6">
+                      <Image
+                        src={mscer.avatar}
+                        alt={mscer.name}
+                        width={128}
+                        height={128}
+                        className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-lg"
+                      />
+                      <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-blue-500 to-teal-400 p-2 rounded-full shadow-md">
+                        <Star className="h-5 w-5 text-white fill-white" />
                       </div>
                     </div>
-
-                    {/* Promotion */}
-                    <div className="mb-4 p-3 bg-orange-50 rounded-lg">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <TrendingUp className="h-4 w-4 text-orange-600" />
-                        <span className="text-sm font-medium text-orange-800">Thăng tiến</span>
-                      </div>
-                      <p className="text-xs text-orange-700">{mscer.promotion}</p>
-                    </div>
-
-                    {/* Skills */}
-                    <div className="mb-4">
-                      <h4 className="font-medium text-gray-900 mb-2 text-sm">Kỹ năng chính:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {mscer.skills.slice(0, 3).map((skill, index) => (
-                          <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Social Impact */}
-                    <div className="mb-4 p-3 bg-purple-50 rounded-lg">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <Users className="h-4 w-4 text-purple-600" />
-                        <span className="text-sm font-medium text-purple-800">Tác động xã hội</span>
-                      </div>
-                      <p className="text-xs text-purple-700">{mscer.socialImpact}</p>
-                    </div>
-
-                    {/* Testimonial */}
-                    <blockquote className="text-xs text-gray-600 italic leading-relaxed mb-4 border-l-2 border-blue-200 pl-3">
+                    
+                    <CardTitle className="text-2xl font-bold text-gray-900">{mscer.name}</CardTitle>
+                    <p className="text-blue-600 font-semibold text-base mb-4">{mscer.position}</p>
+                    
+                    <blockquote className="text-base text-gray-600 italic leading-relaxed mb-6 flex-grow">
                       "{mscer.testimonial}"
                     </blockquote>
-
-                    {/* Action Buttons */}
-                    <div className="flex space-x-2">
-                      <Link href={`/mscer/${mscer.id}`} className="flex-1">
-                        <Button className="w-full btn-primary text-xs">Xem chi tiết</Button>
-                      </Link>
-                      <Link href="/lien-he">
-                        <Button variant="outline" className="bg-transparent text-xs">
-                          Kết nối
+                    
+                    <div className="mt-auto w-full">
+                      <Link href={`/mscer/${mscer.id}`}>
+                        <Button className="w-full btn-primary group-hover:bg-blue-700 transition-colors">
+                          Xem Hồ Sơ
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Join MSCer Community */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
+      {/* Join MSCer Community Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Gia nhập cộng đồng MSCer</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Bắt đầu hành trình phát triển sự nghiệp của bạn cùng MSC Center và trở thành một phần của cộng đồng MSCer
-            thành công
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/dao-tao">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
-                Khám phá khóa học
-              </Button>
-            </Link>
-            <Link href="/lien-he">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-4 bg-transparent"
-              >
-                Tư vấn miễn phí
-              </Button>
-            </Link>
-          </div>
+           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+           >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Viết nên câu chuyện của riêng bạn</h2>
+              <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                Bắt đầu hành trình phát triển sự nghiệp cùng MSC Center và trở thành gương mặt thành công tiếp theo trong cộng đồng MSCer.
+              </p>
+              <Link href="/dao-tao">
+                  <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-10 py-6">
+                    Khám phá các khóa học
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+              </Link>
+           </motion.div>
         </div>
       </section>
     </div>

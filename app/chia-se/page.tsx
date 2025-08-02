@@ -1,149 +1,107 @@
-import type { Metadata } from "next"
+'use client'
+
+import { motion, Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Calendar, User, Clock, Eye, Heart, Share2, BookOpen, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-export const metadata: Metadata = {
-  title: "Chia sẻ - MSC Center",
-  description: "Tin tức, bài viết và chia sẻ kiến thức từ các chuyên gia tại MSC Center",
-}
-
 export default function BlogPage() {
-  const featuredPost = {
-    id: "future-of-leadership-2025",
-    title: "Tương lai của Lãnh đạo trong Thời đại AI và Tự động hóa",
-    excerpt:
-      "Khám phá những thay đổi căn bản trong phong cách lãnh đạo khi AI và tự động hóa đang reshape toàn bộ thế giới kinh doanh. Những leader thành công sẽ cần những kỹ năng gì?",
-    image: "/placeholder.svg?height=400&width=800&text=Future+of+Leadership",
-    author: "TS. Nguyễn Văn Minh",
-    authorAvatar: "/placeholder.svg?height=50&width=50&text=Author",
-    publishDate: "20/01/2025",
-    readTime: "12 phút đọc",
-    category: "Leadership",
-    views: "2,847",
-    likes: "156",
-    featured: true,
-  }
-
-  const blogPosts = [
+  // DỮ LIỆU BÀI VIẾT THỰC TẾ
+  const allBlogPosts = [
     {
-      id: "emotional-intelligence-workplace",
-      title: "Emotional Intelligence: Chìa khóa thành công trong môi trường làm việc hiện đại",
-      excerpt:
-        "Tại sao EQ lại quan trọng hơn IQ trong thế kỷ 21? Cách phát triển trí tuệ cảm xúc để trở thành leader xuất sắc.",
-      image: "/placeholder.svg?height=250&width=400&text=Emotional+Intelligence",
-      author: "ThS. Phạm Thị Lan",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Lan",
-      publishDate: "18/01/2025",
-      readTime: "8 phút đọc",
-      category: "Soft Skills",
-      views: "1,923",
-      likes: "89",
-    },
-    {
-      id: "agile-transformation-guide",
-      title: "Agile Transformation: Hướng dẫn toàn diện cho doanh nghiệp Việt Nam",
-      excerpt:
-        "Roadmap chi tiết để chuyển đổi sang mô hình Agile, từ mindset đến implementation. Case study thực tế từ các doanh nghiệp hàng đầu.",
-      image: "/placeholder.svg?height=250&width=400&text=Agile+Transformation",
-      author: "TS. Lê Hoàng Nam",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Nam",
-      publishDate: "15/01/2025",
-      readTime: "15 phút đọc",
-      category: "Project Management",
-      views: "3,156",
-      likes: "201",
-    },
-    {
-      id: "digital-marketing-trends-2025",
-      title: "10 Xu hướng Digital Marketing không thể bỏ qua trong năm 2025",
-      excerpt:
-        "Từ AI-powered personalization đến voice search optimization, khám phá những trend sẽ định hình digital marketing năm 2025.",
-      image: "/placeholder.svg?height=250&width=400&text=Digital+Marketing+2025",
-      author: "ThS. Hoàng Thị Mai",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Mai",
-      publishDate: "12/01/2025",
-      readTime: "10 phút đọc",
-      category: "Digital Marketing",
-      views: "2,734",
-      likes: "143",
-    },
-    {
-      id: "remote-team-management",
-      title: "Quản lý đội nhóm Remote hiệu quả: Bí quyết từ các Global Leaders",
-      excerpt:
-        "Những thách thức và giải pháp trong việc quản lý team từ xa. Tools, processes và best practices từ kinh nghiệm thực tế.",
-      image: "/placeholder.svg?height=250&width=400&text=Remote+Team+Management",
-      author: "ThS. Trần Thị Hương",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Huong",
-      publishDate: "10/01/2025",
-      readTime: "7 phút đọc",
-      category: "HR Management",
-      views: "1,567",
-      likes: "78",
-    },
-    {
-      id: "innovation-culture-building",
-      title: "Xây dựng văn hóa đổi mới sáng tạo trong doanh nghiệp",
-      excerpt:
-        "Làm thế nào để tạo ra một môi trường khuyến khích innovation? Framework và case studies từ các công ty công nghệ hàng đầu.",
-      image: "/placeholder.svg?height=250&width=400&text=Innovation+Culture",
-      author: "TS. Vũ Đình Khoa",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Khoa",
-      publishDate: "08/01/2025",
-      readTime: "11 phút đọc",
-      category: "Innovation",
-      views: "2,089",
-      likes: "134",
-    },
-    {
-      id: "data-driven-decision-making",
-      title: "Data-Driven Decision Making: Từ lý thuyết đến thực hành",
-      excerpt:
-        "Cách sử dụng data analytics để đưa ra quyết định kinh doanh chính xác. Tools, metrics và pitfalls cần tránh.",
-      image: "/placeholder.svg?height=250&width=400&text=Data+Driven+Decisions",
-      author: "TS. Nguyễn Văn Minh",
-      authorAvatar: "/placeholder.svg?height=40&width=40&text=Minh",
-      publishDate: "05/01/2025",
-      readTime: "9 phút đọc",
-      category: "Business Analytics",
-      views: "1,845",
+      id: "1",
+      title: "Muốn phát triển liên tục - Phải có Kaizen!",
+      excerpt: "Kaizen là triết lý cải tiến liên tục, một công cụ mạnh mẽ giúp các cá nhân và tổ chức không ngừng đổi mới để nâng cao chất lượng và hiệu suất công việc.",
+      image: "/News/kaizen.webp",
+      author: "Dương Thế Khải",
+      authorAvatar: "/MSCers/DTK.webp",
+      publishDate: "22/05/2024",
+      category: "Kỹ năng mềm",
+      readTime: "5 phút đọc",
+      views: "1,284",
       likes: "97",
+    },
+    {
+      id: "2",
+      title: "IKIGAI – Tìm ra lẽ sống của cuộc đời bạn",
+      excerpt: "Khám phá ý nghĩa cuộc sống và cách triết lý Ikigai từ Nhật Bản giúp bạn tìm thấy sự cân bằng hoàn hảo giữa công việc, đam mê và giá trị bản thân.",
+      image: "/News/ikigai.webp",
+      author: "TS. Phan Huỳnh Anh",
+      authorAvatar: "/Mentors/PHA.webp",
+      publishDate: "20/05/2024",
+      category: "Phát triển bản thân",
+      readTime: "7 phút đọc",
+      views: "2,109",
+      likes: "152",
+    },
+    {
+      id: "3",
+      title: "Trainer - Coach - Mentor khác nhau như thế nào?",
+      excerpt: "Phân biệt rõ ràng vai trò và giá trị của từng hình thức hỗ trợ phát triển, giúp bạn lựa chọn đúng người đồng hành trên con đường sự nghiệp.",
+      image: "/News/trainer-mentor-coach.webp",
+      author: "TS. Phan Huỳnh Anh",
+      authorAvatar: "/Mentors/PHA.webp",
+      publishDate: "18/05/2024",
+      category: "Coaching & Mentoring",
+      readTime: "6 phút đọc",
+      views: "3,512",
+      likes: "231",
+    },
+    {
+      id: "4",
+      title: "ASK - Mô hình đánh giá năng lực chuẩn quốc tế",
+      excerpt: "Tìm hiểu cách đo lường và phát triển năng lực nhân sự một cách hiệu quả với mô hình ASK: Thái độ (Attitude), Kỹ năng (Skills), và Kiến thức (Knowledge).",
+      image: "/News/ask.webp", // Giả định tên file ảnh là ask.webp
+      author: "TS. Phan Huỳnh Anh",
+      authorAvatar: "/Mentors/PHA.webp",
+      publishDate: "15/05/2024",
+      category: "Quản trị Nhân sự",
+      readTime: "6 phút đọc",
+      views: "1,876",
+      likes: "112",
     },
   ]
 
+  const featuredPost = allBlogPosts[0]; // Chọn bài đầu tiên làm bài nổi bật
+  const blogPosts = allBlogPosts.slice(1); // Các bài còn lại
+
   const categories = [
-    { name: "Leadership", count: 24, color: "bg-blue-500" },
-    { name: "Digital Marketing", count: 18, color: "bg-green-500" },
-    { name: "Project Management", count: 15, color: "bg-purple-500" },
-    { name: "Soft Skills", count: 21, color: "bg-orange-500" },
-    { name: "Innovation", count: 12, color: "bg-red-500" },
-    { name: "HR Management", count: 16, color: "bg-yellow-500" },
-    { name: "Business Analytics", count: 9, color: "bg-indigo-500" },
-    { name: "Entrepreneurship", count: 14, color: "bg-pink-500" },
+    { name: "Kỹ năng mềm", count: 18, color: "bg-blue-500" },
+    { name: "Phát triển bản thân", count: 25, color: "bg-green-500" },
+    { name: "Coaching & Mentoring", count: 22, color: "bg-purple-500" },
+    { name: "Quản trị Nhân sự", count: 15, color: "bg-orange-500" },
+    { name: "Lãnh đạo", count: 12, color: "bg-red-500" },
+    { name: "Xu hướng", count: 10, color: "bg-yellow-500" },
   ]
 
   const stats = [
-    { label: "Bài viết đã xuất bản", value: "200+", icon: BookOpen },
-    { label: "Lượt đọc hàng tháng", value: "50K+", icon: Eye },
-    { label: "Chuyên gia đóng góp", value: "25+", icon: User },
-    { label: "Chủ đề đa dạng", value: "15+", icon: TrendingUp },
+    { label: "Bài viết chuyên môn", value: "50+", icon: BookOpen },
+    { label: "Lượt đọc hàng tháng", value: "10K+", icon: Eye },
+    { label: "Chuyên gia đóng góp", value: "10+", icon: User },
+    { label: "Lĩnh vực chia sẻ", value: "8+", icon: TrendingUp },
   ]
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
         <div className="container">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Chia sẻ & Tri thức</h1>
+          <motion.div 
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block bg-white/10 p-4 rounded-full mb-6">
+              <BookOpen className="h-12 w-12 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Chia sẻ & Tri thức</h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Khám phá những insights sâu sắc, xu hướng mới nhất và kiến thức thực tiễn từ các chuyên gia hàng đầu tại
-              MSC Center
+              Khám phá những insights sâu sắc, xu hướng mới nhất và kiến thức thực tiễn từ các chuyên gia hàng đầu tại MSC Center.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -152,221 +110,194 @@ export default function BlogPage() {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <motion.div 
+                key={index} 
+                className="text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-blue-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
+                <p className="text-gray-600">{stat.label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Featured Post */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Bài viết nổi bật</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Những insights mới nhất và quan trọng nhất từ thế giới business và leadership
+              Những góc nhìn sâu sắc và quan trọng nhất được chia sẻ từ các chuyên gia của chúng tôi.
             </p>
-          </div>
+          </motion.div>
 
-          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative">
-                <Image
-                  src={featuredPost.image || "/placeholder.svg"}
-                  alt={featuredPost.title}
-                  width={800}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {featuredPost.category}
-                  </span>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 max-w-6xl mx-auto rounded-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="relative aspect-video lg:aspect-auto">
+                  <Image
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    fill
+                    className="w-full h-full object-cover"
+                    sizes="(max-width: 1023px) 100vw, 50vw"
+                  />
                 </div>
-              </div>
 
-              <div className="p-8 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{featuredPost.excerpt}</p>
+                <div className="p-8 md:p-10 flex flex-col justify-between">
+                  <div>
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                      {featuredPost.category}
+                    </span>
+                    <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                      {featuredPost.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">{featuredPost.excerpt}</p>
 
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4 mb-8">
                       <Image
-                        src={featuredPost.authorAvatar || "/placeholder.svg"}
+                        src={featuredPost.authorAvatar}
                         alt={featuredPost.author}
-                        width={40}
-                        height={40}
-                        className="w-10 h-10 rounded-full"
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-full border-2 border-white shadow-md"
                       />
                       <div>
-                        <p className="font-medium text-gray-900">{featuredPost.author}</p>
+                        <p className="font-semibold text-gray-900">{featuredPost.author}</p>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
-                          <div className="flex items-center space-x-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>{featuredPost.publishDate}</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <Clock className="h-4 w-4" />
-                            <span>{featuredPost.readTime}</span>
-                          </div>
+                          <div className="flex items-center space-x-1"><Calendar className="h-4 w-4" /><span>{featuredPost.publishDate}</span></div>
+                          <div className="flex items-center space-x-1"><Clock className="h-4 w-4" /><span>{featuredPost.readTime}</span></div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-6 text-sm text-gray-500 mb-6">
-                    <div className="flex items-center space-x-1">
-                      <Eye className="h-4 w-4" />
-                      <span>{featuredPost.views} lượt xem</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Heart className="h-4 w-4" />
-                      <span>{featuredPost.likes} lượt thích</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Share2 className="h-4 w-4" />
-                      <span>Chia sẻ</span>
-                    </div>
-                  </div>
+                  <Link href={`/chia-se/${featuredPost.id}`}>
+                    <Button size="lg" className="w-full btn-primary text-lg py-6">
+                      Đọc bài viết đầy đủ
+                    </Button>
+                  </Link>
                 </div>
-
-                <Link href={`/chia-se/${featuredPost.id}`}>
-                  <Button size="lg" className="w-full btn-primary">
-                    Đọc bài viết đầy đủ
-                  </Button>
-                </Link>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Chủ đề</h2>
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Chủ đề chính</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Khám phá nội dung theo các chủ đề chuyên môn khác nhau
+              Khám phá nội dung theo các lĩnh vực chuyên môn mà bạn quan tâm.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {categories.map((category, index) => (
-              <Link key={index} href={`/chia-se/category/${category.name.toLowerCase()}`}>
-                <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group">
-                  <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-12 h-12 ${category.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <BookOpen className="h-6 w-6 text-white" />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <Link href={`/chia-se/category/${category.name.toLowerCase().replace(/ /g, '-')}`}>
+                  <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group p-6 text-center hover:-translate-y-2 rounded-2xl">
+                    <div className={`w-16 h-16 ${category.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <BookOpen className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-2">{category.name}</h3>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">{category.name}</h3>
                     <p className="text-sm text-gray-600">{category.count} bài viết</p>
-                  </CardContent>
-                </Card>
-              </Link>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Recent Posts */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Bài viết mới nhất</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Cập nhật những kiến thức và insights mới nhất từ các chuyên gia
+              Cập nhật những kiến thức và góc nhìn mới nhất từ các chuyên gia của chúng tôi.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div className="relative">
-                  <Image
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
-                    width={400}
-                    height={250}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+            {blogPosts.map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full flex flex-col group overflow-hidden hover:shadow-xl transition-all duration-300 rounded-2xl">
+                  <div className="relative aspect-video">
+                    <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium absolute top-4 left-4">
                       {post.category}
                     </span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
 
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Image
-                      src={post.authorAvatar || "/placeholder.svg"}
-                      alt={post.author}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 rounded-full"
-                    />
-                    <div>
-                      <p className="text-sm font-medium text-gray-900">{post.author}</p>
-                      <div className="flex items-center space-x-3 text-xs text-gray-500">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-3 w-3" />
-                          <span>{post.publishDate}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Clock className="h-3 w-3" />
-                          <span>{post.readTime}</span>
-                        </div>
+                  <CardContent className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2 leading-tight">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">{post.excerpt}</p>
+                    <div className="flex items-center space-x-3 mt-auto pt-4 border-t">
+                      <Image src={post.authorAvatar} alt={post.author} width={40} height={40} className="w-10 h-10 rounded-full" />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">{post.author}</p>
+                        <p className="text-xs text-gray-500">{post.publishDate}</p>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-1">
-                        <Eye className="h-4 w-4" />
-                        <span>{post.views}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Heart className="h-4 w-4" />
-                        <span>{post.likes}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link href={`/chia-se/${post.id}`}>
-                    <Button
-                      variant="outline"
-                      className="w-full group-hover:bg-blue-700 group-hover:text-white group-hover:border-blue-700 transition-all duration-300 bg-transparent"
-                    >
-                      Đọc thêm
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link href="/chia-se/all">
-              <Button size="lg" className="btn-primary">
+              <Button size="lg" className="btn-primary text-lg py-6 px-10">
                 Xem tất cả bài viết
               </Button>
             </Link>
@@ -375,21 +306,17 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Đăng ký nhận tin</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Đăng ký nhận tin tức</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Nhận những bài viết mới nhất và insights độc quyền từ các chuyên gia MSC Center
+            Nhận những bài viết mới nhất và thông tin độc quyền từ các chuyên gia MSC Center thẳng vào hộp thư của bạn.
           </p>
           <div className="max-w-md mx-auto">
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Nhập email của bạn"
-                className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-r-lg">Đăng ký</Button>
-            </div>
+            <form className="flex">
+              <input type="email" placeholder="Nhập email của bạn" className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white" required />
+              <Button type="submit" className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-r-lg">Đăng ký</Button>
+            </form>
           </div>
         </div>
       </section>

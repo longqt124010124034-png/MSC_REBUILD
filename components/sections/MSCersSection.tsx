@@ -31,8 +31,8 @@ const MSCersSection = () => {
     {
       id: 3,
       name: "Lã Phương Uyên",
-      position: "Marketing Director",
-      company: "Unilever Vietnam",
+      position: "Nhân sự Marketing",
+      company: "MSC",
       avatar: "/MSCers/LPU.webp",
       achievement: "Tốt nghiệp và trưởng thành từ HKDN",
       testimonial: "MSC Center không chỉ dạy kiến thức mà còn giúp tôi xây dựng network chuyên nghiệp.",
@@ -40,8 +40,8 @@ const MSCersSection = () => {
     {
       id: 4,
       name: "Nguyễn Ngọc Thiên Hương",
-      position: "HR Business Partner",
-      company: "Samsung Vietnam",
+      position: "Nhân sự Marketing",
+      company: "MSC",
       avatar: "/MSCers/NNTH.webp",
       achievement: "Tốt nghiệp và trưởng thành từ HKDN",
       testimonial: "Chương trình đào tạo tại MSC rất thực tế và ứng dụng được ngay vào công việc.",
@@ -49,8 +49,8 @@ const MSCersSection = () => {
     {
       id: 5,
       name: "Phạm Ngọc Thuỳ Trang",
-      position: "Financial Analyst",
-      company: "KPMG Vietnam",
+      position: "Nhân sự Marketing",
+      company: "MSC",
       avatar: "/MSCers/PNTT.webp",
       achievement: "Tốt nghiệp khóa Financial Management 2022",
       testimonial: "MSC đã trang bị cho tôi nền tảng vững chắc để phát triển sự nghiệp trong lĩnh vực tài chính.",
@@ -58,8 +58,8 @@ const MSCersSection = () => {
     {
       id: 6,
       name: "Trần Hoàng Minh Thư",
-      position: "UX/UI Designer",
-      company: "Grab Vietnam",
+      position: "Thư ký dự án",
+      company: "MSC ",
       avatar: "/MSCers/THMT.webp",
       achievement: "Học viên xuất sắc khóa Design Thinking 2023",
       testimonial: "Khóa học Design Thinking tại MSC đã mở ra góc nhìn mới về thiết kế và trải nghiệm người dùng.",
@@ -67,7 +67,7 @@ const MSCersSection = () => {
     {
       id: 7,
       name: "Huỳnh Nguyên Quân",
-      position: "Software Engineer",
+      position: "Nhân sự Marketing",
       company: "Google Vietnam",
       avatar: "/MSCers/HNQ.webp",
       achievement: "Cựu học viên khóa Tech Leadership 2022",
@@ -76,8 +76,8 @@ const MSCersSection = () => {
     {
       id: 8,
       name: "Phan Bích Hợp",
-      position: "Marketing",
-      company: "Google Vietnam",
+      position: "Nhân sự Marketing",
+      company: "MSC",
       avatar: "/MSCers/PBH.webp",
       achievement: "Cựu học viên khóa Tech Leadership 2022",
       testimonial: "MSC Center đã giúp tôi phát triển từ một developer thành tech leader tự tin.",

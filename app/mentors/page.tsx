@@ -1,363 +1,284 @@
-import type { Metadata } from "next"
+'use client'
+
+import { useState } from "react"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Linkedin, Facebook, Mail, Award, BookOpen, Users, Star } from "lucide-react"
+import { Users, BookOpen, ChevronRight, GraduationCap, Briefcase, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-
-export const metadata: Metadata = {
-  title: "Mentors - MSC Center",
-  description: "Gặp gỡ đội ngũ mentors và chuyên gia hàng đầu tại MSC Center",
-}
+import { Card, CardContent, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 export default function MentorsPage() {
-  const mentors = [
-    {
-      id: "nguyen-van-minh",
-      name: "TS. Nguyễn Văn Minh",
-      title: "Giám đốc Học thuật",
-      degree: "Tiến sĩ Quản trị Kinh doanh - Harvard Business School",
-      avatar: "/placeholder.svg?height=200&width=200&text=Dr.+Minh",
-      experience: "15+ năm",
-      students: "2000+",
-      rating: 4.9,
-      specialties: ["Strategic Leadership", "Business Strategy", "Executive Coaching", "Change Management"],
-      bio: "TS. Minh có hơn 15 năm kinh nghiệm trong lĩnh vực quản trị doanh nghiệp và đào tạo lãnh đạo. Ông từng giữ các vị trí C-level tại nhiều tập đoàn đa quốc gia trước khi gia nhập MSC Center.",
-      achievements: [
-        "Tác giả 5 cuốn sách về lãnh đạo",
-        "Top 100 CEO xuất sắc Việt Nam 2020",
-        "Chứng chỉ Executive Coach từ ICF",
-        "MBA Harvard Business School",
-      ],
-      courses: ["Leadership Excellence", "Strategic Management", "Executive Coaching"],
-      social: {
-        linkedin: "https://linkedin.com/in/nguyen-van-minh",
-        facebook: "https://facebook.com/nguyen.van.minh",
-        email: "minh.nguyen@msc.edu.vn",
-      },
-    },
-    {
-      id: "tran-thi-huong",
-      name: "ThS. Trần Thị Hương",
-      title: "Chuyên gia Phát triển Nhân sự",
-      degree: "Thạc sĩ Tâm lý Tổ chức - RMIT University",
-      avatar: "/placeholder.svg?height=200&width=200&text=Ms.+Huong",
-      experience: "12+ năm",
-      students: "1500+",
-      rating: 4.8,
-      specialties: ["HR Development", "Organizational Psychology", "Team Building", "Performance Management"],
-      bio: "ThS. Hương là chuyên gia hàng đầu về phát triển nhân sự với kinh nghiệm làm việc tại các tập đoàn Fortune 500. Cô có khả năng đặc biệt trong việc xây dựng văn hóa doanh nghiệp và phát triển đội nhóm.",
-      achievements: [
-        "SHRM-SCP Certified Professional",
-        "Top 50 HR Leaders Asia 2021",
-        "Chứng chỉ Organizational Psychology",
-        "15+ năm kinh nghiệm HR tại MNCs",
-      ],
-      courses: ["HR Business Partner", "Team Building", "Performance Management"],
-      social: {
-        linkedin: "https://linkedin.com/in/tran-thi-huong",
-        email: "huong.tran@msc.edu.vn",
-      },
-    },
-    {
-      id: "le-hoang-nam",
-      name: "TS. Lê Hoàng Nam",
-      title: "Chuyên gia Quản lý Dự án",
-      degree: "Tiến sĩ Công nghệ Thông tin - Stanford University",
-      avatar: "/placeholder.svg?height=200&width=200&text=Dr.+Nam",
-      experience: "18+ năm",
-      students: "2500+",
-      rating: 4.9,
-      specialties: ["Project Management", "Agile Methodology", "Digital Transformation", "Innovation Management"],
-      bio: "TS. Nam là chuyên gia hàng đầu về quản lý dự án và chuyển đổi số. Ông có kinh nghiệm triển khai thành công hàng trăm dự án công nghệ lớn tại các tập đoàn quốc tế.",
-      achievements: [
-        "PMP & PMI-ACP Certified",
-        "Agile Coach Certification",
-        "20+ dự án triệu USD thành công",
-        "Tác giả 3 cuốn sách về Agile",
-      ],
-      courses: ["Project Management Professional", "Agile & Scrum", "Digital Transformation"],
-      social: {
-        linkedin: "https://linkedin.com/in/le-hoang-nam",
-        facebook: "https://facebook.com/le.hoang.nam",
-        email: "nam.le@msc.edu.vn",
-      },
-    },
-    {
-      id: "pham-thi-lan",
-      name: "ThS. Phạm Thị Lan",
-      title: "Chuyên gia Coaching & Mentoring",
-      degree: "Thạc sĩ Tâm lý Ứng dụng - University of Melbourne",
-      avatar: "/placeholder.svg?height=200&width=200&text=Ms.+Lan",
-      experience: "10+ năm",
-      students: "1200+",
-      rating: 4.9,
-      specialties: ["Executive Coaching", "Career Development", "Emotional Intelligence", "Mindfulness"],
-      bio: "ThS. Lan là coach chuyên nghiệp được chứng nhận bởi ICF với chuyên môn sâu về phát triển cá nhân và nghề nghiệp. Cô đã hỗ trợ hàng nghìn chuyên gia đạt được mục tiêu nghề nghiệp.",
-      achievements: [
-        "ICF Professional Certified Coach",
-        "Certified Emotional Intelligence Coach",
-        "Mindfulness-Based Coaching Certificate",
-        "1000+ giờ coaching thành công",
-      ],
-      courses: ["Professional Coaching", "Emotional Intelligence", "Career Development"],
-      social: {
-        linkedin: "https://linkedin.com/in/pham-thi-lan",
-        email: "lan.pham@msc.edu.vn",
-      },
-    },
-    {
-      id: "vu-dinh-khoa",
-      name: "TS. Vũ Đình Khoa",
-      title: "Chuyên gia Đổi mới Sáng tạo",
-      degree: "Tiến sĩ Kinh tế - London School of Economics",
-      avatar: "/placeholder.svg?height=200&width=200&text=Dr.+Khoa",
-      experience: "14+ năm",
-      students: "1800+",
-      rating: 4.8,
-      specialties: ["Innovation Management", "Design Thinking", "Entrepreneurship", "Business Model Innovation"],
-      bio: "TS. Khoa là chuyên gia hàng đầu về đổi mới sáng tạo và khởi nghiệp. Ông đã tư vấn cho hàng trăm startup và doanh nghiệp trong việc phát triển sản phẩm và mô hình kinh doanh mới.",
-      achievements: [
-        "Certified Design Thinking Coach",
-        "Mentor tại 500 Startups",
-        "Tác giả 'Innovation Playbook'",
-        "50+ startup được mentoring thành công",
-      ],
-      courses: ["Design Thinking", "Innovation Management", "Entrepreneurship"],
-      social: {
-        linkedin: "https://linkedin.com/in/vu-dinh-khoa",
-        facebook: "https://facebook.com/vu.dinh.khoa",
-        email: "khoa.vu@msc.edu.vn",
-      },
-    },
-    {
-      id: "hoang-thi-mai",
-      name: "ThS. Hoàng Thị Mai",
-      title: "Chuyên gia Kỹ năng Mềm",
-      degree: "Thạc sĩ Giáo dục - Columbia University",
-      avatar: "/placeholder.svg?height=200&width=200&text=Ms.+Mai",
-      experience: "11+ năm",
-      students: "2200+",
-      rating: 4.9,
-      specialties: ["Communication Skills", "Public Speaking", "Emotional Intelligence", "Interpersonal Skills"],
-      bio: "ThS. Mai là chuyên gia hàng đầu về phát triển kỹ năng mềm với kinh nghiệm đào tạo cho hàng nghìn chuyên gia. Cô có khả năng đặc biệt trong việc giúp học viên tự tin giao tiếp và thuyết trình.",
-      achievements: [
-        "Certified Professional Speaker",
-        "Dale Carnegie Master Trainer",
-        "TEDx Speaker",
-        "Top 10 Trainers Vietnam 2022",
-      ],
-      courses: ["Communication Excellence", "Public Speaking", "Emotional Intelligence"],
-      social: {
-        linkedin: "https://linkedin.com/in/hoang-thi-mai",
-        email: "mai.hoang@msc.edu.vn",
-      },
-    },
-  ]
+  const [activeTab, setActiveTab] = useState('faculty')
 
-  const stats = [
-    { label: "Mentors chuyên nghiệp", value: "50+", icon: Users },
-    { label: "Năm kinh nghiệm trung bình", value: "15+", icon: Award },
-    { label: "Học viên đã đào tạo", value: "10,000+", icon: BookOpen },
-    { label: "Đánh giá trung bình", value: "4.9/5", icon: Star },
+  const faculty = [
+    {
+      id: "phan-huynh-anh",
+      name: "Phan Huỳnh Anh",
+      title: "Tiến Sĩ Kinh tế",
+      description: "Chủ tịch HĐQT Công ty Smentor",
+      avatar: "/Mentors/PHA.webp",
+      specialties: ["Lãnh đạo chiến lược", "Mentoring Doanh nghiệp", "Tư vấn"],
+    },
+    {
+      id: "hoang-cuu-long",
+      name: "Hoàng Cửu Long",
+      title: "Phó Giáo Sư - Tiến Sĩ",
+      description: "Giảng viên Đại học Kinh tế TP. Hồ Chí Minh",
+      avatar: "/Mentors/HCL.webp",
+      specialties: ["Kinh tế học", "Nghiên cứu thị trường", "Phân tích chính sách"],
+    },
+    {
+      id: "doan-duc-minh",
+      name: "Đoàn Đức Minh",
+      title: "Thạc Sĩ - Nghiên cứu sinh",
+      description: "Giảng viên Đại học Western Sydney",
+      avatar: "/Mentors/DDM.webp",
+      specialties: ["Quản trị kinh doanh", "Marketing quốc tế", "Giáo dục đại học"],
+    },
+    {
+      id: "nguyen-chi-thanh",
+      name: "Nguyễn Chí Thành",
+      title: "CEO",
+      description: "Làng Kết nối Kinh doanh VABIX",
+      avatar: "/Mentors/NCT.webp",
+      specialties: ["Kết nối kinh doanh", "Xây dựng hệ sinh thái", "Khởi nghiệp"],
+    },
+    {
+      id: "le-nhat-truong-chinh",
+      name: "Lê Nhật Trường Chinh",
+      title: "CEO & Founder",
+      description: "SUCCESS Partner Co.Ltd",
+      avatar: "/Mentors/LNTC.webp",
+      specialties: ["Tư vấn chiến lược", "Phát triển đối tác", "Tối ưu vận hành"],
+    },
+    {
+      id: "phan-phat-huy",
+      name: "Phan Phát Huy",
+      title: "CEO & Founder",
+      description: "HILTOW LANDMARK",
+      avatar: "/Mentors/PPH.webp",
+      specialties: ["Quản lý bất động sản", "Phát triển dự án", "Đầu tư"],
+    },
   ]
+  
+  const teachingMethods = {
+    title: "Phương pháp giảng huấn độc đáo",
+    description: "Chúng tôi áp dụng mô hình đào tạo 70-20-10, kết hợp lý thuyết, thực hành và học hỏi qua trải nghiệm thực tế để đảm bảo hiệu quả cao nhất.",
+    points: [
+      {
+        icon: GraduationCap,
+        title: "10% - Học tập chính quy (Formal Learning)",
+        text: "Nắm vững kiến thức nền tảng và các mô hình tiên tiến nhất thông qua các bài giảng, hội thảo từ các chuyên gia hàng đầu.",
+      },
+      {
+        icon: Users,
+        title: "20% - Học hỏi xã hội (Social Learning)",
+        text: "Tương tác, thảo luận và học hỏi từ các cố vấn (mentors) và các học viên khác trong cộng đồng MSCer ưu tú.",
+      },
+      {
+        icon: Briefcase,
+        title: "70% - Học qua trải nghiệm (Experiential Learning)",
+        text: "Áp dụng kiến thức trực tiếp vào các dự án thực tế, case study, và các tình huống mô phỏng để giải quyết vấn đề và phát triển kỹ năng.",
+      }
+    ]
+  }
+
+  // Animation variants
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  }
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
         <div className="container">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Đội ngũ Mentors</h1>
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block bg-white/10 p-4 rounded-full mb-6">
+              <Users className="h-12 w-12 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Ban Giảng Huấn & Cố Vấn</h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Gặp gỡ những chuyên gia hàng đầu, những người sẽ đồng hành cùng bạn trên hành trình phát triển bản thân và
-              sự nghiệp
+              Gặp gỡ đội ngũ chuyên gia, những người thầy tâm huyết sẽ đồng hành và dẫn dắt bạn trên hành trình chinh phục những đỉnh cao mới.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Tabs Section */}
+      <section className="sticky top-[79px] bg-white/80 backdrop-blur-lg z-30 border-b shadow-sm">
+        <div className="container">
+          <div className="flex justify-center items-center space-x-2 md:space-x-4 py-4">
+            <Button
+              onClick={() => setActiveTab('methods')}
+              variant={activeTab === 'methods' ? 'default' : 'ghost'}
+              className={`transition-all duration-300 rounded-full px-4 md:px-6 ${activeTab === 'methods' ? 'btn-primary' : ''}`}
+            >
+              <BookOpen className="mr-2 h-4 w-4" /> Phương pháp
+            </Button>
+            <Button
+              onClick={() => setActiveTab('faculty')}
+              variant={activeTab === 'faculty' ? 'default' : 'ghost'}
+              className={`transition-all duration-300 rounded-full px-4 md:px-6 ${activeTab === 'faculty' ? 'btn-primary' : ''}`}
+            >
+              <Users className="mr-2 h-4 w-4" /> Ban Giảng Huấn
+            </Button>
+            <Button
+              onClick={() => setActiveTab('successors')}
+              variant={activeTab === 'successors' ? 'default' : 'ghost'}
+              className={`transition-all duration-300 rounded-full px-4 md:px-6 ${activeTab === 'successors' ? 'btn-primary' : ''}`}
+            >
+              <Sparkles className="mr-2 h-4 w-4" /> Nhân sự Kế thừa
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
+      {/* Content Section */}
+      <main className="py-24 bg-gray-50">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="h-8 w-8 text-blue-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mentors Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Mentors nổi bật</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Đội ngũ mentors giàu kinh nghiệm với chuyên môn sâu và tâm huyết trong việc phát triển nhân tài
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mentors.map((mentor) => (
-              <Card key={mentor.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-0">
-                  {/* Avatar Section */}
-                  <div className="relative bg-gradient-to-br from-blue-100 to-teal-100 p-8 text-center">
-                    <div className="relative mx-auto mb-4 w-32 h-32">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full p-1">
-                        <div className="w-full h-full rounded-full overflow-hidden bg-white">
+          <AnimatePresence mode="wait">
+            {activeTab === 'faculty' && (
+              <motion.div
+                key="faculty"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {faculty.map((mentor) => (
+                    <motion.div key={mentor.id} variants={itemVariants}>
+                      <Card className="h-full flex flex-col group overflow-hidden bg-white hover:shadow-2xl transition-all duration-300 rounded-2xl text-center border hover:-translate-y-2">
+                        <CardContent className="p-8 flex flex-col flex-grow items-center">
                           <Image
-                            src={mentor.avatar || "/placeholder.svg"}
+                            src={mentor.avatar}
                             alt={mentor.name}
-                            width={200}
-                            height={200}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            width={160}
+                            height={160}
+                            className="rounded-full w-40 h-40 object-cover border-4 border-white shadow-lg mb-6"
                           />
-                        </div>
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                        <Star className="h-4 w-4 text-yellow-600 fill-current" />
-                      </div>
-                    </div>
+                          <CardTitle className="text-2xl font-bold text-gray-900">{mentor.name}</CardTitle>
+                          <Badge variant="secondary" className="my-3 text-sm bg-blue-100 text-blue-800">{mentor.title}</Badge>
+                          <p className="text-gray-600 mb-6 flex-grow">{mentor.description}</p>
+                          <div className="mt-auto w-full">
+                            <Link href={`/mentors/${mentor.id}`}>
+                              <Button variant="outline" className="w-full group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                Xem Hồ Sơ <ChevronRight className="ml-2 h-4 w-4" />
+                              </Button>
+                            </Link>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            )}
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
-                    <p className="text-blue-600 font-medium mb-2">{mentor.title}</p>
-                    <p className="text-sm text-gray-600 mb-4">{mentor.degree}</p>
-
-                    <div className="flex justify-center space-x-4 text-sm text-gray-600 mb-4">
-                      <div className="text-center">
-                        <div className="font-bold text-blue-600">{mentor.experience}</div>
-                        <div>Kinh nghiệm</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="font-bold text-blue-600">{mentor.students}</div>
-                        <div>Học viên</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="font-bold text-blue-600">{mentor.rating}</div>
-                        <div>Đánh giá</div>
-                      </div>
-                    </div>
+            {activeTab === 'methods' && (
+               <motion.div
+                key="methods"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-4xl mx-auto"
+              >
+                  <div className="text-center mb-12">
+                      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 font-serif">{teachingMethods.title}</h2>
+                      <p className="text-xl text-gray-600">{teachingMethods.description}</p>
                   </div>
+                  <motion.div 
+                    className="space-y-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                      {teachingMethods.points.map((point, index) => (
+                          <motion.div key={index} variants={itemVariants}>
+                              <Card className="p-8 flex items-start space-x-6 bg-white shadow-lg rounded-2xl">
+                                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-400 rounded-xl flex items-center justify-center">
+                                      <point.icon className="w-8 h-8 text-white"/>
+                                  </div>
+                                  <div>
+                                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{point.title}</h3>
+                                      <p className="text-gray-600 text-lg leading-relaxed">{point.text}</p>
+                                  </div>
+                              </Card>
+                          </motion.div>
+                      ))}
+                  </motion.div>
+              </motion.div>
+            )}
 
-                  {/* Content Section */}
-                  <div className="p-6">
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{mentor.bio}</p>
-
-                    {/* Specialties */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Chuyên môn:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {mentor.specialties.slice(0, 3).map((specialty, index) => (
-                          <span
-                            key={index}
-                            className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium"
-                          >
-                            {specialty}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Achievements */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Thành tựu nổi bật:</h4>
-                      <ul className="space-y-1">
-                        {mentor.achievements.slice(0, 2).map((achievement, index) => (
-                          <li key={index} className="flex items-center space-x-2 text-xs text-gray-600">
-                            <Award className="h-3 w-3 text-yellow-500 flex-shrink-0" />
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex justify-center space-x-3 mb-4">
-                      {mentor.social.linkedin && (
-                        <Link href={mentor.social.linkedin} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="w-8 h-8 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors duration-300 p-0"
-                          >
-                            <Linkedin className="h-4 w-4" />
-                          </Button>
-                        </Link>
-                      )}
-                      {mentor.social.facebook && (
-                        <Link href={mentor.social.facebook} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="w-8 h-8 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors duration-300 p-0"
-                          >
-                            <Facebook className="h-4 w-4" />
-                          </Button>
-                        </Link>
-                      )}
-                      {mentor.social.email && (
-                        <Link href={`mailto:${mentor.social.email}`}>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="w-8 h-8 rounded-full hover:bg-gray-100 hover:text-gray-600 transition-colors duration-300 p-0"
-                          >
-                            <Mail className="h-4 w-4" />
-                          </Button>
-                        </Link>
-                      )}
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex space-x-2">
-                      <Link href={`/mentors/${mentor.id}`} className="flex-1">
-                        <Button className="w-full btn-primary text-sm">Xem hồ sơ</Button>
-                      </Link>
-                      <Link href="/lien-he">
-                        <Button variant="outline" className="bg-transparent text-sm">
-                          Liên hệ
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+            {activeTab === 'successors' && (
+              <motion.div
+                key="successors"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="text-center max-w-3xl mx-auto"
+              >
+                  <Sparkles className="mx-auto h-16 w-16 text-yellow-500 mb-6"/>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 font-serif">Nhân sự Kế thừa</h2>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Nội dung về chương trình "Nhân sự Kế thừa" đang được chúng tôi xây dựng và sẽ sớm ra mắt. Đây là chương trình chiến lược nhằm phát hiện, đào tạo và phát triển những tài năng trẻ để trở thành thế hệ lãnh đạo tiếp theo cho MSC và các doanh nghiệp đối tác.
+                  </p>
+                  <Link href="/lien-he" className="mt-8 inline-block">
+                    <Button size="lg" className="btn-primary">Tìm hiểu thêm</Button>
+                  </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
-      </section>
+      </main>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
+      <section className="py-24 bg-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Bạn muốn trở thành mentor?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Gia nhập đội ngũ mentors MSC Center để chia sẻ kiến thức và kinh nghiệm của bạn với thế hệ tài năng trẻ
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/lien-he">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
-                Đăng ký làm mentor
-              </Button>
-            </Link>
-            <Link href="/chia-se">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-4 bg-transparent"
-              >
-                Tìm hiểu thêm
-              </Button>
-            </Link>
-          </div>
+           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+           >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Sẵn sàng nâng tầm sự nghiệp?</h2>
+              <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                Hãy để đội ngũ chuyên gia của MSC Center đồng hành cùng bạn. Khám phá các khóa học phù hợp hoặc liên hệ để được tư vấn trực tiếp.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/dao-tao">
+                    <Button size="lg" className="btn-primary text-lg px-10 py-6">
+                      Khám phá các khóa học
+                    </Button>
+                </Link>
+                <Link href="/lien-he">
+                  <Button size="lg" variant="outline" className="text-lg px-10 py-6">
+                    Liên hệ tư vấn
+                  </Button>
+                </Link>
+              </div>
+           </motion.div>
         </div>
       </section>
     </div>

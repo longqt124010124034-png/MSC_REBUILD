@@ -1,362 +1,222 @@
-import type { Metadata } from "next"
+'use client'
+
+import { motion, Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Building2, Users, Award, TrendingUp, Globe, Handshake } from "lucide-react"
+import { Users, Award, Handshake, Building2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
-export const metadata: Metadata = {
-  title: "Đồng hành - MSC Center",
-  description: "Các đối tác và đơn vị đồng hành cùng MSC Center trong hành trình phát triển giáo dục",
-}
+import { Card } from "@/components/ui/card"
 
 export default function PartnersPage() {
-  const partnerCategories = [
-    {
-      title: "Đối tác Giáo dục",
-      description: "Các trường đại học và tổ chức giáo dục hàng đầu",
-      icon: Building2,
-      color: "from-blue-500 to-blue-600",
-      partners: [
-        {
-          name: "Đại học Kinh tế TP.HCM (UEH)",
-          logo: "/placeholder.svg?height=80&width=160&text=UEH",
-          description: "Đối tác chiến lược trong phát triển chương trình đào tạo",
-          collaboration: "Hợp tác từ 2018",
-          projects: ["Executive MBA", "Leadership Development", "Research Programs"],
-        },
-        {
-          name: "RMIT University Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=RMIT",
-          description: "Chương trình đào tạo quốc tế và chuyển giao công nghệ",
-          collaboration: "Hợp tác từ 2019",
-          projects: ["International Programs", "Faculty Exchange", "Joint Research"],
-        },
-        {
-          name: "Singapore Management University",
-          logo: "/placeholder.svg?height=80&width=160&text=SMU",
-          description: "Chương trình Executive Education và nghiên cứu",
-          collaboration: "Hợp tác từ 2020",
-          projects: ["Executive Programs", "Case Study Development", "Best Practices"],
-        },
-        {
-          name: "Harvard Business School Online",
-          logo: "/placeholder.svg?height=80&width=160&text=HBS",
-          description: "Chương trình học trực tuyến và chứng chỉ quốc tế",
-          collaboration: "Hợp tác từ 2021",
-          projects: ["Online Courses", "Certification Programs", "Global Network"],
-        },
-      ],
-    },
-    {
-      title: "Đối tác Doanh nghiệp",
-      description: "Các tập đoàn và doanh nghiệp hàng đầu Việt Nam",
-      icon: Handshake,
-      color: "from-green-500 to-green-600",
-      partners: [
-        {
-          name: "Vingroup",
-          logo: "/placeholder.svg?height=80&width=160&text=Vingroup",
-          description: "Đào tạo và phát triển nhân tài cho hệ sinh thái Vingroup",
-          collaboration: "Đối tác từ 2019",
-          projects: ["Leadership Training", "Digital Transformation", "Innovation Programs"],
-        },
-        {
-          name: "FPT Corporation",
-          logo: "/placeholder.svg?height=80&width=160&text=FPT",
-          description: "Chương trình đào tạo công nghệ và chuyển đổi số",
-          collaboration: "Đối tác từ 2018",
-          projects: ["Tech Leadership", "AI Training", "Digital Skills"],
-        },
-        {
-          name: "Vietcombank",
-          logo: "/placeholder.svg?height=80&width=160&text=VCB",
-          description: "Phát triển năng lực lãnh đạo và quản lý rủi ro",
-          collaboration: "Đối tác từ 2020",
-          projects: ["Banking Leadership", "Risk Management", "Customer Service"],
-        },
-        {
-          name: "Samsung Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=Samsung",
-          description: "Chương trình phát triển nhân sự và đổi mới sáng tạo",
-          collaboration: "Đối tác từ 2019",
-          projects: ["Innovation Training", "Quality Management", "Leadership Development"],
-        },
-      ],
-    },
-    {
-      title: "Đối tác Quốc tế",
-      description: "Các tổ chức và chương trình hợp tác quốc tế",
-      icon: Globe,
-      color: "from-purple-500 to-purple-600",
-      partners: [
-        {
-          name: "British Council Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=British+Council",
-          description: "Chương trình phát triển kỹ năng và giáo dục Anh",
-          collaboration: "Hợp tác từ 2020",
-          projects: ["English Training", "Professional Skills", "Cultural Exchange"],
-        },
-        {
-          name: "Goethe Institut",
-          logo: "/placeholder.svg?height=80&width=160&text=Goethe",
-          description: "Chương trình đào tạo và trao đổi văn hóa Đức",
-          collaboration: "Hợp tác từ 2021",
-          projects: ["German Language", "Professional Training", "Cultural Programs"],
-        },
-        {
-          name: "UNDP Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=UNDP",
-          description: "Chương trình phát triển bền vững và đổi mới",
-          collaboration: "Hợp tác từ 2022",
-          projects: ["Sustainability Training", "SDGs Programs", "Innovation Labs"],
-        },
-        {
-          name: "World Bank Group",
-          logo: "/placeholder.svg?height=80&width=160&text=World+Bank",
-          description: "Chương trình phát triển kinh tế và tài chính",
-          collaboration: "Hợp tác từ 2023",
-          projects: ["Economic Development", "Financial Inclusion", "Capacity Building"],
-        },
-      ],
-    },
-    {
-      title: "Đối tác Công nghệ",
-      description: "Các công ty công nghệ và nền tảng học tập",
-      icon: TrendingUp,
-      color: "from-orange-500 to-orange-600",
-      partners: [
-        {
-          name: "Microsoft Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=Microsoft",
-          description: "Chương trình đào tạo công nghệ và chuyển đổi số",
-          collaboration: "Đối tác từ 2020",
-          projects: ["Azure Training", "AI/ML Programs", "Digital Transformation"],
-        },
-        {
-          name: "Google Cloud Vietnam",
-          logo: "/placeholder.svg?height=80&width=160&text=Google+Cloud",
-          description: "Đào tạo cloud computing và data analytics",
-          collaboration: "Đối tác từ 2021",
-          projects: ["Cloud Training", "Data Analytics", "Machine Learning"],
-        },
-        {
-          name: "Coursera for Business",
-          logo: "/placeholder.svg?height=80&width=160&text=Coursera",
-          description: "Nền tảng học trực tuyến và chứng chỉ quốc tế",
-          collaboration: "Đối tác từ 2022",
-          projects: ["Online Learning", "Professional Certificates", "Skill Assessments"],
-        },
-        {
-          name: "LinkedIn Learning",
-          logo: "/placeholder.svg?height=80&width=160&text=LinkedIn",
-          description: "Chương trình phát triển kỹ năng chuyên nghiệp",
-          collaboration: "Đối tác từ 2023",
-          projects: ["Professional Skills", "Career Development", "Industry Insights"],
-        },
-      ],
-    },
-  ]
+  // Dữ liệu đối tác thực tế
+  const corporatePartners = [
+    { id: 1, name: "ASL", logo: "/carousel/ASL.webp" },
+    { id: 2, name: "Binemo", logo: "/carousel/Binemo.webp" },
+    { id: 4, name: "CP Group", logo: "/carousel/CP.webp" },
+    { id: 6, name: "Greenfeed", logo: "/carousel/Greenfeed.webp" },
+    { id: 7, name: "Happy Land", logo: "/carousel/Happyland.webp" },
+    { id: 8, name: "HTO Group", logo: "/carousel/HTOGroup.webp" },
+    { id: 11, name: "NAB", logo: "/carousel/NAB.webp" },
+    { id: 12, name: "Richs Vietnam", logo: "/carousel/Richs.webp" },
+    { id: 13, name: "Satra", logo: "/carousel/Satra.webp" },
+    { id: 14, name: "Schindler", logo: "/carousel/Schindler.webp" },
+    { id: 15, name: "SGC", logo: "/carousel/SGC.webp" },
+    { id: 16, name: "SGF", logo: "/carousel/SGF.webp" },
+    { id: 17, name: "SGGG", logo: "/carousel/SGGG.webp" },
+    { id: 18, name: "SGL", logo: "/carousel/SGL.webp" },
+    { id: 19, name: "Shinhan Bank", logo: "/carousel/Shinhan.webp" },
+    { id: 20, name: "Smar", logo: "/carousel/Smar.webp" },
+    { id: 21, name: "Smentor", logo: "/carousel/Smentor.webp" },
+    { id: 22, name: "SP", logo: "/carousel/SP.webp" },
+    { id: 23, name: "Tâm Châu", logo: "/carousel/TC.webp" },
+    { id: 28, name: "VNPT", logo: "/carousel/VNPT.webp" },
+    { id: 32, name: "WK", logo: "/carousel/WK.webp" },
+    { id: 33, name: "YESCO", logo: "/carousel/YESCO.webp" },
+  ];
+
+  const educationAndAssociationPartners = [
+    { id: 3, name: "BNI Vietnam", logo: "/carousel/BNI.webp" },
+    { id: 5, name: "CSMO Vietnam", logo: "/carousel/CSMO.webp" },
+    { id: 9, name: "HUIT", logo: "/carousel/HUIT.webp" },
+    { id: 10, name: "Kỷ lục Quốc gia", logo: "/carousel/KNQG.webp" },
+    { id: 24, name: "UEH", logo: "/carousel/UEH.webp" },
+    { id: 25, name: "UFM", logo: "/carousel/UFM.webp" },
+    { id: 26, name: "VCCI", logo: "/carousel/VCCI.webp" },
+    { id: 27, name: "VK", logo: "/carousel/VK.webp" },
+    { id: 29, name: "VRA", logo: "/carousel/VRA.webp" },
+    { id: 30, name: "VSM", logo: "/carousel/VSM.webp" },
+    { id: 31, name: "VTF", logo: "/carousel/VTF.webp" },
+  ];
 
   const stats = [
-    { label: "Đối tác chiến lược", value: "50+", icon: Handshake },
-    { label: "Quốc gia hợp tác", value: "15+", icon: Globe },
-    { label: "Dự án chung", value: "200+", icon: Award },
-    { label: "Học viên được hỗ trợ", value: "10,000+", icon: Users },
-  ]
+    { label: "Đối tác tin cậy", value: "30+", icon: Handshake },
+    { label: "Dự án hợp tác", value: "100+", icon: Award },
+    { label: "Học viên được đào tạo", value: "5,000+", icon: Users },
+  ];
 
-  const benefits = [
-    {
-      title: "Mạng lưới toàn cầu",
-      description: "Kết nối với các đối tác hàng đầu thế giới",
-      icon: Globe,
-    },
-    {
-      title: "Chương trình đa dạng",
-      description: "Đa dạng hóa nội dung và phương pháp đào tạo",
-      icon: Award,
-    },
-    {
-      title: "Cơ hội nghề nghiệp",
-      description: "Mở rộng cơ hội việc làm cho học viên",
-      icon: TrendingUp,
-    },
-    {
-      title: "Chất lượng quốc tế",
-      description: "Đảm bảo chất lượng theo tiêu chuẩn quốc tế",
-      icon: Building2,
-    },
-  ]
+  // Animation variants
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+  }
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] } }
+  }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white">
         <div className="container">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Đối tác & Đồng hành</h1>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Cùng với mạng lưới đối tác uy tín trong và ngoài nước, MSC Center mang đến những chương trình đào tạo chất
-              lượng cao và cơ hội phát triển toàn cầu
-            </p>
-            <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-300">50+</div>
-                <div className="text-sm text-blue-200">Đối tác</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-300">15+</div>
-                <div className="text-sm text-blue-200">Quốc gia</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-300">200+</div>
-                <div className="text-sm text-blue-200">Dự án</div>
-              </div>
+          <motion.div 
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block bg-white/10 p-4 rounded-full mb-6">
+              <Handshake className="h-12 w-12 text-white" />
             </div>
-          </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Đối tác & Đồng hành</h1>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Sức mạnh của MSC Center được tạo nên từ mạng lưới đối tác uy tín, cùng chung một tầm nhìn về phát triển giáo dục và nguồn nhân lực chất lượng cao.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Stats Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <motion.div 
+                key={index} 
+                className="text-center p-6 bg-gray-50 rounded-2xl"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <p className="text-gray-600 text-lg">{stat.label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Corporate Partners Section */}
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Lợi ích từ đối tác</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Mạng lưới đối tác mạnh mẽ mang lại những giá trị vượt trội cho học viên MSC Center
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 py-3 rounded-full mb-4">
+              <Handshake className="h-6 w-6" />
+              <h2 className="text-3xl font-bold font-serif">Đối tác Doanh nghiệp & Tập đoàn</h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              Những doanh nghiệp hàng đầu đã tin tưởng và lựa chọn MSC Center làm đối tác đào tạo và phát triển nguồn nhân lực.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 rounded-xl">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {corporatePartners.map(partner => (
+              <motion.div key={partner.id} variants={itemVariants}>
+                <Card className="p-6 flex items-center justify-center h-32 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-2xl border">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={120}
+                    height={60}
+                    className="max-h-16 w-auto object-contain"
+                  />
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Partners by Category */}
-      <section className="py-20 bg-white">
+       {/* Education & Association Partners Section */}
+      <section className="py-24 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-serif">Đối tác theo lĩnh vực</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Khám phá mạng lưới đối tác đa dạng của MSC Center trên nhiều lĩnh vực khác nhau
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+             <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-full mb-4">
+              <Building2 className="h-6 w-6" />
+              <h2 className="text-3xl font-bold font-serif">Đối tác Giáo dục & Hiệp hội</h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              Hợp tác chặt chẽ với các trường đại học, viện nghiên cứu và hiệp hội ngành nghề để nâng cao chất lượng đào tạo.
             </p>
-          </div>
-
-          <div className="space-y-16">
-            {partnerCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex}>
-                <div className="text-center mb-12">
-                  <div
-                    className={`inline-flex items-center space-x-3 bg-gradient-to-r ${category.color} text-white px-6 py-3 rounded-full mb-4`}
-                  >
-                    <category.icon className="h-6 w-6" />
-                    <h3 className="text-2xl font-bold">{category.title}</h3>
-                  </div>
-                  <p className="text-gray-600 max-w-2xl mx-auto">{category.description}</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {category.partners.map((partner, partnerIndex) => (
-                    <Card key={partnerIndex} className="overflow-hidden hover:shadow-xl transition-all duration-300">
-                      <CardHeader className="text-center pb-4">
-                        <div className="w-32 h-16 mx-auto mb-4 bg-gray-50 rounded-lg flex items-center justify-center">
-                          <Image
-                            src={partner.logo || "/placeholder.svg"}
-                            alt={partner.name}
-                            width={160}
-                            height={80}
-                            className="max-w-full max-h-full object-contain"
-                          />
-                        </div>
-                        <CardTitle className="text-xl font-bold text-gray-900">{partner.name}</CardTitle>
-                        <p className="text-sm text-blue-600 font-medium">{partner.collaboration}</p>
-                      </CardHeader>
-
-                      <CardContent>
-                        <p className="text-gray-600 mb-4">{partner.description}</p>
-
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-gray-900 mb-2">Dự án hợp tác:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {partner.projects.map((project, projectIndex) => (
-                              <span
-                                key={projectIndex}
-                                className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
-                              >
-                                {project}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="flex space-x-3">
-                          <Button className="flex-1 btn-primary">Tìm hiểu thêm</Button>
-                          <Link href="/lien-he">
-                            <Button variant="outline" className="bg-transparent">
-                              Liên hệ
-                            </Button>
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
+          </motion.div>
+          
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {educationAndAssociationPartners.map(partner => (
+              <motion.div key={partner.id} variants={itemVariants}>
+                <Card className="p-6 flex items-center justify-center h-32 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-2xl border">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={120}
+                    height={60}
+                    className="max-h-16 w-auto object-contain"
+                  />
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Partnership Opportunities */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
+      
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Cơ hội hợp tác</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Bạn muốn trở thành đối tác của MSC Center? Hãy cùng chúng tôi xây dựng những chương trình đào tạo chất lượng
-            cao và tạo ra tác động tích cực cho cộng đồng
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/lien-he">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
-                Đăng ký hợp tác
-              </Button>
-            </Link>
-            <Link href="/chia-se">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-4 bg-transparent"
-              >
-                Tải partnership deck
-              </Button>
-            </Link>
-          </div>
+           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+           >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Trở thành Đối tác của MSC</h2>
+              <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                Cùng chúng tôi kiến tạo những giá trị bền vững cho cộng đồng và doanh nghiệp thông qua các chương trình đào tạo chất lượng cao.
+              </p>
+              <Link href="/lien-he">
+                  <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-10 py-6">
+                    Liên hệ Hợp tác
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+              </Link>
+           </motion.div>
         </div>
       </section>
     </div>
