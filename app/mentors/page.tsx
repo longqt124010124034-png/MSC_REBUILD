@@ -1,3 +1,4 @@
+//app/mentors/page.tsx
 'use client'
 
 import { useState } from "react"
@@ -8,6 +9,7 @@ import { Users, BookOpen, ChevronRight, GraduationCap, Briefcase, Sparkles } fro
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import type { LucideIcon } from "lucide-react"; 
 
 export default function MentorsPage() {
   const [activeTab, setActiveTab] = useState('faculty')

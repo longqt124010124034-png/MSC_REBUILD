@@ -1,3 +1,4 @@
+//components/MentorCard.tsx
 "use client"
 
 import { motion } from "framer-motion"
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button"
 
 interface MentorCardProps {
   id: string
+  slug: string
   name: string
   title: string
   degree: string
@@ -22,7 +24,7 @@ interface MentorCardProps {
   }
 }
 
-const MentorCard = ({ id, name, title, degree, avatar, specialties, social }: MentorCardProps) => {
+const MentorCard = ({ id, slug, name, title, degree, avatar, specialties, social }: MentorCardProps) => {
   return (
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
@@ -121,7 +123,8 @@ const MentorCard = ({ id, name, title, degree, avatar, specialties, social }: Me
         </CardContent>
 
         <CardFooter className="pt-0 px-6">
-          <Link href={`/mentors/${id}`} className="w-full">
+          <Link href={`/mentors/${slug}`} className="w-full">
+
             <Button className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white group/btn">
               Xem hồ sơ
               <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
