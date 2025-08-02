@@ -191,7 +191,7 @@ export default function NotFound() {
                 className="bg-transparent"
                 onClick={() => window.open("tel:(+84) 329 381 489", "_self")}
               >
-                Gọi hotline: 0909 123 456
+                Gọi hotline: (+84) 329 381 489
               </Button>
             </div>
           </motion.div>
