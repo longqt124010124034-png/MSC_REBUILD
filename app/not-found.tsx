@@ -189,7 +189,7 @@ export default function NotFound() {
               <Button
                 variant="outline"
                 className="bg-transparent"
-                onClick={() => window.open("tel:+84909123456", "_self")}
+                onClick={() => window.open("tel:(+84) 329 381 489", "_self")}
               >
                 Gọi hotline: 0909 123 456
               </Button>

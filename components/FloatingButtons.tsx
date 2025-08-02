@@ -41,7 +41,7 @@ const FloatingButtons = () => {
       icon: Phone,
       label: "Hotline",
       color: "from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700",
-      action: () => window.open("tel:+84909123456", "_self"),
+      action: () => window.open("tel:(+84) 329 381 489", "_self"),
     },
   ]
 
