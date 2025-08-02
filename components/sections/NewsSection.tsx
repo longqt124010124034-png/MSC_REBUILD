@@ -49,7 +49,7 @@ const NewsSection = () => {
       title: "ASK - Mô hình đánh giá năng lực chuẩn quốc tế",
       excerpt:
         "Đo lường năng lực nhân sự hiệu quả với mô hình ASK: Attitude, Skills, Knowledge.",
-      image: "/News/trainer-mentor-coach.webp",
+      image: "/News/ASK.webp",
       author: "TS. Phan Huỳnh Anh",
       publishDate: "10/01/2025",
       category: "Xu hướng",

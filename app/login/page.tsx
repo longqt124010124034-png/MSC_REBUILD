@@ -54,11 +54,11 @@ export default function LoginPage() {
       avatar: "/MSCers/NTD.webp"
     },
     {
-      name: "Trần Thị B",
-      role: "Marketing Director",
-      company: "Shopee Vietnam",
+      name: "Quách Thành Long",
+      role: "CTO",
+      company: "MSC",
       content: "Những khóa học tại đây rất thực tế và ứng dụng được ngay vào công việc.",
-      avatar: "/placeholder.svg?height=40&width=40&text=B"
+      avatar: "/MSCers/QTL.webp"
     }
   ]
 
@@ -101,7 +101,7 @@ export default function LoginPage() {
             <CardHeader className="text-center pb-8">
               <Link href="/" className="inline-block mb-6">
                 <Image
-                  src="/placeholder.svg?height=60&width=200&text=MSC+Center"
+                  src="/Users/login.webp"
                   alt="MSC Center"
                   width={200}
                   height={60}

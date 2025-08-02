@@ -70,15 +70,15 @@ export default function RegisterPage() {
                 <div className="space-y-4">
                   <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <p className="text-sm text-teal-100 mb-2">
-                      "Sau 6 tháng học tại MSC, tôi đã tăng lương 150% và chuyển sang vị trí Senior Developer"
+                      "Sau 6 tháng học tại MSC, tôi đã học tập được nhiều kĩ năng về tư duy và kinh nghiệm trong mảng lập trình"
                     </p>
-                    <div className="text-xs text-white font-medium">- Nguyễn Văn A, Frontend Developer</div>
+                    <div className="text-xs text-white font-medium">- Nguyễn Tuấn Dũng, Frontend Developer</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <p className="text-sm text-teal-100 mb-2">
-                      "MSC Center đã giúp tôi có được công việc mơ ước tại Google"
+                      "MSC Center đã giúp tôi có được tư duy tầm nhìn"
                     </p>
-                    <div className="text-xs text-white font-medium">- Trần Thị B, Software Engineer</div>
+                    <div className="text-xs text-white font-medium">- Quách Thành Long, Fullstack Developer</div>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function RegisterPage() {
             <div className="text-center">
               <Link href="/" className="inline-block">
                 <Image
-                  src="/placeholder.svg?height=60&width=200&text=MSC+CENTER"
+                  src="Users/login.webp"
                   alt="MSC Center"
                   width={200}
                   height={60}

@@ -72,6 +72,9 @@ interface UserProfile {
     icon: string
     earnedAt: string
     rarity: "common" | "rare" | "epic" | "legendary"
+    // THÊM 2 DÒNG NÀY VÀO ĐÂY
+    category: string 
+    isUnlocked: boolean
   }>
   skills: string[]
   interests: string[]
@@ -82,9 +85,9 @@ const ProfileDashboard = () => {
   const [isEditingProfile, setIsEditingProfile] = useState(false)
   const [user, setUser] = useState<UserProfile>({
     id: "user-123",
-    fullName: "Nguyễn Văn An",
-    email: "nguyenvanan@email.com",
-    avatar: "/placeholder.svg?height=120&width=120&text=Avatar",
+    fullName: "Quách Thành Long",
+    email: "stephensouth1307@gmail.com",
+    avatar: "/MSCers/QTL.webp",
     bio: "Passionate developer với 5 năm kinh nghiệm trong lĩnh vực web development. Luôn học hỏi và cập nhật những công nghệ mới nhất.",
     location: "Hồ Chí Minh, Việt Nam",
     website: "https://nguyenvanan.dev",
@@ -137,6 +140,8 @@ const ProfileDashboard = () => {
         icon: "🎯",
         earnedAt: "2023-02-01",
         rarity: "common",
+        category: "Học tập", 
+        isUnlocked: true,
       },
       {
         id: "2",
@@ -145,6 +150,9 @@ const ProfileDashboard = () => {
         icon: "⚡",
         earnedAt: "2023-03-15",
         rarity: "rare",
+        // THÊM 2 DÒNG NÀY VÀO
+        category: "Học tập",
+        isUnlocked: true,
       },
       {
         id: "3",
@@ -153,6 +161,9 @@ const ProfileDashboard = () => {
         icon: "🧠",
         earnedAt: "2023-06-20",
         rarity: "epic",
+        // THÊM 2 DÒNG NÀY VÀO
+        category: "Tiến độ",
+        isUnlocked: true,
       },
       {
         id: "4",
@@ -161,6 +172,9 @@ const ProfileDashboard = () => {
         icon: "👑",
         earnedAt: "2023-12-01",
         rarity: "legendary",
+        // THÊM 2 DÒNG NÀY VÀO
+        category: "Hoàn thành",
+        isUnlocked: true,
       },
     ],
     skills: ["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"],

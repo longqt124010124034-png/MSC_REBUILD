@@ -53,7 +53,7 @@ export default function BlogPage() {
       id: "4",
       title: "ASK - Mô hình đánh giá năng lực chuẩn quốc tế",
       excerpt: "Tìm hiểu cách đo lường và phát triển năng lực nhân sự một cách hiệu quả với mô hình ASK: Thái độ (Attitude), Kỹ năng (Skills), và Kiến thức (Knowledge).",
-      image: "/News/ask.webp", // Giả định tên file ảnh là ask.webp
+      image: "/News/ASK.webp", // Giả định tên file ảnh là ask.webp
       author: "TS. Phan Huỳnh Anh",
       authorAvatar: "/Mentors/PHA.webp",
       publishDate: "15/05/2024",
