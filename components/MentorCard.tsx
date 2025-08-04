@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 
 interface MentorCardProps {
   id: string
-  slug: string
+  slug?: string
   name: string
   title: string
   degree: string
