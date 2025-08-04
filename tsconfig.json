@@ -24,8 +24,10 @@
     },
     "lib": [
       "dom",
-      "dom.iterable",
-      "esnext"
+    "dom.iterable",
+    "esnext",
+    "es2015"
+
     ]
   },
   "include": [
