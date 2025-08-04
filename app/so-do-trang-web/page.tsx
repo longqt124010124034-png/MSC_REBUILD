@@ -194,15 +194,26 @@ export default function SiteMapPage() {
                 {item.icon}
               </div>
               <div className="flex-1">
-                <Link 
-                  href={item.href}
-                  className="group flex items-center space-x-2 mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {item.title}
-                  </h3>
-                  <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
+                {item.isDynamic ? (
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
+                    <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">
+                      Dynamic Route
+                    </span>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="group flex items-center space-x-2 mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
+                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                )}
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
                   {item.description}
                 </p>
