@@ -33,7 +33,7 @@ export default function MSCerPage() {
       position: "Trưởng phòng CNTT",
       company: "Trung tâm MSC",
       avatar: "/MSCers/QTL.webp",
-      testimonial: "Từ những khóa học đầu tiên, tôi đã tìm thấy đam mê công nghệ. MSC đã cho tôi cơ hội để biến đam mê đó thành sự nghiệp.",
+      testimonial: "Từ những khóa học ��ầu tiên, tôi đã tìm thấy đam mê công nghệ. MSC đã cho tôi cơ hội để biến đam mê đó thành sự nghiệp.",
       skills: ["Quản lý dự án", "Phát triển sản phẩm", "Lãnh đạo kỹ thuật"],
     },
     {
@@ -64,7 +64,7 @@ export default function MSCerPage() {
       skills: ["Content Marketing", "Digital Advertising", "Brand Strategy"],
     },
     {
-      id: "pham-thuy-trang",
+      id: "pham-ngoc-thuy-trang",
       name: "Phạm Ngọc Thuỳ Trang",
       position: "Nhân sự Marketing",
       company: "KPMG Vietnam",
