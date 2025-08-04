@@ -1,18 +1,12 @@
 "use client"
 
-import { Metadata } from "next"
 import { motion } from "framer-motion"
 import { Shield, Lock, Eye, Users, Database, FileText } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Chính sách bảo mật - MSC Center",
-  description: "Chính sách bảo mật và quyền riêng tư của MSC Center - Cam kết bảo vệ thông tin cá nhân của bạn một cách an toàn và minh bạch.",
-}
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-      <div className="container py-12 lg:py-20">
+      <div className="container py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +35,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           {/* Content */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 lg:p-12">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 sm:p-8 lg:p-12">
             <div className="prose prose-lg dark:prose-invert max-w-none">
               
               {/* Section 1 */}
