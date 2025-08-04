@@ -1,6 +1,5 @@
 "use client"
 
-import { Metadata } from "next"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { 
@@ -22,10 +21,7 @@ import {
   ExternalLink
 } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Sơ đồ trang web - MSC Center",
-  description: "Sơ đồ trang web MSC Center - Tổng quan về tất cả các trang và dịch vụ có sẵn trên website của chúng tôi.",
-}
+
 
 interface SiteMapItem {
   title: string
@@ -56,7 +52,7 @@ export default function SiteMapPage() {
       description: "Các khóa học và chương trình đào tạo chuyên nghiệp"
     },
     {
-      title: "Dự ��n",
+      title: "Dự án",
       href: "/du-an",
       icon: <FolderOpen className="h-5 w-5" />,
       description: "Danh sách các dự án đã và đang triển khai"
@@ -116,7 +112,7 @@ export default function SiteMapPage() {
       ]
     },
     {
-      title: "Liên hệ",
+      title: "Liên h��",
       href: "/lien-he",
       icon: <Phone className="h-5 w-5" />,
       description: "Thông tin liên hệ và form gửi tin nhắn"
@@ -140,7 +136,7 @@ export default function SiteMapPage() {
       title: "Hồ sơ cá nhân",
       href: "/profile",
       icon: <User className="h-5 w-5" />,
-      description: "Quản lý thông tin và tiến đ�� học tập"
+      description: "Quản lý thông tin và tiến độ học tập"
     },
     {
       title: "CV Builder",
@@ -186,7 +182,7 @@ export default function SiteMapPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: delay + index * 0.1 }}
-            className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-600"
+            className="bg-white dark:bg-gray-700 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-600"
           >
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
@@ -238,7 +234,7 @@ export default function SiteMapPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-      <div className="container py-12 lg:py-20">
+      <div className="container py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
