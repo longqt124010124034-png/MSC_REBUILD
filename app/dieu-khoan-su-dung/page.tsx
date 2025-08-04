@@ -1,3 +1,5 @@
+"use client"
+
 import { Metadata } from "next"
 import { motion } from "framer-motion"
 import { Scale, Book, Users, CreditCard, AlertTriangle, CheckCircle } from "lucide-react"
@@ -191,7 +193,7 @@ export default function TermsOfServicePage() {
                     <li>Không đảm bảo kết quả học tập cụ thể cho từng cá nhân</li>
                     <li>Không chịu trách nhiệm về thiệt hại gián tiếp hoặc hậu quả</li>
                     <li>Có quyền thay đổi lịch học, giảng viên khi cần thiết</li>
-                    <li>Có quyền từ chối cung c��p dịch vụ nếu học viên vi phạm quy định</li>
+                    <li>Có quyền từ chối cung cấp dịch vụ nếu học viên vi phạm quy định</li>
                   </ul>
                 </div>
               </motion.div>
@@ -223,7 +225,7 @@ export default function TermsOfServicePage() {
               >
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Thông tin liên hệ</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  Nếu bạn có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:
+                  Nếu b���n có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:
                 </p>
                 <div className="space-y-2 text-gray-700 dark:text-gray-300">
                   <p><strong>Trung tâm Kỹ năng Mekong (MSC Center)</strong></p>
