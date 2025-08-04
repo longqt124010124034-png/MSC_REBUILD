@@ -46,7 +46,7 @@ export default function MSCerPage() {
       skills: ["Chiến lược thương hiệu", "Marketing kỹ thuật số", "Nghiên cứu thị trường"],
     },
     {
-      id: "nguyen-thien-huong",
+      id: "nguyen-ngoc-thien-huong",
       name: "Nguyễn Ngọc Thiên Hương",
       position: "Nhân sự nội dung",
       company: "Samsung Vietnam",
