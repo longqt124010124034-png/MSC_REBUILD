@@ -140,4 +140,109 @@ export const mentorDetails: MentorDetail[] = [
       ],
     },
   },
+  {
+    id: "doan-duc-minh",
+    slug: "doan-duc-minh",
+    name: "Đoàn Đức Minh",
+    title: "Thạc Sĩ - Nghiên cứu sinh",
+    avatar: "/Mentors/DDM.webp",
+    role: "Giảng viên Đại học Western Sydney",
+    personalInfo: {
+      "Họ và tên": "Đoàn Đức Minh",
+      "Học vị": "Thạc Sĩ",
+    },
+    organization: [
+      "Giảng viên Đại học Western Sydney",
+      "Chuyên gia quản lý dự án",
+    ],
+    education: [
+      "Thạc Sĩ Quản trị dự án",
+      "Cử nhân Công nghệ Thông tin",
+    ],
+    subjects: [
+      "Quản lý dự án",
+      "Agile và Scrum",
+      "Chuyển đổi số",
+      "Phân tích dữ liệu",
+    ],
+    achievements: [
+      "Chuyên gia tư vấn cho nhiều dự án chuyển đổi số",
+      "Giảng viên các khóa đào tạo Agile và Scrum",
+    ],
+  },
+  {
+    id: "nguyen-chi-thanh",
+    slug: "nguyen-chi-thanh",
+    name: "Nguyễn Chí Thành",
+    title: "CEO",
+    avatar: "/Mentors/NCT.webp",
+    role: "CEO TLàng Kết nối Kinh doanh VABIX",
+    personalInfo: {
+      "Họ và tên": "Nguyễn Chí Thành",
+      "Chức vụ": "CEO",
+    },
+    organization: [
+      "TLàng Kết nối Kinh doanh VABIX",
+    ],
+    subjects: [
+      "Personal Coaching",
+      "Career Development",
+      "Mindfulness",
+      "Leadership",
+    ],
+    achievements: [
+      "Founder TLàng Kết nối Kinh doanh VABIX",
+      "Chuyên gia coaching cá nhân",
+    ],
+  },
+  {
+    id: "le-nhat-truong-chinh",
+    slug: "le-nhat-truong-chinh",
+    name: "Lê Nhật Trường Chinh",
+    title: "CEO & Founder",
+    avatar: "/Mentors/LNTC.webp",
+    role: "CEO & Founder SUCCESS Partner Co.Ltd",
+    personalInfo: {
+      "Họ và tên": "Lê Nhật Trường Chinh",
+      "Chức vụ": "CEO & Founder",
+    },
+    organization: [
+      "SUCCESS Partner Co.Ltd",
+    ],
+    subjects: [
+      "Innovation",
+      "Entrepreneurship",
+      "Design Thinking",
+      "Startup Development",
+    ],
+    achievements: [
+      "Founder SUCCESS Partner Co.Ltd",
+      "Chuyên gia đổi mới sáng tạo",
+    ],
+  },
+  {
+    id: "phan-phat-huy",
+    slug: "phan-phat-huy",
+    name: "Phan Phát Huy",
+    title: "CEO & Founder",
+    avatar: "/Mentors/PPH.webp",
+    role: "CEO & Founder HILTOW LANDMARK",
+    personalInfo: {
+      "Họ và tên": "Phan Phát Huy",
+      "Chức vụ": "CEO & Founder",
+    },
+    organization: [
+      "HILTOW LANDMARK",
+    ],
+    subjects: [
+      "Soft Skills",
+      "Public Speaking",
+      "Emotional Intelligence",
+      "Communication",
+    ],
+    achievements: [
+      "Founder HILTOW LANDMARK",
+      "Chuyên gia phát triển kỹ năng mềm",
+    ],
+  },
 ];
