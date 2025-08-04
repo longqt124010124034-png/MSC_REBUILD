@@ -112,7 +112,7 @@ export default function MentorsPage() {
             <div className="inline-block bg-white/10 p-4 rounded-full mb-6">
               <Users className="h-12 w-12 text-white" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Ban Giảng Huấn & Cố Vấn</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">Ban Giảng Huấn </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Gặp gỡ đội ngũ chuyên gia, những người thầy tâm huyết sẽ đồng hành và dẫn dắt bạn trên hành trình chinh phục những đỉnh cao mới.
             </p>
