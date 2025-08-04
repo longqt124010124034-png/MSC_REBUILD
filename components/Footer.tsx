@@ -60,7 +60,8 @@ const Footer = () => {
     }
 
     return (
-        <footer className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-900 text-white overflow-hidden">
+        <footer className="relative bg-gradient-to-br from-blue-900 via-sky-900 to-teal-800 text-white overflow-hidden">
+
              <FacebookSDKLoader /> {/* Gọi component tải và khởi tạo SDK */}
             
             {/* Hiệu ứng nền */}
@@ -95,18 +96,23 @@ const Footer = () => {
                         className="lg:col-span-2"
                     >
                         <Link href="/" className="inline-block mb-6">
-                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-white/40 transition-all duration-300">
-                                {/* Thay src bằng logo mới của bạn, có thể là file PNG nền trong suốt */}
-                                <Image
-                                    src="/logo.webp" // Cập nhật đường dẫn logo của bạn ở đây
-                                    alt="MSC Center - UEH University"
-                                    width={450} // Có thể tăng width một chút để logo trông rõ hơn
-                                    height={100}
-                                    className="h-auto w-auto max-w-full md:max-w-[450px]"
-                                    priority
-                                />
-                            </div>
-                        </Link>
+  <div className="relative inline-block rounded-2xl p-4 transition-all duration-300 hover:shadow-xl">
+    
+    {/* Nền sáng nhẹ phía sau logo */}
+    <div className="absolute inset-0 rounded-2xl bg-white/100 backdrop-blur-md shadow-inner z-0 pointer-events-none" />
+
+    {/* Logo nằm trên nền sáng */}
+    <Image
+      src="/logo.webp"
+      alt="MSC Center - UEH University"
+      width={450}
+      height={100}
+      className="relative z-10 h-auto w-auto max-w-full md:max-w-[450px]"
+      priority
+    />
+  </div>
+</Link>
+
                         <p className="text-blue-100 mb-6 leading-relaxed max-w-md">
                             MSC Center - Trung tâm đào tạo và phát triển kỹ năng chuyên nghiệp hàng đầu Việt Nam cho người đi làm và sinh viên.
                         </p>
