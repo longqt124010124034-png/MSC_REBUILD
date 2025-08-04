@@ -147,7 +147,7 @@ const Footer = () => {
                                     <MapPin className="h-5 w-5 text-teal-300" />
                                 </div>
                                 <div>
-                                    <p className="text-blue-100">279 Nguyễn Tri Phương, Phường 5, Quận 10, TP.Hồ Chí Minh</p>
+                                    <p className="text-blue-100">279 Nguyễn Tri Phương, Phường Diên Hồng, TP.Hồ Chí Minh</p>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-4">
