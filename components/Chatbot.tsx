@@ -77,7 +77,7 @@ const Chatbot = () => {
       id: "contact",
       text: "📞 Liên hệ trực tiếp",
       response:
-        "Thông tin liên hệ MSC Center:\n\n📧 Email: msc.edu.vn@gmail.com\n📞 Hotline: (+84) 329 381 489\n🏢 Địa chỉ: 279 Nguyễn Tri Phương, Q.10, TP.HCM\n⏰ Giờ làm việc: 8:00 - 22:00\n\n🌐 Website: msc.edu.vn\n📱 Facebook: /msc.edu.vn\n💼 LinkedIn: /company/msc-center",
+        "Thông tin liên hệ MSC Center:\n\n📧 Email: msc.edu.vn@gmail.com\n📞 Hotline: (+84) 329 381 489\n🏢 Địa chỉ: 279 Nguyễn Tri Phương, Phường Diên Hồng, TP.HCM\n⏰ Giờ làm việc: 8:00 - 22:00\n\n🌐 Website: msc.edu.vn\n📱 Facebook: /msc.edu.vn\n💼 LinkedIn: /company/msc-center",
     },
   ]
 

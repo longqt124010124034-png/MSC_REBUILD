@@ -51,7 +51,7 @@ export default function ContactPage() {
 
   // Dữ liệu liên hệ chính xác
   const contactInfo = [
-    { icon: MapPin, title: "Địa chỉ", lines: ["279 Nguyễn Tri Phương, Phường 5,", "Quận 10, TP. Hồ Chí Minh"] },
+    { icon: MapPin, title: "Địa chỉ", lines: ["279 Nguyễn Tri Phương, Phường 5,", "Phường Diên Hồng,  TP. Hồ Chí Minh"] },
     { icon: Phone, title: "Điện thoại", lines: ["(+84) 329 381 489"], link: "tel:+84329381489" },
     { icon: Mail, title: "Email", lines: ["msc.edu.vn@gmail.com"], link: "mailto:msc.edu.vn@gmail.com" },
     { icon: Clock, title: "Giờ làm việc", lines: ["Thứ 2 - Thứ 7: 8:00 - 17:30", "Chủ nhật: Nghỉ"] },
