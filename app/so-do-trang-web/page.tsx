@@ -230,12 +230,21 @@ export default function SiteMapPage() {
                     {item.children.map((child) => (
                       <div key={child.href} className="flex items-center space-x-2 mb-2">
                         {child.icon}
-                        <Link 
-                          href={child.href}
-                          className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                        >
-                          {child.title}
-                        </Link>
+                        {child.isDynamic ? (
+                          <span className="text-sm text-gray-600 dark:text-gray-400">
+                            {child.title}
+                            <span className="ml-2 text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">
+                              Dynamic
+                            </span>
+                          </span>
+                        ) : (
+                          <Link
+                            href={child.href}
+                            className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                          >
+                            {child.title}
+                          </Link>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -309,7 +318,7 @@ export default function SiteMapPage() {
                 className="inline-flex items-center justify-center px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors border border-blue-500"
               >
                 <Home className="h-5 w-5 mr-2" />
-                Về trang chủ
+                Về trang ch��
               </Link>
             </div>
           </motion.div>
