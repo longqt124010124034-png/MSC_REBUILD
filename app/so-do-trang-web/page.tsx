@@ -28,6 +28,7 @@ interface SiteMapItem {
   href: string
   icon: React.ReactNode
   description: string
+  isDynamic?: boolean
   children?: SiteMapItem[]
 }
 
