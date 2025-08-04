@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 
 interface MentorCardProps {
   id: string
-  slug: string
+  slug?: string
   name: string
   title: string
   degree: string
@@ -123,7 +123,7 @@ const MentorCard = ({ id, slug, name, title, degree, avatar, specialties, social
         </CardContent>
 
         <CardFooter className="pt-0 px-6">
-          <Link href={`/mentors/${slug}`} className="w-full">
+          <Link href={`/mentors/${slug || id}`} className="w-full">
 
             <Button className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white group/btn">
               Xem hồ sơ

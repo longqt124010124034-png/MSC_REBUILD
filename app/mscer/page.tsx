@@ -46,7 +46,7 @@ export default function MSCerPage() {
       skills: ["Chiến lược thương hiệu", "Marketing kỹ thuật số", "Nghiên cứu thị trường"],
     },
     {
-      id: "nguyen-thien-huong",
+      id: "nguyen-ngoc-thien-huong",
       name: "Nguyễn Ngọc Thiên Hương",
       position: "Nhân sự nội dung",
       company: "Samsung Vietnam",
@@ -64,7 +64,7 @@ export default function MSCerPage() {
       skills: ["Content Marketing", "Digital Advertising", "Brand Strategy"],
     },
     {
-      id: "pham-thuy-trang",
+      id: "pham-ngoc-thuy-trang",
       name: "Phạm Ngọc Thuỳ Trang",
       position: "Nhân sự Marketing",
       company: "KPMG Vietnam",
@@ -73,7 +73,7 @@ export default function MSCerPage() {
       skills: ["Phân tích tài chính", "Quản lý rủi ro", "Mô hình hóa tài chính"],
     },
     {
-      id: "tran-minh-thu",
+      id: "tran-hoang-minh-thu",
       name: "Trần Hoàng Minh Thư",
       position: "Thư ký dự án",
       company: "Grab Vietnam",
