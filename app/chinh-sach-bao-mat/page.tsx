@@ -1,3 +1,5 @@
+"use client"
+
 import { Metadata } from "next"
 import { motion } from "framer-motion"
 import { Shield, Lock, Eye, Users, Database, FileText } from "lucide-react"
