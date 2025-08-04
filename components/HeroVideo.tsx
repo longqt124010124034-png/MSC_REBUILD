@@ -127,14 +127,12 @@ const HeroVideo = () => {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <Button
-            asChild
-
-              onClick={scrollToContact}
+              asChild
               size="lg"
               className="btn-secondary text-lg px-8 py-4 hover:scale-105 transition-transform duration-300"
             >
-              <Link href = "/lien-he">
-              {t("hero.cta")}
+              <Link href="/lien-he">
+                {t("hero.cta")}
               </Link>
             </Button>
           </motion.div>
