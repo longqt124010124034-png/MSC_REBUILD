@@ -1,3 +1,5 @@
+"use client"
+
 import { Metadata } from "next"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -54,7 +56,7 @@ export default function SiteMapPage() {
       description: "Các khóa học và chương trình đào tạo chuyên nghiệp"
     },
     {
-      title: "Dự án",
+      title: "Dự ��n",
       href: "/du-an",
       icon: <FolderOpen className="h-5 w-5" />,
       description: "Danh sách các dự án đã và đang triển khai"
@@ -138,7 +140,7 @@ export default function SiteMapPage() {
       title: "Hồ sơ cá nhân",
       href: "/profile",
       icon: <User className="h-5 w-5" />,
-      description: "Quản lý thông tin và tiến độ học tập"
+      description: "Quản lý thông tin và tiến đ�� học tập"
     },
     {
       title: "CV Builder",
