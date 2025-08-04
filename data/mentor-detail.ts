@@ -93,6 +93,7 @@ export const mentorDetails: MentorDetail[] = [
   },
   {
     id: "hoang-cuu-long",
+    slug: "hoang-cuu-long",
     name: "Hoàng Cửu Long",
     title: "Phó Giáo sư Tiến sĩ Quản trị kinh doanh",
     avatar: "Mentors/HCL.webp",
