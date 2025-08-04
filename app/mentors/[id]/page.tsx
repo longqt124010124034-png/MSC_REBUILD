@@ -35,7 +35,12 @@ const Section = ({ title, items }: { title: string; items?: string[] }) => {
 export default function MentorDetailPage({ params }: Props) {
   const mentor = mentorDetails.find((m) => m.id === params.id);
 
-  if (!mentor) return notFound();
+  if (!mentor) {
+    // Log the ID that's causing the issue for debugging
+    console.error('Mentor not found for ID:', params.id);
+    console.log('Available mentor IDs:', mentorDetails.map(m => m.id));
+    return notFound();
+  }
 
   // Convert personalInfo object to array of strings
   const personalInfoItems = mentor.personalInfo ?
