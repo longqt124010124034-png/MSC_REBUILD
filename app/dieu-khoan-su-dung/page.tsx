@@ -1,18 +1,12 @@
 "use client"
 
-import { Metadata } from "next"
 import { motion } from "framer-motion"
 import { Scale, Book, Users, CreditCard, AlertTriangle, CheckCircle } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Điều khoản sử dụng - MSC Center",
-  description: "Điều khoản và điều kiện sử dụng dịch vụ của MSC Center - Quy định và trách nhiệm khi tham gia các khóa học và dịch vụ đào tạo.",
-}
 
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-teal-900">
-      <div className="container py-12 lg:py-20">
+      <div className="container py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +35,7 @@ export default function TermsOfServicePage() {
           </div>
 
           {/* Content */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 lg:p-12">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 sm:p-8 lg:p-12">
             <div className="prose prose-lg dark:prose-invert max-w-none">
               
               {/* Section 1 */}
@@ -192,7 +186,7 @@ export default function TermsOfServicePage() {
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Không đảm bảo kết quả học tập cụ thể cho từng cá nhân</li>
                     <li>Không chịu trách nhiệm về thiệt hại gián tiếp hoặc hậu quả</li>
-                    <li>Có quyền thay đổi lịch học, giảng viên khi cần thiết</li>
+                    <li>Có quyền thay đổi lịch học, gi��ng viên khi cần thiết</li>
                     <li>Có quyền từ chối cung cấp dịch vụ nếu học viên vi phạm quy định</li>
                   </ul>
                 </div>
@@ -225,7 +219,7 @@ export default function TermsOfServicePage() {
               >
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Thông tin liên hệ</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  Nếu b���n có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:
+                  Nếu bạn có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:
                 </p>
                 <div className="space-y-2 text-gray-700 dark:text-gray-300">
                   <p><strong>Trung tâm Kỹ năng Mekong (MSC Center)</strong></p>
