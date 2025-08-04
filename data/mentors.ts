@@ -24,6 +24,34 @@ export interface MSCerDetail {
 
 export const mscersData: MSCerDetail[] = [
   {
+    id: "pham-hoang-minh-khanh",
+    name: "Phạm Hoàng Minh Khánh",
+    position: "Giám Đốc",
+    company: "MSC Center",
+    avatar: "/MSCers/PHMK.webp",
+    achievement: "Founder và Giám Đốc MSC Center",
+    testimonial: "MSC là nơi tôi không chỉ học hỏi mà còn trưởng thành. Môi trường năng động đã giúp tôi định hình con đường sự nghiệp của mình và xây dựng tầm nhìn phát triển MSC Center thành tổ chức đào tạo hàng đầu.",
+    currentSalary: "50M+",
+    graduationYear: "2019",
+    promotion: "Từ học viên → Mentor → Co-founder → Giám Đốc MSC Center",
+    socialImpact: "Xây dựng MSC Center thành tổ chức đào tạo với 5000+ học viên",
+    course: "Leadership Excellence & Educational Management",
+    skills: ["Strategic Vision", "Educational Leadership", "Business Development", "Stakeholder Management", "Innovation"],
+    achievements: [
+      "Founder & CEO - MSC Center (2019-nay)",
+      "Xây dựng MSC Center từ ý tưởng thành tổ chức 100+ nhân viên",
+      "Phát triển 20+ chương trình đào tạo chuyên nghiệp",
+      "Hợp tác với 100+ doanh nghiệp và tổ chức",
+      "Đào tạo thành công 5000+ học viên các cấp độ"
+    ],
+    mentoring: "Tôi trực tiếp mentor cho ban lãnh đạo MSC Center và tham gia hướng dẫn các chương trình phát triển lãnh đạo cấp cao. Mục tiêu là tạo ra thế hệ lãnh đạo mới cho tương lai.",
+    background: {
+      education: "Thạc sĩ Quản trị Giáo dục - UEH, MBA Strategic Management",
+      previousRole: "Giảng viên và Quản lý chương trình đào tạo",
+      experience: "10+ năm kinh nghiệm trong lĩnh vực giáo dục và phát triển tổ chức, từng làm việc tại nhiều tổ chức giáo dục và tư vấn"
+    }
+  },
+  {
     id: "duong-the-khai",
     name: "Dương Thế Khải",
     position: "Phó Giám Đốc MSC",
@@ -38,7 +66,7 @@ export const mscersData: MSCerDetail[] = [
     course: "Leadership & Strategic Management",
     skills: ["Strategic Leadership", "Business Development", "Team Management", "Project Planning", "Mentoring"],
     achievements: [
-      "Phó Giám Đốc MSC Center - MSC Center (2023-nay)",
+      "Ph�� Giám Đốc MSC Center - MSC Center (2023-nay)",
       "Xây dựng và phát triển 3 chương trình đào tạo mới",
       "Dẫn dắt team 15+ nhân viên",
       "Tăng hiệu suất làm việc của đội ngũ 40%",
