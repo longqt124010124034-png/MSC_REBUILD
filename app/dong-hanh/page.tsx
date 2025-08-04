@@ -131,7 +131,7 @@ export default function PartnersPage() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -139,15 +139,16 @@ export default function PartnersPage() {
           >
             {corporatePartners.map(partner => (
               <motion.div key={partner.id} variants={itemVariants}>
-                <Card className="p-6 flex items-center justify-center h-32 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-2xl border">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={120}
-                    height={60}
-                    className="max-h-16 w-auto object-contain"
-                  />
-                </Card>
+                <Card className="p-6 flex items-center justify-center h-40 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-2xl border">
+                   <Image
+                       src={partner.logo}
+                        alt={partner.name}
+                         width={560}
+                          height={350}
+                 className="max-h-24 w-auto object-contain"
+                     />
+              </Card>
+
               </motion.div>
             ))}
           </motion.div>
@@ -174,7 +175,7 @@ export default function PartnersPage() {
           </motion.div>
           
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -186,9 +187,9 @@ export default function PartnersPage() {
                   <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={120}
-                    height={60}
-                    className="max-h-16 w-auto object-contain"
+                    width={700}
+                    height={550}
+                    className="max-h-[6.8rem] w-auto object-contain"
                   />
                 </Card>
               </motion.div>
