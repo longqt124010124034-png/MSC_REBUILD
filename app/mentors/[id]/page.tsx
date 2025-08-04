@@ -51,7 +51,7 @@ export default function MentorDetailPage({ params }: Props) {
       {/* Header */}
       <div className="flex flex-col md:flex-row items-center gap-6">
         <Image
-          src={mentor.avatar || "/default-avatar.png"}
+          src={mentor.avatar || "/placeholder.svg"}
           alt={mentor.name}
           width={180}
           height={180}
