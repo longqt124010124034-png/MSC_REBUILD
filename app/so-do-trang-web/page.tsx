@@ -83,7 +83,8 @@ export default function SiteMapPage() {
           title: "Hồ sơ MSCer",
           href: "/mscer/[id]",
           icon: <User className="h-4 w-4" />,
-          description: "Thông tin chi tiết về từng MSCer"
+          description: "Thông tin chi tiết về từng MSCer",
+          isDynamic: true
         }
       ]
     },
