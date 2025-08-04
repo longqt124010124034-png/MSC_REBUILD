@@ -11,58 +11,58 @@ const MentorsSection = () => {
 
   const mentors = [
     {
-      id: "1",
+      id: "phan-huynh-anh",
+      slug: "phan-huynh-anh",
       name: "TS. Phan Huỳnh Anh",
       title: "Tiến Sĩ Kinh tế",
       degree: "Chủ tịch HĐQT Công ty Smentor",
       avatar: "/Mentors/PHA.webp",
       specialties: ["Leadership", "Strategic Management", "Business Coaching"],
-      
     },
     {
-      id: "2",
+      id: "hoang-cuu-long",
+      slug: "hoang-cuu-long",
       name: "Hoàng Cửu Long",
       title: "Phó Giáo Sư - Tiến Sĩ",
       degree: "Giảng viên Đại học Kinh tế TP. Hồ Chí Minh",
       avatar: "/Mentors/HCL.webp",
       specialties: ["HR Development", "Team Building", "Communication Skills"],
-      
     },
     {
-      id: "3",
+      id: "doan-duc-minh",
+      slug: "doan-duc-minh",
       name: "Đoàn Đức Minh",
       title: "Thạc Sĩ - Nghiên cứu sinh",
       degree: "Giảng viên Đại học Western Sydney",
       avatar: "/Mentors/DDM.webp",
       specialties: ["Project Management", "Agile", "Digital Transformation"],
-      
     },
     {
-      id: "4",
+      id: "nguyen-chi-thanh",
+      slug: "nguyen-chi-thanh",
       name: "Nguyễn Chí Thành",
       title: "CEO",
       degree: "TLàng Kết nối Kinh doanh VABIX",
       avatar: "/Mentors/NCT.webp",
       specialties: ["Personal Coaching", "Career Development", "Mindfulness"],
-      
     },
     {
-      id: "5",
+      id: "le-nhat-truong-chinh",
+      slug: "le-nhat-truong-chinh",
       name: "Lê Nhật Trường Chinh",
       title: "CEO & Founder",
       degree: "SUCCESS Partner Co.Ltd",
       avatar: "/Mentors/LNTC.webp",
       specialties: ["Innovation", "Entrepreneurship", "Design Thinking"],
-      
     },
     {
-      id: "6",
+      id: "phan-phat-huy",
+      slug: "phan-phat-huy",
       name: "Phan Phát Huy",
       title: "CEO & Founder",
       degree: "HILTOW LANDMARK",
       avatar: "/Mentors/PPH.webp",
       specialties: ["Soft Skills", "Public Speaking", "Emotional Intelligence"],
-      
     },
   ]
 
@@ -80,7 +80,7 @@ const MentorsSection = () => {
             Ban giảng huấn
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Đội ngũ giảng viên và chuyên gia hàng đầu với nhiều năm kinh nghiệm trong lĩnh vực đào tạo và phát triển
+            Đội ngũ giảng viên và chuyên gia hàng đầu với nhiều năm kinh nghi���m trong lĩnh vực đào tạo và phát triển
           </p>
         </motion.div>
 
