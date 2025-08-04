@@ -7,7 +7,6 @@ export interface MSCerDetail {
   avatar: string;
   achievement: string;
   testimonial: string;
-  currentSalary: string;
   graduationYear: string;
   promotion: string;
   socialImpact: string;
@@ -23,34 +22,39 @@ export interface MSCerDetail {
 }
 
 export const mscersData: MSCerDetail[] = [
-  {
-    id: "pham-hoang-minh-khanh",
-    name: "Phạm Hoàng Minh Khánh",
-    position: "Giám Đốc",
-    company: "MSC Center",
-    avatar: "/MSCers/PHMK.webp",
-    achievement: "Founder và Giám Đốc MSC Center",
-    testimonial: "MSC là nơi tôi không chỉ học hỏi mà còn trưởng thành. Môi trường năng động đã giúp tôi định hình con đường sự nghiệp của mình và xây dựng tầm nhìn phát triển MSC Center thành tổ chức đào tạo hàng đầu.",
-    currentSalary: "50M+",
-    graduationYear: "2019",
-    promotion: "Từ học viên → Mentor → Co-founder → Giám Đốc MSC Center",
-    socialImpact: "Xây dựng MSC Center thành tổ chức đào tạo với 5000+ học viên",
-    course: "Leadership Excellence & Educational Management",
-    skills: ["Strategic Vision", "Educational Leadership", "Business Development", "Stakeholder Management", "Innovation"],
-    achievements: [
-      "Founder & CEO - MSC Center (2019-nay)",
-      "Xây dựng MSC Center từ ý tưởng thành tổ chức 100+ nhân viên",
-      "Phát triển 20+ chương trình đào tạo chuyên nghiệp",
-      "Hợp tác với 100+ doanh nghiệp và tổ chức",
-      "Đào tạo thành công 5000+ học viên các cấp độ"
-    ],
-    mentoring: "Tôi trực tiếp mentor cho ban lãnh đạo MSC Center và tham gia hướng dẫn các chương trình phát triển lãnh đạo cấp cao. Mục tiêu là tạo ra thế hệ lãnh đạo mới cho tương lai.",
-    background: {
-      education: "Thạc sĩ Quản trị Giáo dục - UEH, MBA Strategic Management",
-      previousRole: "Giảng viên và Quản lý chương trình đào tạo",
-      experience: "10+ năm kinh nghiệm trong lĩnh vực giáo dục và phát triển tổ chức, từng làm việc tại nhiều tổ chức giáo dục và tư vấn"
-    }
-  },
+ {
+  "id": "pham-hoang-minh-khanh",
+  "name": "Phạm Hoàng Minh Khánh",
+  "position": "Nhà sáng lập & Giám đốc",
+  "company": "SMENTOR, SMAR, SGA",
+  "avatar": "/MSCers/PHMK.webp",
+  "achievement": "Nhà sáng lập đa ngành, Giảng viên & Chuyên gia tư vấn chiến lược",
+  "testimonial": "Kiến thức và kỹ năng được hệ thống hóa tại MSC đã trở thành nền tảng vững chắc, giúp tôi tự tin sáng lập và điều hành hiệu quả nhiều doanh nghiệp. Đây là nơi cung cấp tư duy chiến lược để biến ý tưởng thành hiện thực.",
+  "graduationYear": "2022",
+  "promotion": "Từ Trưởng phòng Marketing → Giám đốc → Sáng lập nhiều công ty & Viện phó",
+  "socialImpact": "Sáng lập và vận hành 3+ công ty trong lĩnh vực tư vấn, công nghệ và nông nghiệp. Giảng dạy và định hướng cho hàng ngàn sinh viên tại Đại học UEF.",
+  "course": "Leadership Excellence & Strategic Management",
+  "skills": [
+    "Lãnh đạo & Quản trị",
+    "Chiến lược Marketing",
+    "Khởi nghiệp & Xây dựng doanh nghiệp",
+    "Tư vấn doanh nghiệp",
+    "Giảng dạy & Đào tạo"
+  ],
+  "achievements": [
+    "Sáng lập & Giám đốc Công ty TNHH Smentor (2017-nay)",
+    "Sáng lập & Giám đốc Công ty cổ phần SMAR (2020-nay)",
+    "Sáng lập & Giám đốc Công ty phát triển Nông Nghiệp Xanh SGA (2022-nay)",
+    "Viện Phó, Viện Việt Nam Bách Nghệ Thực Hành (2021-nay)",
+    "Giảng viên, Đại học Kinh Tế Tài Chính – TP.HCM (UEF) (2022-nay)"
+  ],
+  "mentoring": "Với kinh nghiệm đa ngành, tôi tập trung mentoring cho các nhà sáng lập trẻ về xây dựng mô hình kinh doanh, chiến lược marketing và quản trị nhân sự. Đồng thời, tôi cũng hướng dẫn sinh viên về định hướng nghề nghiệp và khởi nghiệp.",
+  "background": {
+    "education": "Thạc sĩ Quản trị hệ điều hành, Đại học Kinh tế TP.HCM (2022); Cử nhân Marketing, Đại học Tài chính - Marketing (2017)",
+    "previousRole": "Trưởng phòng Marketing, Phó Giám đốc tại Smentor",
+    "experience": "Hơn 7 năm kinh nghiệm thực chiến trong lĩnh vực Marketing, tư vấn chiến lược và điều hành doanh nghiệp. Có chuyên môn sâu về giảng dạy và quản lý giáo dục."
+  }
+},
   {
     id: "duong-the-khai",
     name: "Dương Thế Khải",
@@ -59,7 +63,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/DTK.webp",
     achievement: "Tốt nghiệp và trưởng thành từ MSC",
     testimonial: "MSC Center đã giúp tôi phát triển kỹ năng lãnh đạo và tư duy chiến lược một cách toàn diện. Từ một sinh viên bình thường, tôi đã trở thành Phó Giám Đốc và có thể đóng góp vào việc phát triển thế hệ MSCer tiếp theo.",
-    currentSalary: "25M+",
+
     graduationYear: "2021",
     promotion: "Từ Nhân viên → Team Lead → Phó Giám Đốc trong 3 năm",
     socialImpact: "Đào tạo và phát triển hơn 200 học viên MSC",
@@ -87,7 +91,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/QTL.webp",
     achievement: "Tốt nghiệp và trưởng thành từ HKDN",
     testimonial: "Những kiến thức về quản lý dự án tại MSC đã giúp tôi thành công trong vai trò Trưởng phòng CNTT. Tôi đã học được cách áp dụng các phương pháp Agile và Scrum để quản lý team hiệu quả.",
-    currentSalary: "22M+",
+
     graduationYear: "2020",
     promotion: "Từ Developer → Senior Dev → Tech Lead → Trưởng phòng CNTT",
     socialImpact: "Xây dựng hạ tầng IT cho toàn bộ hệ thống MSC Center",
@@ -115,7 +119,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/LPU.webp",
     achievement: "Tốt nghiệp và trưởng thành từ HKDN",
     testimonial: "MSC Center không chỉ dạy kiến thức mà còn giúp tôi xây dựng network chuyên nghiệp. Tôi đã học được cách làm marketing hiệu quả và xây dựng thương hiệu cá nhân.",
-    currentSalary: "18M+",
+
     graduationYear: "2021",
     promotion: "Từ Intern → Marketing Executive → Marketing Specialist",
     socialImpact: "Phát triển thương hiệu MSC Center qua các kênh digital",
@@ -143,7 +147,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/NNTH.webp",
     achievement: "Tốt nghiệp và trưởng thành từ HKDN",
     testimonial: "Chương trình đào tạo tại MSC rất thực tế và ứng dụng được ngay vào công việc. Tôi đã học được cách làm việc chuyên nghiệp và phát triển kỹ năng giao tiếp hiệu quả.",
-    currentSalary: "16M+",
+
     graduationYear: "2022",
     promotion: "Từ Intern → Marketing Assistant → Marketing Executive",
     socialImpact: "Hỗ trợ recruitment và onboarding cho 50+ nhân viên mới",
@@ -171,7 +175,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/PNTT.webp",
     achievement: "Tốt nghiệp khóa Financial Management 2022",
     testimonial: "MSC đã trang bị cho tôi nền tảng vững chắc để phát triển sự nghiệp trong lĩnh vực tài chính. Tôi đã học được cách phân tích tài chính và quản lý rủi ro hiệu quả.",
-    currentSalary: "17M+",
+
     graduationYear: "2022",
     promotion: "Từ Finance Intern → Finance Assistant → Finance Executive",
     socialImpact: "Quản lý ngân sách và tài chính cho các dự án đào tạo của MSC",
@@ -199,7 +203,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/THMT.webp",
     achievement: "Học viên xuất sắc khóa Design Thinking 2023",
     testimonial: "Khóa học Design Thinking tại MSC đã mở ra góc nhìn mới về thiết kế và trải nghiệm người dùng. Tôi đã áp dụng thành công vào công việc quản lý dự án.",
-    currentSalary: "15M+",
+
     graduationYear: "2023",
     promotion: "Từ Project Assistant → Project Coordinator → Project Secretary",
     socialImpact: "Hỗ trợ quản lý và điều phối 15+ dự án đào tạo thành công",
@@ -227,7 +231,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/HNQ.webp",
     achievement: "Cựu học viên khóa Tech Leadership 2022",
     testimonial: "MSC Center đã giúp tôi phát triển từ một developer thành tech leader tự tin. Những kỹ năng leadership và communication tại MSC đã giúp tôi thành công tại Google.",
-    currentSalary: "45M+",
+
     graduationYear: "2022",
     promotion: "Từ Junior Dev → Senior Dev → Tech Lead → Software Engineer tại Google",
     socialImpact: "Mentor cho 20+ junior developers trong cộng đồng tech Việt Nam",
@@ -255,7 +259,7 @@ export const mscersData: MSCerDetail[] = [
     avatar: "/MSCers/PBH.webp",
     achievement: "Cựu học viên khóa Tech Leadership 2022",
     testimonial: "MSC Center đã giúp tôi phát triển từ một developer thành tech leader tự tin. Tôi đã học được cách kết hợp technical skills với business understanding.",
-    currentSalary: "19M+",
+
     graduationYear: "2022", 
     promotion: "Từ Developer → Senior Dev → Tech-Marketing Bridge Role",
     socialImpact: "Kết nối giữa team technical và marketing, tối ưu hóa các sản phẩm digital",
