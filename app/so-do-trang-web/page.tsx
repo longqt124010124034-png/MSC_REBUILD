@@ -104,13 +104,15 @@ export default function SiteMapPage() {
           title: "Danh mục bài viết",
           href: "/chia-se/category/[category]",
           icon: <FolderOpen className="h-4 w-4" />,
-          description: "Bài viết theo danh mục"
+          description: "Bài viết theo danh mục",
+          isDynamic: true
         },
         {
           title: "Chi tiết bài viết",
           href: "/chia-se/[slug]",
           icon: <FileText className="h-4 w-4" />,
-          description: "Nội dung chi tiết của từng bài viết"
+          description: "Nội dung chi tiết của từng bài viết",
+          isDynamic: true
         }
       ]
     },
