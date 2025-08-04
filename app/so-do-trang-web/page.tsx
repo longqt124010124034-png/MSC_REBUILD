@@ -68,7 +68,8 @@ export default function SiteMapPage() {
           title: "Chi tiết mentor",
           href: "/mentors/[id]",
           icon: <User className="h-4 w-4" />,
-          description: "Thông tin chi tiết về từng mentor"
+          description: "Thông tin chi tiết về từng mentor",
+          isDynamic: true
         }
       ]
     },
