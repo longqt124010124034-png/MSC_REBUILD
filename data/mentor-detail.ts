@@ -1,16 +1,40 @@
-import { MentorDetail } from "@/types/mentor";
+export type MentorDetail = {
+  id: string;
+  slug: string;
+  name: string;
+  title: string;
+  avatar?: string;
+  bio?: string;
+  role?: string;
+  personalInfo?: {
+    [key: string]: string;
+  };
+  organization?: string[];
+  education?: (string | { degree: string; school: string; year: string; thesis?: string })[];
+  workHistory?: string[];
+  subjects?: string[];
+  practicalWorks?: string[];
+  researchProjects?: string[];
+  awards?: string[];
+  achievements?: string[];
+  research?: {
+    teachingAreas: string[];
+    publications: string[];
+  };
+};
 
 export const mentorDetails: MentorDetail[] = [
   {
     id: "phan-huynh-anh",
     slug: "phan-huynh-anh",
     name: "Phan Huỳnh Anh",
-    title: "Dr. Phan Huỳnh Anh",
+    title: "Tiến sĩ Kinh tế",
     avatar: "/Mentors/PHA.webp",
-    role: "Chủ tịch HĐQT Công ty Smentor | CEO Quỹ FFVM | Giảng viên Đại học",
+    role: "Chủ tịch HĐQT Smentor | CEO Quỹ FFVM | Giảng viên Đại học",
     personalInfo: {
       "Họ và tên": "Phan Huỳnh Anh",
       "Học vị": "Tiến sĩ (2019)",
+
     },
     organization: [
       "Giảng viên Đại học UEH",
@@ -20,10 +44,10 @@ export const mentorDetails: MentorDetail[] = [
       "Founder/CEO Quỹ FFVN",
     ],
     education: [
-      "Cử nhân Công nghệ Thông tin",
-      "Cử nhân Kinh tế",
-      "Thạc sĩ Kinh tế",
       "Tiến sĩ Kinh tế",
+      "Thạc sĩ Kinh tế",
+      "Cử nhân Kinh tế",
+      "Cử nhân Công nghệ Thông tin",
       "Chuyên viên Microsoft (MCSE)",
       "Chuyên viên Cisco (CCNP)",
       "Giảng viên Khởi nghiệp Quốc gia (VCCI)",
@@ -42,17 +66,15 @@ export const mentorDetails: MentorDetail[] = [
       "2023–nay: Founder/CEO – Quỹ FFVN",
     ],
     subjects: [
-      "Bộ môn kỹ năng mềm",
+      "Kỹ năng mềm",
       "Quản trị và khởi nghiệp",
       "Giao tiếp kinh doanh",
-      "Kỹ năng sales và marketing",
-      "Kỹ năng lập kế hoạch và thực thi",
+      "Sales và marketing",
+      "Lập kế hoạch và thực thi",
       "Khởi nghiệp số - Kinh tế số",
-      "Khởi nghiệp và đổi mới sáng tạo",
-      "Ứng dụng công nghệ 4.0 trong khởi nghiệp",
+      "Đổi mới sáng tạo",
       "Xây dựng nhân sự kế thừa",
-      "Thẩm định dự án",
-      "Quản lý dự án",
+      "Thẩm định và Quản lý dự án",
     ],
     practicalWorks: [
       "Chương trình học kỳ doanh nghiệp – 50 doanh nghiệp tham gia (2018–2020)",
@@ -63,10 +85,10 @@ export const mentorDetails: MentorDetail[] = [
     ],
     researchProjects: [
       "Xúc tiến du lịch tỉnh Long An (2018–2019) – Cấp tỉnh – Đã nghiệm thu",
-      "Xúc tiến du lịch đêm Sóc Trăng, Bà Rịa - Vũng Tàu, Kiên Giang... (2020–nay) – Cấp tỉnh – Chưa nghiệm thu",
-      "Giảng viên nguồn/Ủy viên Hội đồng Khởi nghiệp quốc gia (VCCI) – (2017–nay) – Quốc gia – Đã nghiệm thu",
-      "Ban chấp hành Hiệp hội Du lịch Việt Nam – (2015–nay) – Quốc gia – Đã nghiệm thu",
-      "CLB Giám đốc Sales & Marketing Việt Nam – (2017–nay) – Quốc gia – Đã nghiệm thu",
+      "Xúc tiến du lịch đêm Sóc Trăng, Bà Rịa - Vũng Tàu, Kiên Giang... (2020–nay) – Cấp tỉnh",
+      "Giảng viên nguồn/Ủy viên Hội đồng Khởi nghiệp quốc gia (VCCI) – (2017–nay) – Cấp Quốc gia",
+      "Ban chấp hành Hiệp hội Du lịch Việt Nam – (2015–nay) – Cấp Quốc gia",
+      "CLB Giám đốc Sales & Marketing Việt Nam – (2017–nay) – Cấp Quốc gia",
     ],
     awards: [
       "Bằng khen của Trung Ương Hội Kỷ lục gia Việt Nam – 2019",
@@ -74,20 +96,16 @@ export const mentorDetails: MentorDetail[] = [
       "Giấy khen của HĐ Khởi nghiệp Quốc gia (VCCI) – 2019, 2020, 2021",
     ],
     achievements: [
-      "Đồng sáng lập Exotic Vietnam – chuyên Teambuilding, MICE, Travel (2013)",
-      "Đồng sáng lập Smentor – mô hình Mentoring For Success (2017)",
-      "Đồng sáng lập Viện Việt Nam Bách Nghệ Thực Hành – Bộ KH&CN (2019)",
-      "Đồng sáng lập công ty cổ phần Smar – giải pháp marketing (2020)",
-      "Người sáng lập CLB Action Media – sản phẩm media B2B (2017)",
-      "Đồng sáng lập SRun Vietnam – đơn vị quản lý giải chạy (2023)",
-      "Người sáng lập giải chạy Vietnam Student Marathon – dành cho sinh viên (2022)",
+      "Đồng sáng lập Exotic Vietnam (2013)",
+      "Đồng sáng lập Smentor (2017)",
+      "Đồng sáng lập Viện Việt Nam Bách Nghệ Thực Hành (2019)",
+      "Đồng sáng lập công ty cổ phần Smar (2020)",
+      "Người sáng lập CLB Action Media (2017)",
+      "Đồng sáng lập SRun Vietnam (2023)",
+      "Người sáng lập giải chạy Vietnam Student Marathon (2022)",
     ],
     research: {
-      teachingAreas: [
-        "Khởi nghiệp số",
-        "Marketing",
-        "Quản trị dự án",
-      ],
+      teachingAreas: ["Khởi nghiệp số", "Marketing", "Quản trị dự án"],
       publications: [],
     },
   },
@@ -95,48 +113,43 @@ export const mentorDetails: MentorDetail[] = [
     id: "hoang-cuu-long",
     slug: "hoang-cuu-long",
     name: "Hoàng Cửu Long",
-    title: "Phó Giáo sư Tiến sĩ Quản trị kinh doanh",
-    avatar: "Mentors/HCL.webp",
+    title: "Phó Giáo sư, Tiến sĩ Quản trị kinh doanh",
+    avatar: "/Mentors/HCL.webp",
+    role: "Phó Trưởng khoa, Khoa Kinh doanh quốc tế - Marketing, ĐH Kinh tế TP.HCM",
     personalInfo: {
       "Họ và tên": "Hoàng Cửu Long",
       "Ngày sinh": "30/04/1977",
-      "Nơi sinh": "Tp. Hồ Chí Minh",
-      "Quê quán": "Quảng Nam",
-      "Địa chỉ": "324 Điện Biên Phủ, Phường 11, Quận 10, Tp. Hồ Chí Minh",
       "Email": "hoangcuulong@ueh.edu.vn",
       "Điện thoại": "0903923590",
     },
     organization: [
-      "Khoa Kinh doanh quốc tế - Marketing",
-      "Chức vụ: Phó Trưởng khoa",
+      "Khoa Kinh doanh quốc tế - Marketing, Trường Đại học Kinh tế TP. Hồ Chí Minh",
     ],
     education: [
-      { degree: "Tiến sĩ", school: "ĐH Kinh tế TP.HCM", year: "2019" },
+      { degree: "Tiến sĩ", school: "Trường Đại học Kinh tế TP.HCM", year: "2019" },
       { degree: "Thạc sĩ", school: "James Cook University", year: "2006" },
-      { degree: "Cử nhân", school: "ĐH Kinh tế TP.HCM", year: "1999" },
+      { degree: "Cử nhân", school: "Trường Đại học Kinh tế TP.HCM", year: "1999" },
     ],
     subjects: [
-      "ThS - Kinh doanh và quản lý (834)",
-      "ThS - Quản trị kinh doanh (8340101)",
-      "ThS - Kinh doanh thương mại (8340121)",
-      "ThS - Quản lý công (8340403)",
-      "ThS - Quản trị nhân lực (8340404)",
-      "TS - Kinh doanh và quản lý (934)",
-      "TS - Quản trị kinh doanh (9340101)",
-      "TS - Kinh doanh thương mại (9340121)",
+      "Quản trị kinh doanh",
+      "Kinh doanh thương mại",
+      "Quản lý công",
+      "Quản trị nhân lực",
     ],
     researchProjects: [
       "Factors affecting customer engagement and brand loyalty in Vietnam FMCG (2023–2024)",
-      "Xây dựng chiến lược phát triển Bình Minh, tỉnh Vĩnh Long (2024)",
-      "Nghiên cứu khởi nghiệp trực tuyến của sinh viên đại học tại Việt Nam (2023)",
-      // rút gọn ở đây, bạn có thể bổ sung tiếp nếu muốn
+      "Xây dựng chiến lược phát triển kinh tế xã hội thị xã Bình Minh tỉnh Vĩnh Long (2024)",
+      "Nghiên cứu hoạt động khởi nghiệp trực tuyến của sinh viên đại học tại Việt Nam (2023)",
+      "Hình thành & phát triển bền vững: Quản trị & vận hành chuỗi bán lẻ Bánh Mì Má Hải (2023)",
     ],
     research: {
-      teachingAreas: ["Quản trị", "Marketing", "Khởi nghiệp"],
+      teachingAreas: ["Quản trị kinh doanh", "Marketing", "Kinh doanh quốc tế", "Khởi nghiệp"],
       publications: [
-        "FACTORS AFFECTING GREEN PURCHASE BEHAVIOUR OF YOUNG PEOPLE...",
-        "Mindfulness Practice and Work Performance...",
-        // rút gọn tiếp tại đây
+        "Factors affecting green purchase behaviour of young people with dairy products through new trends and packaging (2025)",
+        "Mindfulness Practice and Work Performance: The Mediating Role of Emotional Intelligence and Psychological Capital (2025)",
+        "Blockchain technology applications in retail branding: Insights from retailers in the developing world (2023)",
+        "The impact of business simulation games on Vietnamese students’ entrepreneurial intention (2023)",
+        "Strategic Groups Assessment: The Case of Vietnam Beer Market (2020)",
       ],
     },
   },
@@ -144,30 +157,43 @@ export const mentorDetails: MentorDetail[] = [
     id: "doan-duc-minh",
     slug: "doan-duc-minh",
     name: "Đoàn Đức Minh",
-    title: "Thạc Sĩ - Nghiên cứu sinh",
+    title: "Chuyên gia tư vấn & huấn luyện, Nghiên cứu sinh Tiến sĩ",
     avatar: "/Mentors/DDM.webp",
-    role: "Giảng viên Đại học Western Sydney",
+    role: "Đồng sáng lập HuyDong.com | Giảng viên thỉnh giảng",
     personalInfo: {
       "Họ và tên": "Đoàn Đức Minh",
-      "Học vị": "Thạc Sĩ",
+      "Học vị": "Thạc Sĩ, Nghiên cứu sinh Tiến sĩ",
     },
     organization: [
-      "Giảng viên Đại học Western Sydney",
-      "Chuyên gia quản lý dự án",
+      "Đồng sáng lập & Giám đốc chiến lược – HuyDong.com/LoanVi.com",
+      "Giảng viên thỉnh giảng – ĐH Kinh tế TP.HCM, ĐH Tôn Đức Thắng, ĐH KHXH&NV",
+      "Giảng viên cao cấp – John & Partners, Trường Doanh nhân PTI",
     ],
     education: [
-      "Thạc Sĩ Quản trị dự án",
-      "Cử nhân Công nghệ Thông tin",
+      { degree: "Nghiên cứu sinh Tiến sĩ Quản trị Kinh Doanh", school: "Viện Đào tạo quốc tế, ĐH Kinh tế TP.HCM", year: "2015 - nay" },
+      { degree: "Thạc sĩ Quản trị Kinh doanh", school: "Viện Đào tạo quốc tế, ĐH Kinh tế TP.HCM", year: "2014" },
+      { degree: "Cử nhân Quản trị Kinh Doanh", school: "ĐH Kinh tế TP.HCM", year: "2008" },
+    ],
+    workHistory: [
+      "05/2014–nay: Đồng sáng lập và Giám đốc chiến lược – Công ty tài chính công nghệ HuyDong.com/LoanVi.com",
+      "01/2014–12/2016: Giám đốc chương trình - Viện đào tạo Quốc tế (Đại học Kinh tế TP.HCM)",
+      "06/2012–09/2013: Giám đốc Quan hệ khách hàng Doanh nghiệp và Quản trị rủi ro – Ngân hàng Shinhan Việt Nam",
+      "04/2010–06/2012: Chuyên viên Quan hệ khách hàng – Ngân hàng United Overseas (UOB)",
+      "09/2009–04/2010: Trưởng phòng kinh doanh – Khách sạn Ramana Saigon",
     ],
     subjects: [
-      "Quản lý dự án",
-      "Agile và Scrum",
-      "Chuyển đổi số",
-      "Phân tích dữ liệu",
+      "Kỹ năng mềm",
+      "Kỹ năng bán hàng",
+      "Tài chính cho người không chuyên",
+      "Xây dựng và phát triển đội nhóm",
+      "Tư duy sáng tạo và phản biện",
+      "Phát triển đội ngũ đào tạo nội bộ (Train the Trainer)",
+      "Chiến lược kinh doanh",
     ],
     achievements: [
-      "Chuyên gia tư vấn cho nhiều dự án chuyển đổi số",
-      "Giảng viên các khóa đào tạo Agile và Scrum",
+      "Đồng sáng lập công ty Fintech HuyDong.com/LoanVi.com",
+      "Kinh nghiệm quản lý cấp cao tại các ngân hàng quốc tế như Shinhan, UOB",
+      "Giảng viên thỉnh giảng tại nhiều trường đại học và tổ chức giáo dục uy tín",
     ],
   },
   {
@@ -176,13 +202,13 @@ export const mentorDetails: MentorDetail[] = [
     name: "Nguyễn Chí Thành",
     title: "CEO",
     avatar: "/Mentors/NCT.webp",
-    role: "CEO TLàng Kết nối Kinh doanh VABIX",
+    role: "CEO Làng Kết nối Kinh doanh VABIX",
     personalInfo: {
       "Họ và tên": "Nguyễn Chí Thành",
       "Chức vụ": "CEO",
     },
     organization: [
-      "TLàng Kết nối Kinh doanh VABIX",
+      "Làng Kết nối Kinh doanh VABIX",
     ],
     subjects: [
       "Personal Coaching",
@@ -191,7 +217,7 @@ export const mentorDetails: MentorDetail[] = [
       "Leadership",
     ],
     achievements: [
-      "Founder TLàng Kết nối Kinh doanh VABIX",
+      "Founder Làng Kết nối Kinh doanh VABIX",
       "Chuyên gia coaching cá nhân",
     ],
   },

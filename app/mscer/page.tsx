@@ -1,4 +1,4 @@
-'use client'
+'use client' //app/mscer/page.tsx
 
 import { motion, Variants } from "framer-motion"
 import Image from "next/image"

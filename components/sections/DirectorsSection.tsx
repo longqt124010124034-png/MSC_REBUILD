@@ -1,79 +1,64 @@
-"use client"
-import { motion } from "framer-motion"
-import { useLanguage } from "../language-provider"
-import MentorCard from "../MentorCard"
+'use client'
 
-const DirectorsSection = () => {
-  const { t } = useLanguage()
+import { mscersData } from "@/data/mscer";
+import MentorCard from "@/components/MentorCard";
+import { motion } from "framer-motion";
 
-  const directors = [
-    {
-      id: "dir-1",
-      name: "Dương Thế Khải",
-      title: "",
-      degree: "Phó Giám Đốc MSC",
-      avatar: "/MSCers/DTK.webp",
-      specialties: ["Strategic Leadership", "Business Development", "Management"],
-      
-    },
-    {
-      id: "dir-2",
-      name: "Phạm Hoàng Minh Khánh",
-      title: "",
-      degree: "Giám Đốc MSC",
-      avatar: "/MSCers/PHMK.webp",
-      specialties: ["Academic Affairs", "Curriculum Development", "Quality Assurance","Business Development"],
-      /*social: {
-        linkedin: "https://linkedin.com/in/director2",
-        email: "director2@msc.edu.vn",
-      },*/
-    },
-    {
-      id: "dir-3",
-      name: "Quách Thành Long",
-      title: "",
-      degree: "Trưởng phòng CNTT",
-      avatar: "/MSCers/QTL.webp",
-      specialties: ["Strategic Leadership", "Business Development", "Technique Management","Game Development"],
-      
-      
-    },
-  ]
+export default function DirectorsSection() {
+  // Lọc ra các giám đốc từ danh sách MSCer.
+  // Đây là ví dụ, bạn có thể thay đổi logic lọc tùy theo cấu trúc dữ liệu của mình.
+  const directorIds = ["pham-hoang-minh-khanh", "duong-the-khai", "quach-thanh-long"];
+  const directors = mscersData.filter(mscer => directorIds.includes(mscer.id));
+
+  // Nếu không có dữ liệu giám đốc, có thể hiển thị một thông báo hoặc trả về null.
+  if (directors.length === 0) {
+    return (
+      <div className="container py-12 text-center text-gray-500">
+        Không có dữ liệu giám đốc để hiển thị.
+      </div>
+    );
+  }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-teal-50 dark:from-gray-800 dark:to-gray-900">
+    <section className="py-12 bg-white">
       <div className="container">
         <motion.div
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white font-serif">
-            Ban chủ nhiệm
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Ban Giám đốc
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Đội ngũ lãnh đạo giàu kinh nghiệm, định hướng chiến lược và phát triển MSC Center
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Gặp gỡ những người lãnh đạo đã tạo nên MSC Center và định hướng sự phát triển của cộng đồng.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {directors.map((director, index) => (
             <motion.div
               key={director.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <MentorCard {...director} />
+              <MentorCard
+                id={director.id}
+                name={director.name}
+                title={director.position}
+                degree={director.company}
+                avatar={director.avatar}
+                specialties={director.skills}
+                linkPrefix="mscer" // Đường dẫn sẽ là /mscer/[id]
+              />
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default DirectorsSection
