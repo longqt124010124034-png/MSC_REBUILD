@@ -13,7 +13,7 @@ const ProjectsSection = () => {
   {
     id: "1",
     title: "🛠️ Dự án: Công ty TNHH F Deli",
-    description: "👉Mentoring & Coaching: Chuẩn hoá quy trình làm việc.👉Ban Giảng Huấn: Phan Huỳnh Anh.",
+    description: "👉Mentoring & Coaching: Chuẩn hoá quy trình làm việc.",
     
     instructors: "🧑‍🏫 Ban Giảng Huấn: Phan Huỳnh Anh & MSC Teams",
     image: "/Projects/Fdeli.webp",

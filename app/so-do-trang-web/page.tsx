@@ -117,7 +117,7 @@ export default function SiteMapPage() {
       ]
     },
     {
-      title: "Liên h��",
+      title: "Liên hệ",
       href: "/lien-he",
       icon: <Phone className="h-5 w-5" />,
       description: "Thông tin liên hệ và form gửi tin nhắn"
@@ -318,7 +318,7 @@ export default function SiteMapPage() {
                 className="inline-flex items-center justify-center px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors border border-blue-500"
               >
                 <Home className="h-5 w-5 mr-2" />
-                Về trang ch��
+                Về trang chủ
               </Link>
             </div>
           </motion.div>
