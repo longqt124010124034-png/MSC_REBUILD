@@ -80,7 +80,7 @@ const MentorsSection = () => {
             Ban giảng huấn
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Đội ngũ giảng viên và chuyên gia hàng đầu với nhiều năm kinh nghi���m trong lĩnh vực đào tạo và phát triển
+            Đội ngũ giảng viên và chuyên gia hàng đầu với nhiều năm kinh nghiệm trong lĩnh vực đào tạo và phát triển
           </p>
         </motion.div>
 

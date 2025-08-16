@@ -21,7 +21,7 @@ export default function MentorsPage() {
       title: "Tiến Sĩ Kinh tế",
       description: "Chủ tịch HĐQT Công ty Smentor",
       avatar: "/Mentors/PHA.webp",
-      specialties: ["Lãnh đạo chiến lược", "Mentoring Doanh nghiệp", "Tư vấn"],
+  
     },
     {
       id: "hoang-cuu-long",
