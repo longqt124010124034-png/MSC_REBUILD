@@ -11,7 +11,7 @@ const ProjectsSection = () => {
 
   const projects = [
   {
-    id: "1",
+    slug:"Fdeli",
     title: "🛠️ Dự án: Công ty TNHH F Deli",
     description: "👉Mentoring & Coaching: Chuẩn hoá quy trình làm việc.",
     

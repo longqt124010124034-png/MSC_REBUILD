@@ -18,7 +18,7 @@ export default function ProjectsPage() {
   // Thay thế dữ liệu mockup bằng dữ liệu dự án thực tế
   const projects = [
     {
-      id: "1",
+      slug:"Fdeli",
       title: "Công ty TNHH F-Deli",
       description: "Mentoring & Coaching: Chuẩn hoá quy trình làm việc toàn diện, tối ưu hóa hiệu suất và xây dựng văn hóa doanh nghiệp bền vững.",
       image: "/Projects/Fdeli.webp",
