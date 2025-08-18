@@ -15,7 +15,6 @@ interface MentorCardProps {
   title: string
   degree: string
   avatar: string
-  specialties: string[]
   linkPrefix?: 'mentors' | 'mscers'; // Prop để quyết định loại link
   social?: {
     linkedin?: string
@@ -32,7 +31,7 @@ const MentorCard = ({
   title,
   degree,
   avatar,
-  specialties,
+
   linkPrefix = 'mentors', // Thêm vào đây, mặc định là 'mentors'
   social,
 }: MentorCardProps) => {
@@ -76,23 +75,8 @@ const MentorCard = ({
 
         <CardContent className="flex-1 px-6 pb-4">
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Chuyên môn:</h4>
-            <div className="flex flex-wrap gap-1 min-h-[2.5rem]">
-              {specialties.slice(0, 3).map((specialty, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
-                >
-                  {specialty}
-                </Badge>
-              ))}
-              {specialties.length > 3 && (
-                <Badge variant="outline" className="text-xs">
-                  +{specialties.length - 3}
-                </Badge>
-              )}
-            </div>
+            
+            
           </div>
           {social && (
             <div className="flex justify-center space-x-3">

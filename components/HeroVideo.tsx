@@ -120,39 +120,7 @@ const HeroVideo = () => {
             {t("hero.subtitle")}
           </motion.p>*/}
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            <Button
-              asChild
-              size="lg"
-              className="btn-secondary text-lg px-8 py-4 hover:scale-105 transition-transform duration-300"
-            >
-              <Link href="/lien-he">
-                {t("hero.cta")}
-              </Link>
-            </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="flex flex-col items-center text-white/80"
-          >
-            <span className="text-sm mb-2">Cuộn xuống</span>
-            <ChevronDown className="h-6 w-6" />
-          </motion.div>
+           
         </motion.div>
       </div>
     </section>

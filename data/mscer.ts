@@ -3,8 +3,8 @@
 export interface MSCerDetail {
   id: string;
   name: string;
-  position: string;
   company: string;
+  position: string;
   avatar: string;
   achievement: string;
   testimonial: string;
@@ -26,8 +26,8 @@ export const mscersData: MSCerDetail[] = [
   {
     id: "pham-hoang-minh-khanh",
     name: "Phạm Hoàng Minh Khánh",
-    position: "Nhà sáng lập, Viện phó & Giảng viên",
-    company: "UEF, SMENTOR, SMAR, SGA",
+    company: "MSC",
+    position: "GIÁM ĐỐC MSC",
     avatar: "/MSCers/PHMK.webp",
     achievement: "Nhà sáng lập đa ngành, Giảng viên & Chuyên gia tư vấn chiến lược",
     testimonial: "Kiến thức và kỹ năng được hệ thống hóa tại các trung tâm đào tạo đã trở thành nền tảng vững chắc, giúp tôi tự tin sáng lập và điều hành hiệu quả nhiều doanh nghiệp. Đây là nơi cung cấp tư duy chiến lược để biến ý tưởng thành hiện thực.",
@@ -59,8 +59,8 @@ export const mscersData: MSCerDetail[] = [
   {
     id: "duong-the-khai",
     name: "Dương Thế Khải",
-    position: "Quản lý dự án & Founder",
-    company: "Tập đoàn Nam Quốc, F FOUNDATION, VSM",
+    company: "MSC",
+    position: "PHÓ GIÁM ĐỐC",
     avatar: "/MSCers/DTK.webp",
     achievement: "Founder giải chạy Vietnam Student Marathon & Quản lý dự án chuyên nghiệp",
     testimonial: "Quá trình học tập và làm việc trong các dự án đã cho tôi khả năng quản lý và điều hành. Tôi tự hào khi sáng lập Vietnam Student Marathon, một sân chơi ý nghĩa cho cộng đồng sinh viên.",
@@ -85,8 +85,8 @@ export const mscersData: MSCerDetail[] = [
   {
     id: "quach-thanh-long",
     name: "Quách Thành Long",
-    position: "Trưởng phòng CNTT",
-    company: "Trung tâm MSC",
+    company: "MSC",
+    position: "TRƯỞNG PHÒNG CNTT",
     avatar: "/MSCers/QTL.webp",
     achievement: "Developer đa năng, Business Analyst & Nhà đầu tư",
     testimonial: "Áp dụng kiến thức từ các khoá học, tôi đã xây dựng và dẫn dắt nhiều dự án công nghệ, từ website msc.edu.vn đến các phần mềm quản lý, đồng thời phát triển kỹ năng phân tích kinh doanh để tạo ra giải pháp tối ưu.",

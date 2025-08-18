@@ -17,7 +17,7 @@ const MentorsSection = () => {
       title: "Tiến Sĩ Kinh tế",
       degree: "Chủ tịch HĐQT Công ty Smentor",
       avatar: "/Mentors/PHA.webp",
-      specialties: ["Leadership", "Strategic Management", "Business Coaching"],
+      
     },
     {
       id: "hoang-cuu-long",
@@ -26,7 +26,7 @@ const MentorsSection = () => {
       title: "Phó Giáo Sư - Tiến Sĩ",
       degree: "Giảng viên Đại học Kinh tế TP. Hồ Chí Minh",
       avatar: "/Mentors/HCL.webp",
-      specialties: ["HR Development", "Team Building", "Communication Skills"],
+  
     },
     {
       id: "doan-duc-minh",
@@ -35,7 +35,7 @@ const MentorsSection = () => {
       title: "Thạc Sĩ - Nghiên cứu sinh",
       degree: "Giảng viên Đại học Western Sydney",
       avatar: "/Mentors/DDM.webp",
-      specialties: ["Project Management", "Agile", "Digital Transformation"],
+   
     },
     {
       id: "nguyen-chi-thanh",
@@ -44,7 +44,7 @@ const MentorsSection = () => {
       title: "CEO",
       degree: "TLàng Kết nối Kinh doanh VABIX",
       avatar: "/Mentors/NCT.webp",
-      specialties: ["Personal Coaching", "Career Development", "Mindfulness"],
+
     },
     {
       id: "le-nhat-truong-chinh",
@@ -53,7 +53,7 @@ const MentorsSection = () => {
       title: "CEO & Founder",
       degree: "SUCCESS Partner Co.Ltd",
       avatar: "/Mentors/LNTC.webp",
-      specialties: ["Innovation", "Entrepreneurship", "Design Thinking"],
+   
     },
     {
       id: "phan-phat-huy",
@@ -62,7 +62,7 @@ const MentorsSection = () => {
       title: "CEO & Founder",
       degree: "HILTOW LANDMARK",
       avatar: "/Mentors/PPH.webp",
-      specialties: ["Soft Skills", "Public Speaking", "Emotional Intelligence"],
+
     },
   ]
 
