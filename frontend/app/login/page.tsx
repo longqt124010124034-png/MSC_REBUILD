@@ -17,16 +17,23 @@ export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const { signIn } = useAuth()
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError(null)
     setIsLoading(true)
-    await signIn(email, password)
-    setIsLoading(false)
-    router.replace("/student/dashboard")
+    try {
+      await signIn(email, password)
+      router.replace("/student/dashboard")
+    } catch (err: any) {
+      setError(err?.message || "Đăng nhập thất bại")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const benefits = [
