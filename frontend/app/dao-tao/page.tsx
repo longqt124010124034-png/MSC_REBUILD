@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Clock, Users, Award, BookOpen, Target, CheckCircle, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 import { motion, AnimatePresence, useAnimation, useInView, Variants } from 'framer-motion'; // Đảm bảo đã import useAnimation
 
 export default function TrainingPage() {
@@ -47,7 +48,7 @@ export default function TrainingPage() {
 
   const benefits = [
     { icon: Award, title: "Chứng chỉ uy tín", description: "Nhận chứng chỉ được công nhận quốc tế và trong nước", },
-    { icon: Users, title: "Học từ chuyên gia", description: "Đội ngũ giảng viên giàu kinh nghiệm thực tiễn", },
+    { icon: Users, title: "Học từ chuyên gia", description: "Đội ngũ giảng viên giàu kinh nghi���m thực tiễn", },
     { icon: Target, title: "Thực hành thực tế", description: "70% thời gian dành cho thực hành và case study", },
     { icon: BookOpen, title: "Tài liệu độc quyền", description: "Bộ tài liệu học tập được biên soạn riêng", },
   ];
@@ -303,7 +304,7 @@ export default function TrainingPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Sẵn sàng bắt đ���u hành trình học tập?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Sẵn sàng bắt đầu hành trình học tập?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Đăng ký tư vấn miễn phí để tìm hiểu chương trình phù hợp với bạn</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/lien-he"><Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">Đăng ký tư vấn miễn phí</Button></Link>
