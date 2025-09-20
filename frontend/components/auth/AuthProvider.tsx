@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
 import { getUser, setUser, type StoredUser } from "@/lib/storage"
+import { markUserLogout, upsertUserRecord } from "@/lib/users"
 
 export type AuthContextValue = {
   user: StoredUser | null
