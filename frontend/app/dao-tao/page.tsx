@@ -274,7 +274,7 @@ export default function TrainingPage() {
                   </div>
                   <div className="flex space-x-3">
                     <Link href={`/dao-tao/${program.id}`} className="flex-1"><Button className="w-full btn-primary">Chi tiết khóa học</Button></Link>
-                    <Link href="/lien-he"><Button variant="outline" className="bg-transparent">Đăng ký ngay</Button></Link>
+                    <AddToCartButton courseId={program.id} />
                   </div>
                 </CardContent>
               </Card>
@@ -303,7 +303,7 @@ export default function TrainingPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Sẵn sàng bắt đầu hành trình học tập?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Sẵn sàng bắt đ���u hành trình học tập?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Đăng ký tư vấn miễn phí để tìm hiểu chương trình phù hợp với bạn</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/lien-he"><Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">Đăng ký tư vấn miễn phí</Button></Link>
