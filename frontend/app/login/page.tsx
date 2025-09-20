@@ -171,15 +171,15 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Remember & Forgot */}
+                {/* Demo helper */}
                 <div className="flex items-center justify-between">
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                    />
-                    <span className="text-sm text-gray-600 dark:text-gray-300">Ghi nhớ đăng nhập</span>
-                  </label>
+                  <button
+                    type="button"
+                    onClick={() => { setEmail("quachthanhlong2k3@gamil.com"); setPassword("123456") }}
+                    className="text-xs text-blue-600 hover:underline"
+                  >
+                    Dùng tài khoản demo (auto điền)
+                  </button>
                   <Link
                     href="/forgot-password"
                     className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -187,6 +187,8 @@ export default function LoginPage() {
                     Quên mật khẩu?
                   </Link>
                 </div>
+
+                {error && <div className="text-sm text-red-600">{error}</div>}
 
                 {/* Submit Button */}
                 <Button
