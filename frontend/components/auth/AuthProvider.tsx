@@ -40,29 +40,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       user,
       async signIn(email: string, password: string) {
         const emailLc = email.toLowerCase().trim()
+        const isAdmin = emailLc === "quachthanhlong2k3@gmail.com"
         const demo = DEMO_USERS.find((u) => u.email === emailLc)
         if (demo) {
-          if (password !== demo.password) {
-            throw new Error("Sai mật khẩu tài khoản demo")
+          if (password !== demo.password) throw new Error("Sai mật khẩu tài khoản demo")
+          const demoUser: StoredUser = {
+            id: demo.id,
+            name: demo.name,
+            email: demo.email,
+            avatar: demo.avatar,
+            role: isAdmin ? "admin" : "student",
+            createdAt: new Date().toISOString(),
+            lastLoginAt: new Date().toISOString(),
           }
-          const demoUser: StoredUser = { id: demo.id, name: demo.name, email: demo.email, avatar: demo.avatar }
           setUser(demoUser)
           setUserState(demoUser)
+          upsertUserRecord(demoUser)
           return
         }
-        if (!password || password.length < 6) {
-          throw new Error("Mật khẩu tối thiểu 6 ký tự")
-        }
+        if (!password || password.length < 6) throw new Error("Mật khẩu tối thiểu 6 ký tự")
         const mockUser: StoredUser = {
           id: emailLc,
           name: emailLc.split("@")[0],
           email: emailLc,
           avatar: "/MSCers/QTL.webp",
+          role: isAdmin ? "admin" : "student",
+          createdAt: new Date().toISOString(),
+          lastLoginAt: new Date().toISOString(),
         }
         setUser(mockUser)
         setUserState(mockUser)
+        upsertUserRecord(mockUser)
       },
       signOut() {
+        if (user) markUserLogout(user)
         setUser(null)
         setUserState(null)
       },
