@@ -111,12 +111,16 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${merriweather.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
-            <div className="min-h-screen bg-background text-foreground">
-              <Header />
-              <main>{children}</main>
-              <Footer />
-              <FloatingButtons />
-            </div>
+            <AuthProvider>
+              <CartProvider>
+                <div className="min-h-screen bg-background text-foreground">
+                  <Header />
+                  <main>{children}</main>
+                  <Footer />
+                  <FloatingButtons />
+                </div>
+              </CartProvider>
+            </AuthProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>
