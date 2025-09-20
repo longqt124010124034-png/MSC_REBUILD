@@ -16,14 +16,15 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
+  const { signIn } = useAuth()
+  const router = useRouter()
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate login process
-    setTimeout(() => {
-      setIsLoading(false)
-      console.log("Login attempt:", { email, password })
-    }, 2000)
+    await signIn(email, password)
+    setIsLoading(false)
+    router.replace("/student/dashboard")
   }
 
   const benefits = [
