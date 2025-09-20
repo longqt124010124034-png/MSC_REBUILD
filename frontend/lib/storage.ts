@@ -3,6 +3,10 @@ export type StoredUser = {
   name: string
   email: string
   avatar?: string
+  role?: "admin" | "student"
+  createdAt?: string
+  lastLoginAt?: string
+  lastLogoutAt?: string
 }
 
 export type StoredCartItem = {
