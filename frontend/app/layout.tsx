@@ -6,6 +6,8 @@ import { LanguageProvider } from "@/components/language-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import { AuthProvider } from "@/components/auth/AuthProvider";
+import { CartProvider } from "@/components/cart/CartProvider";
 
 // Cấu hình font Roboto cho chữ thường
 const roboto = Roboto({
